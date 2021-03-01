@@ -1,5 +1,5 @@
 class MealsController < ApplicationController
-
+  skip_before_action :authenticate_user!, only: :preferences
   def index
     @meals = Meal.all
   end
@@ -19,6 +19,9 @@ class MealsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def preferences
   end
 
   def meal_params
