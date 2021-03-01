@@ -5,3 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+# ../lib/assets/nutrition_info.csv
+
+require 'csv'
+
+puts "Destroying all restaurants & meals..."
+
+Restaurant.destroy_all
+
+Meal.destroy_all
+
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath    = 'lib/nutrition_info.csv'
+
+CSV.foreach(filepath, csv_options) do |row|
+  puts "Finding restaurant...thanks to Doug's advice..."
+  restaurant = Restaurant.where(name: row['Restaurant']).first_or_create!
+  puts "Creating meal..."
+  meal = Meal.new(
+    name: row['Meal'],
+    calories: row['Calories'],
+    proteins: row['Protein'],
+    fat: row['Fat'],
+    carbohydrates: row['Carbohydrates'],
+    sodium: row['Sodium'],
+    price: row['Price']
+  )
+  meal.restaurant = restaurant
+  meal.save!
+end
