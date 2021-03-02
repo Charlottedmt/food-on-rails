@@ -8,4 +8,5 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:show]
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboards
   get '/preferences', to: 'meals#preferences', as: :preferences
+  get '/tagged', to: "meals#tagged", as: :tagged
 end
