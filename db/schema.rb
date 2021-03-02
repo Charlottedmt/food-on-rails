@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_01_064909) do
+ActiveRecord::Schema.define(version: 2021_03_02_030454) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "choices", force: :cascade do |t|
-    t.integer "status"
     t.bigint "user_id", null: false
     t.bigint "meal_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -58,7 +57,8 @@ ActiveRecord::Schema.define(version: 2021_03_01_064909) do
     t.string "username"
     t.integer "height"
     t.integer "weight"
-    t.integer "status"
+    t.integer "goal"
+    t.integer "rating"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
