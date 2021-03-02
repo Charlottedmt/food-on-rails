@@ -10,6 +10,7 @@ class MealsController < ApplicationController
       @meals = join.uniq.first(5)
     else
       @meals = Meal.first(3)
+      @user = current_user
     end
   end
 
