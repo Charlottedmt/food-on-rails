@@ -21,7 +21,8 @@
     <%= f.input :weight,
                 required: true %>
     <%= f.input :goal,
-                collection: User.goals %>
+                collection: User.goals.keys,
+                label_method: ->(goal){ t("User.#{goal}") } %>
   </div>
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
