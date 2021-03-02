@@ -36,3 +36,5 @@ CSV.foreach(filepath, csv_options) do |row|
   meal.restaurant = restaurant
   meal.save!
 end
+
+puts "All meals added!"

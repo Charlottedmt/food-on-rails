@@ -1,9 +1,13 @@
 class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
-  acts_as_taggable_on :tags
 
   def index
     @meals = Meal.all
+    array1 = []
+    array2 = []
+    array3 = array1 + array2
+    @meals = array3.distinct
+
   end
 
   def show
