@@ -5,8 +5,10 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal)
     if params[:query].present?
       @meals = Meal.search_by_preferences(params[:query]).first(3)
+      @user = current_user
     else
       @meals = Meal.first(3)
+      @user = current_user
     end
   end
 
