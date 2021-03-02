@@ -30,7 +30,8 @@ CSV.foreach(filepath, csv_options) do |row|
     fat: row['Fat'],
     carbohydrates: row['Carbohydrates'],
     sodium: row['Sodium'],
-    price: row['Price']
+    price: row['Price'],
+    tag_list: row['Tags']
   )
   meal.restaurant = restaurant
   meal.save!
