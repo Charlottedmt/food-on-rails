@@ -2,16 +2,17 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
 
   def index
-    @meals = Meal.all
-    array1 = []
-    array2 = []
-    array3 = array1 + array2
-    @meals = array3.distinct
-
+    @meals = policy_scope(Meal)
+    if params[:query].present?
+      @meals = Meal.search_by_preferences(params[:query]).first(3)
+    else
+      @meals = Meal.first(3)
+    end
   end
 
   def show
     @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
   def new
@@ -28,10 +29,10 @@ class MealsController < ApplicationController
   end
 
   def preferences
+    skip_authorization
   end
 
   def meal_params
     params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium, tag_list: [])
   end
-
 end

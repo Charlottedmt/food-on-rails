@@ -6,6 +6,13 @@ class Meal < ApplicationRecord
   acts_as_taggable_on :tags
 
 
+  include PgSearch::Model
+  pg_search_scope :search_by_preferences,
+    against: :name,
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
   def validate_attrlist
     if calories.blank? && proteins.blank? && carbohydrates.blank? && fat.blank? && sodium.blank?
       errors[:nutrition_infos] << "Can't be blank"
