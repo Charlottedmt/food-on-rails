@@ -3,6 +3,8 @@ class Meal < ApplicationRecord
   validates :name, presence: true
   validates :price, presence: true
   validate :validate_attrlist
+  acts_as_taggable_on :tags
+
 
   include PgSearch::Model
   pg_search_scope :search_by_preferences,
@@ -13,7 +15,7 @@ class Meal < ApplicationRecord
 
   def validate_attrlist
     if calories.blank? && proteins.blank? && carbohydrates.blank? && fat.blank? && sodium.blank?
-       errors[:nutrition_infos] << "Can't be blank"
+      errors[:nutrition_infos] << "Can't be blank"
     end
   end
 

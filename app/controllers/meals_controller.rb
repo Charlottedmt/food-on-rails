@@ -1,11 +1,14 @@
 class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
+
   def index
     @meals = policy_scope(Meal)
     if params[:query].present?
       @meals = Meal.search_by_preferences(params[:query]).first(3)
+      @user = current_user
     else
       @meals = Meal.first(3)
+      @user = current_user
     end
   end
 
@@ -32,6 +35,6 @@ class MealsController < ApplicationController
   end
 
   def meal_params
-    params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium)
+    params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium, tag_list: [])
   end
 end
