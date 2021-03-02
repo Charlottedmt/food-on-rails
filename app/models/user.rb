@@ -7,6 +7,6 @@ class User < ApplicationRecord
   validates :username, presence: true, uniqueness: true
   validates :height, presence: true
   validates :weight, presence: true
-  validates :status, presence: true
+  validates :goal, presence: true
   has_many :choices
 end

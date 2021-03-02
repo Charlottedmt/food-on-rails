@@ -1,0 +1,24 @@
+<%= simple_form_for variable do |f| %>
+  <%= f.input :location, placeholder: 'Change location'%>
+<% end %>
+
+<div class="map-bg"></div>
+
+<h2>Hi #username &#128075;</h2>
+<h3>Here are your suggestions!</h3>
+
+<div class="cards-choice">
+  <% @restaurant.meal.each do |meal| %>
+    <div class="card-choice">
+      <img src="https://via.placeholder.com/80x60" alt="">
+      <div class="card-choice-description">
+        <h3><% meal.name %></h3>
+        <p><% @restaurant.name %></p>
+      </div>
+      <div class="card-choice-right">
+        <button class="btn btn-primary card-choice-button">INFO</button>
+        <button class="btn btn-secondary card-choice-button">GO!</button>
+      </div>
+    </div>
+  <% end %>
+</div>

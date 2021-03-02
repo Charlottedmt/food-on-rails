@@ -1,0 +1,46 @@
+:root {
+  $btn-padding: 8px;
+  $border-radius: 4px;
+  $border: none;
+}
+
+.btn {
+  padding: $btn-padding;
+  border: $border;
+  border-radius: $border-radius;
+}
+
+.btn-primary{
+  background-color: $primary-brand-color;
+  color: $primary-brand-text-color;
+}
+
+.btn-secondary{
+  background-color: $secondary-brand-color;
+  padding: $btn-padding;
+}
+
+.btn-small {
+  font-size: 0.5em;
+  /* width: 50px;
+  height: 50px; */
+}
+
+.btn-select {
+  background-color: $secondary-brand-color;
+}
+
+.btn-text{
+  background-color: inherit;
+  color: black;
+}
+.btn-text:hover{
+  background-color: $secondary-brand-color;
+}
+
+.text-btn-label{
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: $primary-brand-color;
+  text-align: center;
+}
