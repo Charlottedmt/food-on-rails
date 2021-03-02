@@ -1,14 +1,14 @@
-<h1>Meal Show Page</h1>
-<div class="card-trip">
-  <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-  <div class="card-trip-infos">
-    <div>
-      <h2><%= @meal.name%></h2>
-      <p><%= @meal.restaurant.name %></p>
-    </div>
-    <h2 class="card-trip-pricing"><%= @meal.price%></h2>
-    <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-trip-user avatar-bordered" />
-  </div>
+<h1>Meal Show Page- Nutrition Info</h1>
+<div class="card-detail card-detail-show">
+  <img src="https://via.placeholder.com/80x60" alt="">
+  <h2><%= @meal.name%></h2>
+  <p><%= @meal.restaurant.name %></p>
 </div>
-<h1>Nutrition Info</h1>
-<p><%= @meal.calories%></p>
+<div>
+  <h3>Nutrition Info</h3>
+  <p>Calories: <%= @meal.calories%>kcal</p>
+  <p>Proteins: <%= @meal.proteins%>g</p>
+  <p>Carbohydrates: <%= @meal.carbohydrates%>g</p>
+  <p>Fat: <%= @meal.fat%>g</p>
+  <p>Sodium: <%= @meal.sodium%>g</p>
+</div>
