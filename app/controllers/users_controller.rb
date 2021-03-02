@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.update(user_params)
       redirect_to dashboard_path 'Profile was successfully updated' #set redirect to render
     else
-      render :edit #not sure of the render yet
+      render :edit # not sure of the render yet
     end
   end
 
