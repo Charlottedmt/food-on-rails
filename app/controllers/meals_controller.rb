@@ -1,13 +1,13 @@
 class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
   def index
+    @meals = policy_scope(Meal)
     if params[:query].present?
-      @meals = Movie.where("name ILIKE ?", "%#{params[:query]}%")
+      @meals = Meal.search_by_preferences(params[:query]).first(3)
     else
-      @meals = Meals.all
+      @meals = Meal.first(3)
     end
   end
-
 
   def show
     @meal = Meal.find(params[:id])
@@ -27,10 +27,10 @@ class MealsController < ApplicationController
   end
 
   def preferences
+    skip_authorization
   end
 
   def meal_params
     params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium)
   end
-
 end
