@@ -1,6 +1,6 @@
 class Choice < ApplicationRecord
-  enum status: [ :dislike, :new, :like ]
+  enum rating: [ :dislike, :new, :like ]
   belongs_to :user
   belongs_to :meal
-  validates :status, presence: true
+  validates :rating, presence: true
 end
