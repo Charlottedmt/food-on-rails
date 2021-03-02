@@ -3,13 +3,11 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-
 <div class="container-body">
   <div class="center-text">
-    <h2>Hi <%= @user.username %> &#128075;</h2>
+    <h2>Hi <%= current_user.username %> &#128075;</h2>
     <h3>Here are your suggestions!</h3>
   </div>
-
   <div class="cards-choice">
     <% @meals.each do |meal| %>
       <div class="card-choice">
@@ -26,6 +24,4 @@
       </div>
     <% end %>
   </div>
-
 </div>
-
