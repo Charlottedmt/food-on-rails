@@ -1,18 +1,23 @@
-<div class="map-bg"></div>
-<h2>Hi #USERNAME &#128075;</h2>
-<h3>Here are your suggestions!</h3>
-<div class="cards-choice">
-  <% @meals.each do |meal| %>
-    <div class="card-choice">
-      <img src="https://via.placeholder.com/80x60" alt="">
-      <div class="card-choice-description">
-        <h3><%= meal.name %></h3>
-        <p><%= meal.restaurant.name %></p>
+<div class="map-bg">I'm a map!</div>
+
+<div class="container-body">
+  <h2>Hi #USERNAME &#128075;</h2>
+  <h3>Here are your suggestions!</h3>
+
+  <div class="cards-choice">
+    <% @meals.each do |meal| %>
+      <div class="card-choice">
+        <img src="https://via.placeholder.com/80x60" alt="">
+        <div class="card-choice-description">
+          <h3><%= meal.name %></h3>
+          <p><%= meal.restaurant.name %></p>
+        </div>
+        <div class="card-choice-right">
+          <button class="btn btn-primary card-choice-button">INFO</button>
+          <button class="btn btn-secondary card-choice-button">GO!</button>
+        </div>
       </div>
-      <div class="card-choice-right">
-        <button class="btn btn-primary card-choice-button">INFO</button>
-        <button class="btn btn-secondary card-choice-button">GO!</button>
-      </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
+
