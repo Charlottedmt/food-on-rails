@@ -4,8 +4,10 @@ class MealsController < ApplicationController
   def index
     @meals = policy_scope(Meal)
     if params[:query].present?
-      @meals = Meal.search_by_preferences(params[:query]).first(3)
-      @user = current_user
+      search = Meal.search_by_preferences(params[:query])
+      tag = Meal.tagged_with(params[:query])
+      join = search + tag
+      @meals = join.uniq.first(5)
     else
       @meals = Meal.first(3)
       @user = current_user
