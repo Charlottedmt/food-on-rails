@@ -1,9 +1,12 @@
 class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
   def index
-    # @meals = Meal.all
     @meals = policy_scope(Meal)
-    # authorize @meals
+    if params[:query].present?
+      @meals = Meal.search_by_preferences(params[:query]).first(3)
+    else
+      @meals = Meal.first(3)
+    end
   end
 
   def show
@@ -24,10 +27,10 @@ class MealsController < ApplicationController
   end
 
   def preferences
+    skip_authorization
   end
 
   def meal_params
     params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium)
   end
-
 end

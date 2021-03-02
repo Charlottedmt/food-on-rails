@@ -3,9 +3,21 @@ class MealPolicy < ApplicationPolicy
     def resolve
       scope.all
     end
+  end
 
-    def index?
+    def preferences?
       true
     end
-  end
+
+    def show?
+       true
+    end
+    
+    def index?
+      true 
+    end
+  
+    def create?
+      true
+    end
 end
