@@ -1,5 +1,5 @@
 <%= simple_form_for variable do |f| %>
-  <%= f.input :location_item, placeholder: 'Change location'%>
+  <%= f.input :location, placeholder: 'Change location'%>
 <% end %>
 
 <div class="map-bg"></div>
@@ -13,11 +13,11 @@
       <img src="https://via.placeholder.com/80x60" alt="">
       <div class="card-choice-description">
         <h3><% meal.name %></h3>
-        <p><% restaurant.name %></p>
+        <p><% @restaurant.name %></p>
       </div>
       <div class="card-choice-right">
-        <button class="btn btn-primary card-slim-button">INFO</button>
-        <button class="btn btn-secondary card-slim-button">GO!</button>
+        <button class="btn btn-primary card-choice-button">INFO</button>
+        <button class="btn btn-secondary card-choice-button">GO!</button>
       </div>
     </div>
   <% end %>
