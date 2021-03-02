@@ -1,9 +1,7 @@
 <div class="map-bg">I'm a map!</div>
-
 <div class="container-body">
   <h2>Hi #USERNAME &#128075;</h2>
   <h3>Here are your suggestions!</h3>
-
   <div class="cards-choice">
     <% @meals.each do |meal| %>
       <div class="card-choice">
@@ -13,11 +11,11 @@
           <p><%= meal.restaurant.name %></p>
         </div>
         <div class="card-choice-right">
-          <button class="btn btn-primary card-choice-button">INFO</button>
+          <%= link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
+          <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
           <button class="btn btn-secondary card-choice-button">GO!</button>
         </div>
       </div>
     <% end %>
   </div>
 </div>
-
