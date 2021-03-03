@@ -1,11 +1,10 @@
 class Meal < ApplicationRecord
   belongs_to :restaurant
-  has_many :locations, through: :restaurants
+  has_many :locations, through: :restaurant
   validates :name, presence: true
   validates :price, presence: true
   validate :validate_attrlist
   acts_as_taggable_on :tags
-
 
   include PgSearch::Model
   pg_search_scope :search_by_preferences,

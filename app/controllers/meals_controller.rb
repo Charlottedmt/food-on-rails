@@ -12,6 +12,13 @@ class MealsController < ApplicationController
       @meals = Meal.first(3)
       @user = current_user
     end
+    @locations = Location.joins(:meals).where(meals: {id: @meals})
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude
+      }
+    end
   end
 
   def show
