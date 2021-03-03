@@ -5,6 +5,7 @@ ruby '2.6.6'
 
 gem 'acts-as-taggable-on', '~> 6.0'
 
+gem 'cloudinary', '~> 1.16.0'
 gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
@@ -39,7 +40,8 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
-group :development, :test do  gem 'pry-byebug'
+group :development, :test do
+  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'dotenv-rails'
 
