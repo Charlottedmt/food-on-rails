@@ -1,7 +1,16 @@
-<h1>Welcome to Food on Rails!</h1>
-<button data-controller="geolocation">
-  <%= link_to "Choose my meals", meals_path, data: { geolocation_target: "link" } %>
-</button>
-<div>
-  <%= link_to "Let me choose preferences first", preferences_path %>
+<div class="home-photo">
+  <%= image_tag "test2.png" %>
+</div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-6">
+      <h1>Welcome to Food on Rails!</h1>
+      <button data-controller="geolocation">
+        <%= link_to "Choose my meals", meals_path, data: { geolocation_target: "link" } %>
+      </button>
+      <div>
+        <%= link_to "Let me choose preferences first", preferences_path, class: "" %>
+      </div>
+    </div>
+  </div>
 </div>
