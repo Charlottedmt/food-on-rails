@@ -10,10 +10,18 @@
 import { Controller } from "stimulus"
 
 export default class extends Controller {
-  static targets = []
+  static targets = [ "link" ]
 
   connect() {
     console.log('Thanks Trouni!');
-    navigator.geolocation.getCurrentPosition((location) => { console.log(location) });
+    navigator.geolocation.getCurrentPosition((location) => {
+
+const newLinkUrl = new URL(this.linkTarget.href);
+// Copy the existing href from the existing link
+// Append the params to that url using JavaScript's searchParams.append
+newLinkUrl.searchParams.append("lat", location.coords.latitude);
+newLinkUrl.searchParams.append("lon", location.coords.longitude);
+this.linkTarget.href = newLinkUrl
+});
   }
 }
