@@ -1,11 +1,29 @@
 class MealsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :preferences
 
   def index
-    @meals = Meal.all
+    @meals = policy_scope(Meal)
+    if params[:query].present?
+      search = Meal.search_by_preferences(params[:query])
+      tag = Meal.tagged_with(params[:query])
+      join = search + tag
+      @meals = join.uniq.first(5)
+    else
+      @meals = Meal.first(3)
+      @user = current_user
+    end
+    @locations = Location.joins(:meals).where(meals: {id: @meals})
+    @markers = @locations.geocoded.map do |location|
+      {
+        lat: location.latitude,
+        lng: location.longitude
+      }
+    end
   end
 
   def show
     @meal = Meal.find(params[:id])
+    authorize @meal
   end
 
   def new
@@ -21,8 +39,11 @@ class MealsController < ApplicationController
     end
   end
 
-  def meal_params
-    params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium)
+  def preferences
+    skip_authorization
   end
 
+  def meal_params
+    params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium, tag_list: [])
+  end
 end

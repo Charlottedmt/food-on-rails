@@ -1,0 +1,79 @@
+// meal index meal cards
+.cards-choice {
+  width: 100%;
+  display: grid;
+}
+.card-choice{
+  height: 110px; 
+  display: flex;
+  align-items: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 8px 0 8px 0;
+}
+.card-choice img{
+  width: 30%;
+  height: 100%;
+  padding-right: 8px;
+}
+.card-choice-description h3, .card-choice-description p {
+  margin: 0;
+}
+.card-choice-description h3{
+  margin: 0;
+  font-size: 1.2em;
+}
+.card-choice-right {
+  margin-left: auto;
+  padding: 8px;
+}
+.card-choice-button {
+  height: 52px;
+  width: 52px;
+}
+
+// meal show + review card template
+/* card detail */
+.card-detail{
+  text-align: center;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  margin: 8px 0 8px 0;
+}
+
+.card-detail img{
+  width: 100%;
+  height: 50%;
+}
+
+/* product show */
+.card-detail-show h2{
+  margin: 0;
+  padding: 8px;
+}
+
+.card-detail-show  p {
+  margin: 0;
+  padding-bottom: 16px;
+}
+
+/* product review */
+.card-detail i{
+  font-size: 5em;
+  padding-top: 8px;
+  padding-bottom: 16px;
+  color: $primary-brand-color;
+}
+
+.card-detail-review-icons{
+  display: flex;
+  justify-content: space-around;
+}
+
+// FOR EVAN!!!!
+/*
+<p>Feature Card</p>
+<div class="card-detail card-detail-show">
+    <img src="https://via.placeholder.com/80x60" alt="">
+    <h2>Title</h2>
+    <p>Description of the product</p>
+</div>
+*/

@@ -44,11 +44,13 @@ CSV.foreach(filepath, csv_options) do |row|
     fat: row['Fat'],
     carbohydrates: row['Carbohydrates'],
     sodium: row['Sodium'],
-    price: row['Price']
+    price: row['Price'],
+    tag_list: row['Tags']
   )
   meal.restaurant = restaurant
   meal.save!
 end
+
 
 Restaurant.find_each do |restaurant|
   next unless addresses.key?(restaurant.name)
@@ -60,3 +62,6 @@ end
 
 # After restaurants are created, insert the value into the approriate key
 # e.g. Cocoichiban has address "123 Address", so if restaurant is created with name "Cocoichiban", then insert address into it
+
+puts "All meals added!"
+
