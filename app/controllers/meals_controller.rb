@@ -2,14 +2,15 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
 
   def index
-    @meals = policy_scope(Meal)
+    @meals = policy_scope(Meal).where.not(sodium: nil)
     if params[:query].present?
-      search = Meal.search_by_preferences(params[:query])
-      tag = Meal.tagged_with(params[:query])
+      search = @meals.search_by_preferences(params[:query])
+      tag = @meals.tagged_with(params[:query])
       join = search + tag
-      @meals = join.uniq.first(5)
+      @results = join.uniq
+      @meals = @results.sort_by { |meal| meal.sodium }.first(3)
     else
-      @meals = Meal.first(3)
+      @meals = @meals.sort_by { |meal| meal.sodium }.first(3)
       @user = current_user
     end
     @locations = Location.joins(:meals).where(meals: {id: @meals})
