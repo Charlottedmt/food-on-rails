@@ -3,7 +3,7 @@
     <div> <%= link_to root_path do%>
       <i class="fas fa-hamburger"></i>
     <% end %></div>
-    <div> <%= link_to meals_path do%>
+    <div data-controller="geolocation"> <%= link_to meals_path, data: { geolocation_target: "link" } do%>
       <div><i class="fas fa-map-marker-alt"></i></div>
     <% end %></div>
     <div> <%= link_to dashboard_path do%>
