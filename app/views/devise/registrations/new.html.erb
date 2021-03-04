@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
-    <div class="col-12 col-sm-6">
+    <div class="col-12 col-sm-4">
       <div class="form-login">
         <h2>Sign up</h2>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
@@ -20,7 +20,7 @@
                         required: true,
                         input_html: { autocomplete: "new-password" },
                         placeholder: "*********"  %>
-            <hr>
+            <!-- <hr>
             <%= f.input :username,
                         required: true,
                         input_html: { autocomplete: "username" } %>
@@ -30,7 +30,7 @@
                         required: true %>
             <%= f.input :goal,
                         collection: User.goals.keys,
-                        label_method: ->(goal){ t("User.#{goal}") } %>
+                        label_method: ->(goal){ t("User.#{goal}") } %>> -->
           </div>
           <div class="form-actions">
             <%= f.button :submit, "Sign up", class: "btn btn-primary" %>
