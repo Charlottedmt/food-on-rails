@@ -14,5 +14,16 @@
   <p>Carbohydrates: <%= @meal.carbohydrates%>g</p>
   <p>Fat: <%= @meal.fat%>g</p>
   <p>Sodium: <%= @meal.sodium%>g</p>
+  <div>
+    <h3>The Benefits:</h3>
+    <% if current_user.goal == "healty" %>
+      <%= render 'goals/healthy' %>
+    <% end %>
+    <% if current_user.goal == "lose_weight" %>
+      <%= render 'goals/lose_weight' %>
+    <% end %>
+    <% if current_user.goal == "gain_muscle" %>
+      <%= render 'goals/gain_muscle' %>
+    <% end %>
+  </div>
 </div>
-
