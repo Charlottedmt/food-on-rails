@@ -12,3 +12,8 @@
   <p>Fat: <%= @meal.fat%>g</p>
   <p>Sodium: <%= @meal.sodium%>g</p>
 </div>
+<div>
+  <h3>This Choice Saves You:</h3>
+  <p><%= @meals.first.calories - @meal.calories %>kcal</p>
+  <p><%= @meals.first.calories %></p>
+</div>
