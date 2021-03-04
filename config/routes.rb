@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     resources :choices, only: [:new, :create, :update, :edit]
   end
   resources :restaurants, only: [:show]
-  get '/dashboard', to: 'dashboards#dashboard', as: :dashboards
+  get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
   get '/preferences', to: 'meals#preferences', as: :preferences
   get '/tagged', to: "meals#tagged", as: :tagged
 end
