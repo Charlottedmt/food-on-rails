@@ -10,3 +10,11 @@
 <% elsif (@meal.proteins - Meal.min_protein_meal.proteins) > 10 %>
   <p>Wow! That's the equivalent of 1 whole Greek Yogurt!</p>
 <% end %>
+<p><%= Meal.max_fat_meal.fat - @meal.fat %> grams of Fat saved!</p>
+<% if (Meal.max_fat_meal.fat - @meal.fat) > 100 %>
+  <p>Wow! That's the equivalent of one whole stick of butter!</p>
+<% elsif (Meal.max_fat_meal.fat - @meal.fat) > 50 %>
+  <p>Wow! That's the equivalent of one whole cheese pizza!</p>
+<% elsif (Meal.max_fat_meal.fat - @meal.fat) > 10 %>
+  <p>Wow! That's the equivalent of a pack of sliced cheese!</p>
+<% end %>
