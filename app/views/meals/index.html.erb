@@ -20,9 +20,11 @@
           <div class="card-choice-right">
             <%= link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
             <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
-            <!-- simple form nesté pour créer un nouveau choix-->
-            <!-- Quand on click sur submit button, on veut déclencher l'action create dans le choice controller-->
-            <!-- rediriger vers dashboard-->
+            <%= simple_form_for [ meal, @choice ] do |f| %>
+              <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
+              <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
+              <%= f.submit "GO", class: "btn btn-primary" %>
+            <% end %>
             <button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button>
           </div>
         </div>
