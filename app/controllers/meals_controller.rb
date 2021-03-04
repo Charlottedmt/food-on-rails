@@ -68,31 +68,37 @@ class MealsController < ApplicationController
         lng: location.longitude
       }
     end
+    @current_position =
+    {
+      lat: params['lat'].to_f,
+      lng: params['lon'].to_f,
+      image_url: helpers.asset_url('user_position.png')
+    }
+  end
 
-    def show
-      @meal = Meal.find(params[:id])
-      authorize @meal
-    end
+  def show
+    @meal = Meal.find(params[:id])
+    authorize @meal
+  end
 
-    def new
-      @meal = Meal.new
-    end
+  def new
+    @meal = Meal.new
+  end
 
-    def create
-      @meal = Meal.new(meal_params)
-      if @meal.save
-        redirect_to meals_path
-      else
-        render :new
-      end
+  def create
+    @meal = Meal.new(meal_params)
+    if @meal.save
+      redirect_to meals_path
+    else
+      render :new
     end
+  end
 
-    def preferences
-      skip_authorization
-    end
+  def preferences
+    skip_authorization
+  end
 
-    def meal_params
-      params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium, tag_list: [])
-    end
+  def meal_params
+    params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium, tag_list: [])
   end
 end

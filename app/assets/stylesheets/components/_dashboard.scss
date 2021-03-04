@@ -9,13 +9,24 @@
 }
 .dashboard-bottom h4{
   text-align:center;
-
 }
 
 .favorites {
-
 }
 
 .fav-card {
   margin-bottom: 8px;
+}
+
+// anthony edits
+.dashboard-grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 0px;
+}
+.dashboard-section-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0px 0px;
+  justify-content: center;
 }

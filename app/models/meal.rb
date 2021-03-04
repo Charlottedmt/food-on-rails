@@ -6,18 +6,21 @@ class Meal < ApplicationRecord
   validate :validate_attrlist
   acts_as_taggable_on :tags
   has_one_attached :photo
+  scope :max_calories_meal, -> { order(calories: :desc).first }
+  scope :max_fat_meal, -> { order(fat: :desc).first }
+  scope :max_sodium_meal, -> { order(sodium: :desc).first }
+  scope :min_protein_meal, -> { order(proteins: :asc).first }
 
   include PgSearch::Model
   pg_search_scope :search_by_preferences,
-    against: :name,
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
+                  against: :name,
+                  using: {
+                    tsearch: { prefix: true } # <-- now `superman batm` will return something!
+                  }
 
   def validate_attrlist
     if calories.blank? && proteins.blank? && carbohydrates.blank? && fat.blank? && sodium.blank?
       errors[:nutrition_infos] << "Can't be blank"
     end
   end
-
 end
