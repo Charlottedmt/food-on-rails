@@ -15,8 +15,9 @@ class ChoicesController < ApplicationController
   def create
     @meal = Meal.find(params[:meal_id])
     @choice = Choice.new(choices_params)
+    authorize @choice
     if @choice.save
-      redirect_to dashboard_path
+      redirect_to dashboard_path(choice_id: @choice)
     else
       render :new
     end

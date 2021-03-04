@@ -3,6 +3,7 @@ class MealsController < ApplicationController
 
   def index
     @meals = policy_scope(Meal).where.not(sodium: nil)
+    @choice = Choice.new
     case current_user.goal
     when current_user.goal = "healthy"
       if params[:query].present?

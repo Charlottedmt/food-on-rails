@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboards#dashboard', as: :dashboard
   get '/preferences', to: 'meals#preferences', as: :preferences
   get '/tagged', to: "meals#tagged", as: :tagged
+
+#  get "external" => "http:/www.google.com"
 end
