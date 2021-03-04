@@ -1,0 +1,19 @@
+footer {
+  position: sticky;
+  z-index: 1;
+  background-color: white;
+  bottom: 0;
+  width: 100%
+}
+
+.nav-icon-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 24px;
+}
+
+footer i {
+  font-size: 1.5em;
+  color: $primary-brand-color;
+}
