@@ -20,7 +20,6 @@ Restaurant.destroy_all
 
 Meal.destroy_all
 
-puts "Retrieving Address Log..."
 
 addresses = {
   "Coco Ichibanya" => ["1-4-9 Meguro, Meguro City, Tokyo"],
@@ -51,8 +50,9 @@ CSV.foreach(filepath, csv_options) do |row|
   meal.save!
 end
 
+puts "Retrieving Address Log..."
 
-Restaurant.find_each do |restaurant|
+Restaurant.all.each do |restaurant|
   next unless addresses.key?(restaurant.name)
 
   addresses[restaurant.name].each do |address|
@@ -64,4 +64,3 @@ end
 # e.g. Cocoichiban has address "123 Address", so if restaurant is created with name "Cocoichiban", then insert address into it
 
 puts "All meals added!"
-
