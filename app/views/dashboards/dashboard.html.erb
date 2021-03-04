@@ -47,29 +47,24 @@
     </div>
   </div>
 
+  <h4 class="center-text">Favorites</h4>
   <div class="dashboard-grid-container">
-
-    <div class="dashboard-section-container">
-  
-      <h4 class="center-text">Favorites</h4>
-  
-      <div class="card-detail card-detail-favorites">
-        <img src="https://via.placeholder.com/80x60" alt="">
-        <p>name<p>
-        <p>restaurant</p>
-      </div>
-
-      <div class="card-detail card-detail-favorites">
-        <img src="https://via.placeholder.com/80x60" alt="">
-        <p>name<p>
-        <p>restaurant</p>
-      </div>
-    
+    <div class="card-detail card-detail-favorites">
+      <img src="https://via.placeholder.com/80x60" alt="">
+      <p>name<p>
+      <p>restaurant</p>
     </div>
-    
-    <div class="dashboard-section-container">
-      <h4 class="center-text">Results</h4>
+    <div class="card-detail card-detail-favorites">
+      <img src="https://via.placeholder.com/80x60" alt="">
+      <p>name<p>
+      <p>restaurant</p>
     </div>
-
   </div>
+  
+  <hr>
+  <div class="text-center">
+    <h4 style="margin-bottom: 64px;">Account</h4>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+  </div>
+
 </div>
