@@ -1,72 +1,68 @@
 <div class="container-body">
 
-</div>
-<div class="chart-wrap">
-  <h3 class="title">Usage</h3>
-  <div class="grid horizontal">
-    <p id="week">Week</p>
-    <div class="bar" data-name="Sunday" title="Sunday">
-      <p>1</p>
-      <!-- choice.meal_id.count.times doooo -->
-      <% 3.times do %>
+  <div class="chart-wrap">
+    <h3 class="title">Usage</h3>
+    <div class="grid horizontal">
+      <p id="week">Week</p>
+      <div class="bar" data-name="Sunday" title="Sunday">
+        <p>1</p>
+        <% 3.times do %>
+          <div class="burger-container">
+            <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
+          </div>
+        <% end %>
+      </div>
+      <div class="bar" data-name="Monday" title="Monday">
+        <p>2</p>
         <div class="burger-container">
           <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
         </div>
-      <% end %>
-    </div>
-    <div class="bar" data-name="Monday" title="Monday">
-      <p>2</p>
-      <div class="burger-container">
-        <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
       </div>
-    </div>
-    <div class="bar" data-name="Tuesday" title="Tuesday">
-      <p>3</p>
-      <% 2.times do %>
-        <div class="burger-container">
-          <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
-        </div>
-      <% end %>
-    </div>
-    <div class="bar" data-name="Wednesday" title="Wednesday">
-      <p>4</p>
-    </div>
-    <div class="bar" data-name="Thursday" title="Thursday">
-      <p>5</p>
-      <% 3.times do %>
-        <div class="burger-container">
-          <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
-        </div>
-      <% end %>
-    </div>
-  </div>
-</div>
-<div class="dashboard-bottom">
-  <div class="favorites">
-    <h4>Favorites</h4>
-    <div class="fav-card">
-      <img src="https://via.placeholder.com/80x60" alt="">
-      <div class="card-choice-description">
-        <h3>Choice name</h3>
-        <p>Restaurant</p>
+      <div class="bar" data-name="Tuesday" title="Tuesday">
+        <p>3</p>
+        <% 2.times do %>
+          <div class="burger-container">
+            <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
+          </div>
+        <% end %>
       </div>
-    </div>
-    <div class="fav-card">
-      <img src="https://via.placeholder.com/80x60" alt="">
-      <div class="card-choice-description">
-        <h3>Choice name</h3>
-        <p>Restaurant name</p>
+      <div class="bar" data-name="Wednesday" title="Wednesday">
+        <p>4</p>
       </div>
-    </div>
-    <div class="fav-card">
-      <img src="https://via.placeholder.com/80x60" alt="">
-      <div class="card-choice-description">
-        <h3>Choice name</h3>
-        <p>Restaurant</p>
+      <div class="bar" data-name="Thursday" title="Thursday">
+        <p>5</p>
+        <% 3.times do %>
+          <div class="burger-container">
+            <img src="https://www.clipartmax.com/png/middle/255-2551201_hamburger-fast-food-junk-food-carbonated-drink-computer-burger-icon-png.png" />
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
-  <div class="Results">
-    <h4>Results</h4>
+
+  <div class="dashboard-grid-container">
+
+    <div class="dashboard-section-container">
+  
+      <h4 class="center-text">Favorites</h4>
+  
+      <div class="card-detail card-detail-favorites">
+        <img src="https://via.placeholder.com/80x60" alt="">
+        <p>name<p>
+        <p>restaurant</p>
+      </div>
+
+      <div class="card-detail card-detail-favorites">
+        <img src="https://via.placeholder.com/80x60" alt="">
+        <p>name<p>
+        <p>restaurant</p>
+      </div>
+    
+    </div>
+    
+    <div class="dashboard-section-container">
+      <h4 class="center-text">Results</h4>
+    </div>
+
   </div>
 </div>

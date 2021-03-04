@@ -31,8 +31,8 @@
   width: 52px;
 }
 
-// meal show + review card template
-/* card detail */
+// meal show, review, and favorites card templates
+/* base design */
 .card-detail{
   text-align: center;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
@@ -44,7 +44,7 @@
   height: 50%;
 }
 
-/* product show */
+/* meal show */
 .card-detail-show h2{
   margin: 0;
   padding: 8px;
@@ -55,7 +55,7 @@
   padding-bottom: 16px;
 }
 
-/* product review */
+/* meal review */
 .card-detail i{
   font-size: 5em;
   padding-top: 8px;
@@ -68,12 +68,11 @@
   justify-content: space-around;
 }
 
-// FOR EVAN!!!!
-/*
-<p>Feature Card</p>
-<div class="card-detail card-detail-show">
-    <img src="https://via.placeholder.com/80x60" alt="">
-    <h2>Title</h2>
-    <p>Description of the product</p>
-</div>
-*/
+/* meal dashboard favorites */
+
+.card-detail-favorites{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
