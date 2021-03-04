@@ -10,7 +10,6 @@ class ChoicesController < ApplicationController
   def new
     @meal = Meal.find(params[:meal_id])
     @choice = Choice.new
-    raise
   end
 
   def create
