@@ -1,0 +1,12 @@
+<p><%= @meal.proteins - Meal.min_protein_meal.proteins %> grams of extra Protein!</p>
+<% if (@meal.proteins - Meal.min_protein_meal.proteins) > 100 %>
+  <p>Wow! That's the equivalent of 16 ozs of Salmon!</p>
+<% elsif (@meal.proteins - Meal.min_protein_meal.proteins) > 60 %>
+  <p>Wow! That's the equivalent of 2 big scoops of Protein Powder!</p>
+<% elsif (@meal.proteins - Meal.min_protein_meal.proteins) > 40 %>
+  <p>Wow! That's the equivalent of 6 ozs of Chicken Breast!</p>
+<% elsif (@meal.proteins - Meal.min_protein_meal.proteins) > 20 %>
+  <p>Wow! That's the equivalent of 4 whole eggs!</p>
+<% elsif (@meal.proteins - Meal.min_protein_meal.proteins) > 10 %>
+  <p>Wow! That's the equivalent of 1 whole Greek Yogurt!</p>
+<% end %>
