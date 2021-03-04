@@ -33,6 +33,10 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  openBootstrapModal();
 });
 
 import "controllers"
+
+import { openBootstrapModal } from '../controllers/open_bootstrap_modal'
+

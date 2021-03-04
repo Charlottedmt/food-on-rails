@@ -1,0 +1,20 @@
+footer {
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  bottom: 0;
+  width: 100%;
+  border-top: solid 0.25px darkgray;
+}
+
+.nav-icon-align {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 12px 24px;
+}
+
+footer i {
+  font-size: 1.5em;
+  color: $primary-brand-color;
+}
