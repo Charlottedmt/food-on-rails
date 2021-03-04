@@ -33,4 +33,15 @@
       <% end %>
     </div>
   </div>
+  <div class="form-preferences">
+    <p><i> Want to eat something in particular ? </i></p>
+    <%= form_tag meals_path, method: :get do %>
+      <%= text_field_tag :query,
+          params[:query],
+          class: "form-control",
+          placeholder: "Burger, salad, chicken, fish..."
+        %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
+  </div>
 </div>
