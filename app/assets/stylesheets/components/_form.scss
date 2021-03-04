@@ -14,5 +14,32 @@
     }
     .btn {
       width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .btn:hover {
+     box-shadow: -3px -3px 7px #88828a;
+     background-color: #8205b4;
     }
   }
+  hr {
+    width: 50%;
+    margin-top: 24px;
+    margin-bottom: 24px;
+  }
+
+  .bottom-form {
+    font-size: 12px;
+    font-style: italic;
+  }
+
+  .form-preferences {
+    margin: 32px;
+  .btn {
+    margin-top: 16px;
+  }
+  .btn:hover {
+    box-shadow: -3px -3px 7px #88828a;
+    background-color: #8205b4;
+  }
+}
