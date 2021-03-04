@@ -13,7 +13,17 @@
   <p>Sodium: <%= @meal.sodium%>g</p>
 </div>
 <div>
-  <h3>This Choice Saves You:</h3>
-  <p><%= @meals.first.calories - @meal.calories %>kcal</p>
-  <p><%= @meals.first.calories %></p>
+  <h3>The Benefits:</h3>
+  <% if current_user.goal == "healty" %>
+    <p><%= Meal.max_calories_meal.calories - @meal.calories %> calories saved!</p>
+    <p><%= Meal.max_sodium_meal.sodium - @meal.sodium %> grams of Sodium saved!</p>
+    <p><%= Meal.max_fat_meal.fat - @meal.fat %> grams of Fat saved!</p>
+  <% end %>
+  <% if current_user.goal == "lose_weight" %>
+    <p><%= Meal.max_calories_meal.calories - @meal.calories %> calories saved!</p>
+    <p><%= (Meal.max_fat_meal.fat - @meal.fat).round(2) %> grams of Fat saved!</p>
+  <% end %>
+  <% if current_user.goal == "gain_muscle" %>
+    <p><%= @meal.proteins - Meal.min_protein_meal.proteins %> grams of extra Protein!</p>
+  <% end %>
 </div>

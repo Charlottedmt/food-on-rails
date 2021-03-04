@@ -71,9 +71,6 @@ class MealsController < ApplicationController
     def show
       @meal = Meal.find(params[:id])
       authorize @meal
-      @meals = policy_scope(Meal).where.not(sodium: nil)
-      authorize @meals
-      @meals = @meals.sort_by { |meal| -meal.calories }
     end
 
     def new
