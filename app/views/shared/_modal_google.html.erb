@@ -1,5 +1,5 @@
 <!-- Modal -->
-<div class="modal fade show" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" style="display: block">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -11,15 +11,14 @@
       <div class="modal-body">
         Would you want to open GoogleMaps to go there ?heork
         <p><%= link_to "Go back to the selection", meals_path %></p>
-
       </div>
       <div class="modal-footer">
         <p><%= link_to "Yes, please", 'https://www.google.com/maps', :target => "_blank", class: "btn btn-primary"%></p>
-        <p><%= link_to "No, thanks", dashboard_path, :target => "_blank", class: "btn btn-secondary"%></p>
+        <p><%= link_to "No, thanks", dashboard_path, class: "btn btn-secondary"%></p>
         <%# <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary">Save changes</button> %>
       </div>
     </div>
   </div>
 </div>
-<div class="modal-backdrop fade show"></div>
+<div id="exampleModal" class="modal-backdrop fade"></div>
