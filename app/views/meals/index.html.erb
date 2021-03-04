@@ -16,11 +16,12 @@
           <div class="card-choice-description">
             <h3><%= meal.name %></h3>
             <p><%= meal.restaurant.name %></p>
+            <%= link_to "MORE INFO", meal_path(meal), class: "text-btn-label" %>
           </div>
           <div class="card-choice-right">
-            <%= link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
+            <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
             <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
-            <button class="btn btn-secondary card-choice-button">GO!</button>
+            <button class="btn btn-primary card-choice-button">GO!</button>
           </div>
         </div>
       <% end %>
