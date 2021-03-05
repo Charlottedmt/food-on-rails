@@ -4,6 +4,8 @@ class MealsController < ApplicationController
   def index
     @meals = policy_scope(Meal).where.not(sodium: nil)
     @choice = Choice.new
+    # current_user.goal = params[:goal]
+    current_user.update(goal: params[:goal])
     case current_user.goal
     when current_user.goal = "healthy"
       if params[:query].present?
@@ -69,16 +71,17 @@ class MealsController < ApplicationController
       }
     end
     @current_position =
-    {
-      lat: params['lat'].to_f,
-      lng: params['lon'].to_f,
-      image_url: helpers.asset_url('user_position.png')
-    }
+      {
+        lat: params['lat'].to_f,
+        lng: params['lon'].to_f,
+        image_url: helpers.asset_url('user_position.png')
+      }
   end
 
   def show
     @meal = Meal.find(params[:id])
     authorize @meal
+    @choice = Choice.new
   end
 
   def new

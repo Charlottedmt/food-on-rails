@@ -40,6 +40,10 @@ document.addEventListener('turbolinks:load', () => {
   google.charts.setOnLoadCallback(drawChart);
   google.charts.setOnLoadCallback(drawChart2);
   google.charts.setOnLoadCallback(drawChart3);
+  openBootstrapModal();
 });
 
 import "controllers"
+
+import { openBootstrapModal } from '../controllers/open_bootstrap_modal'
+

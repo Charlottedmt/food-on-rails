@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   # not sure if we need this!
   def update
     @user = User.find(params[:id])
-    # authorize @user
+    authorize @user
     if @user.update(user_params)
       redirect_to dashboard_path 'Profile was successfully updated' #set redirect to render
     else

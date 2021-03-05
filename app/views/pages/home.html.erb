@@ -1,18 +1,35 @@
 <div class="home-photo">
   <%= image_tag "test2.png" %>
 </div>
-<div class="container">
+<!--
+
   <div class="row justify-content-center">
     <div class="col-12 col-sm-6 text-center">
-      <h1>Welcome to Food on Rails!</h1>
+      <%# <h1>Welcome to Food on Rails!</h1> %>
       <div class="button-center">
         <button data-controller="geolocation" class="btn btn-primary m-3">
           <%= link_to "Choose my meals", meals_path, data: { geolocation_target: "link" } %>
         </button>
-        <div class= "btn btn-primary m-3">
-          <%= link_to "Let me choose preferences first", preferences_path, class: "" %>
-        </div>
       </div>
+    </div>
+  </div> -->
+<div class="container">
+<h4> Select your goal : </h4>
+  <div class="row justify-content-center">
+    <div class="col-sm-12">
+      <%= link_to meals_path(goal: 'gain_muscle'), class: "card-category", style: "background-image: url(https://images.unsplash.com/photo-1601113329251-0aebe217bdbe?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)" do %>
+          <p> Gain muscles </p>
+      <% end %>
+    </div>
+    <div class="col-sm-12">
+      <%= link_to meals_path(goal: 'lose_weight'), class: "card-category", style: "background-image: url(https://images.unsplash.com/photo-1605661443031-fab4fe95d057?ixid=MXwxMjA3fDB8MHxzZWFyY2h8M3x8c2FsYWRlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60)" do %>
+          <p> Lose weight </p>
+      <% end %>
+    </div>
+    <div class="col-sm-12">
+      <%= link_to meals_path(goal: 'gain_weight'), class: "card-category", style: "background-image: url(https://images.unsplash.com/photo-1517344800994-80b20463999c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)" do %>
+          <p> Gain weight </p>
+      <% end %>
     </div>
   </div>
 </div>
