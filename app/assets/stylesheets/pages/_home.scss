@@ -1,6 +1,14 @@
 // Specific CSS for your home-page
-a{
+
+a {
   color: white;
+  text-decoration: none;
+}
+
+a:hover
+{
+     color:white;
+     text-decoration:none;
 }
 
 a:hover
