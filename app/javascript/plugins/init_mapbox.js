@@ -1,7 +1,18 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 
-const userCurrentPosition = (map, mapElement) => { 
+const addCoordToForm = (coordinates) => {
+  const lats = document.querySelectorAll(".hidden-lat")
+  lats.forEach((input) => {
+    input.value = coordinates.latitude
+  })
+  const lons = document.querySelectorAll(".hidden-lon")
+  lons.forEach((input) => {
+    input.value = coordinates.longitude
+  })
+}
+
+const userCurrentPosition = (map, mapElement) => {
 
   navigator.geolocation.getCurrentPosition((location) => {
 
@@ -15,12 +26,13 @@ const userCurrentPosition = (map, mapElement) => {
     element.style.backgroundSize = 'contain';
     element.style.width = '25px';
     element.style.height = '25px';
-    
+
     // Pass the element as an argument to the new marker
     const user_position = new mapboxgl.Marker(element)
       .setLngLat([location.coords.longitude, location.coords.latitude])
       .setPopup(popup)
       .addTo(map);
+    addCoordToForm(location.coords);
 
     });
 };

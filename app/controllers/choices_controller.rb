@@ -17,7 +17,7 @@ class ChoicesController < ApplicationController
     @choice = Choice.new(choices_params)
     authorize @choice
     if @choice.save
-      redirect_to dashboard_path(choice_id: @choice)
+      redirect_to dashboard_path(choice_id: @choice, lat: params[:lat], lon: params[:lon])
     else
       render :new
     end
