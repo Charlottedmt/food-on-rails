@@ -32,14 +32,8 @@
 }
 
 // anthony edits
-.dashboard-grid-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0px 0px;
-}
-.dashboard-section-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0px 0px;
-  justify-content: center;
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
 }
