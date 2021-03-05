@@ -20,9 +20,9 @@ addresses = {
   "Starbucks" => ["2 Chome-16-9 Kamiosaki, Shinagawa City, Tokyo"],
   "Lawson" => ["3 Chome-9-1 Meguro, Meguro City, Tokyo"],
   # not actual restauraunt addresses from here, just close to HUB
-  "Denny's" => ["2 Chome−11−9, Meguro, Meguro City, Tokyo"],
-  "Burger King" => ["2 Chome−11−8, Meguro, Meguro City, Tokyo"],
-  "Freshness Burger" => ["2 Chome-10-4, Meguro, Meguro City, Tokyo"]
+  "Denny's" => ["2 Chome−11−9 Meguro, Meguro City, Tokyo"],
+  "Burger King" => ["2 Chome−11−8 Meguro, Meguro City, Tokyo"],
+  "Freshness Burger" => ["2 Chome-10-4 Meguro, Meguro City, Tokyo"]
 }
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 filepath    = 'lib/nutrition_info.csv'
