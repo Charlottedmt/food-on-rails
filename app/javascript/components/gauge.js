@@ -18,6 +18,10 @@ function drawChart() {
     var chart = new google.visualization.Gauge(chartDiv);
 
     chart.draw(data, options);
+    setInterval(function() {
+          data.setValue(0, 1, Number(calorie) + Math.round(5 * Math.random()));
+          chart.draw(data, options);
+        }, 1000);
   };
 };
 
@@ -41,6 +45,10 @@ function drawChart2() {
     var chart = new google.visualization.Gauge(chartDiv2);
 
     chart.draw(data, options);
+    setInterval(function() {
+          data.setValue(0, 1, Number(carb) + Math.round(1 * Math.random()));
+          chart.draw(data, options);
+        }, 1000);
   };
 };
 
@@ -62,6 +70,10 @@ function drawChart3() {
     var chart = new google.visualization.Gauge(chartDiv3);
 
     chart.draw(data, options);
+    setInterval(function() {
+          data.setValue(0, 1, Number(protein) + (1 * Math.random()));
+          chart.draw(data, options);
+        }, 2000);
   };
 };
 
