@@ -1,4 +1,4 @@
-<p><%= Meal.max_calories_meal.calories - @meal.calories %> calories saved!</p>
+<p><%= (Meal.max_calories_meal.calories - @meal.calories).round(2) %> calories saved!</p>
 <% if (Meal.max_calories_meal.calories - @meal.calories) > 800 %>
   <p>Wow! That's the equivalent of running a marathon!</p>
 <% elsif (Meal.max_calories_meal.calories - @meal.calories) > 600 %>
