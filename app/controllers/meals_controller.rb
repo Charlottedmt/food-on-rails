@@ -71,16 +71,17 @@ class MealsController < ApplicationController
       }
     end
     @current_position =
-    {
-      lat: params['lat'].to_f,
-      lng: params['lon'].to_f,
-      image_url: helpers.asset_url('user_position.png')
-    }
+      {
+        lat: params['lat'].to_f,
+        lng: params['lon'].to_f,
+        image_url: helpers.asset_url('user_position.png')
+      }
   end
 
   def show
     @meal = Meal.find(params[:id])
     authorize @meal
+    @choice = Choice.new
   end
 
   def new
