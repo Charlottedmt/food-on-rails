@@ -19,7 +19,7 @@
           <div class="card-choice-description">
             <h3><%= meal.name %></h3>
             <p><%= meal.restaurant.name %></p>
-            <%= link_to "MORE INFO", meal_path(meal), class: "text-btn-label" %>
+            <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-right">
             <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
