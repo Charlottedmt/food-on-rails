@@ -69,12 +69,17 @@
 }
 
 /* meal dashboard favorites */
-
-.card-detail-favorites{
-  width: 70%;
-  display: flex;
-  flex-wrap: wrap;
+.scrolling-card {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  text-align: center;
   justify-content: center;
+  margin: 4px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.scrolling-card p{
+  margin: 4px;
 }
 
 .card-category {
@@ -95,9 +100,8 @@
     text-decoration: none;
     color: white;
   }
-  p {
-    margin:0;
-  }
 }
 
-
+.goal {
+  height: 30%;
+}

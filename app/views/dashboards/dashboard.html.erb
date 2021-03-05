@@ -4,31 +4,38 @@
   <%= render 'shared/modal_google' %>
 <%end%>
 <div class="container-body">
-  <h3 class="text-center">Your latest meal:</h3>
+  <div class="text-center">
+    <h2 style="margin-bottom: 16px">Dashboard</h2>
+    <h4>Latest Meal</h3> 
+  </div>
   <div class="dashboard-top">
     <div id="chart_div" style="width: 120px; height: 120px;" data-calories="<%= @choices.last.meal.calories.to_json %>"></div>
     <div id="chart_div2" style="width: 120px; height: 120px;" data-carb="<%= @choices.last.meal.carbohydrates.to_json %>"></div>
     <div id="chart_div3" style="width: 120px; height: 120px;" data-protein="<%= @choices.last.meal.proteins.to_json %>"></div>
   </div>
   <h4 class="center-text">Favorites</h4>
-  <div class="dashboard-grid-container">
-    <div class="card-detail card-detail-favorites">
-      <img src="https://via.placeholder.com/80x60" alt="">
-      <p>name<p>
-      <p>restaurant</p>
+  <div class="scrolling-wrapper">
+    <div class="scrolling-card">
+      <div><%= cl_image_tag @choices.first.meal.photo.key, height: 80, width: 80, crop: :pad %></div>
+      <div><p><%= @choices.first.meal.name %></p></div>
+      <div><p><%= @choices.first.meal.restaurant.name %></p></div>
     </div>
-    <div class="card-detail card-detail-favorites">
-      <img src="https://via.placeholder.com/80x60" alt="">
-      <p>name<p>
-      <p>restaurant</p>
+    <div class="scrolling-card">
+      <div><%= cl_image_tag @choices.second.meal.photo.key, height: 80, width: 80, crop: :pad %></div>
+      <div><p><%= @choices.second.meal.name %></p></div>
+      <div><p><%= @choices.second.meal.restaurant.name %></p></div>
     </div>
+    <div class="scrolling-card">
+      <%= cl_image_tag @choices.third.meal.photo.key, height: 80, width: 80, crop: :pad %>
+      <p><%= @choices.third.meal.name %><p>
+      <p><%= @choices.third.meal.restaurant.name %></p>
+    </div> 
   </div>
   
   <hr>
   <div class="text-center">
-    <h4 style="margin-bottom: 64px;">Account</h4>
-    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-secondary" %>
+    <h4 style="margin-bottom: 16px;">Account</h4>
+    <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "btn btn-primary" %>
   </div>
 
 </div>
-
