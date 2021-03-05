@@ -15,7 +15,8 @@
     <div class="cards-choice">
       <% @meals.each do |meal| %>
         <div class="card-choice">
-          <img src="https://via.placeholder.com/80x60" alt="">
+          <%= cl_image_tag meal.photo.key, height: 80, width: 80, crop: :pad %>
+          <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
           <div class="card-choice-description">
             <h3><%= meal.name %></h3>
             <p><%= meal.restaurant.name %></p>

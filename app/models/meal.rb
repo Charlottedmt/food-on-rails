@@ -1,6 +1,7 @@
 class Meal < ApplicationRecord
   belongs_to :restaurant
   has_many :locations, through: :restaurant
+  has_many :choices, dependent: :destroy
   validates :name, presence: true
   validates :price, presence: true
   validate :validate_attrlist
