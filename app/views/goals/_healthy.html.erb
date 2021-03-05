@@ -1,4 +1,4 @@
-<p><%= Meal.max_calories_meal.calories - @meal.calories %> calories saved!</p>
+<p><%= (Meal.max_calories_meal.calories - @meal.calories).round(2) %> calories saved!</p>
 <% if (Meal.max_calories_meal.calories - @meal.calories) > 800 %>
   <p>Wow! That's the equivalent of running a marathon!</p>
 <% elsif (Meal.max_calories_meal.calories - @meal.calories) > 600 %>
@@ -6,8 +6,8 @@
 <% elsif (Meal.max_calories_meal.calories - @meal.calories) > 400 %>
   <p>Wow! That's the equivalent of hiking for one hour!</p>
 <% end %>
-<p><%= Meal.max_sodium_meal.sodium - @meal.sodium %> grams of Sodium saved!</p>
-<p><%= Meal.max_fat_meal.fat - @meal.fat %> grams of Fat saved!</p>
+<p><%= (Meal.max_sodium_meal.sodium - @meal.sodium).round(2) %> grams of Sodium saved!</p>
+<p><%= (Meal.max_fat_meal.fat - @meal.fat).round(2) %> grams of Fat saved!</p>
 <% if (Meal.max_fat_meal.fat - @meal.fat) > 100 %>
   <p>Wow! That's the equivalent of one whole stick of butter!</p>
 <% elsif (Meal.max_fat_meal.fat - @meal.fat) > 50 %>
