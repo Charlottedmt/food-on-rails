@@ -28,11 +28,18 @@ import "bootstrap";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
+import { drawChart } from '../components/gauge';
+import { drawChart2 } from '../components/gauge';
+import { drawChart3 } from '../components/gauge';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
+  google.charts.load('current', {'packages':['gauge']});
+  google.charts.setOnLoadCallback(drawChart);
+  google.charts.setOnLoadCallback(drawChart2);
+  google.charts.setOnLoadCallback(drawChart3);
   openBootstrapModal();
 });
 
