@@ -4,6 +4,8 @@ class MealsController < ApplicationController
   def index
     @meals = policy_scope(Meal).where.not(sodium: nil)
     @choice = Choice.new
+    # current_user.goal = params[:goal]
+    current_user.update(goal: params[:goal])
     case current_user.goal
     when current_user.goal = "healthy"
       if params[:query].present?
