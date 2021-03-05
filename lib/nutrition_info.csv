@@ -1,36 +1,36 @@
-Restaurant,Meal,Calories,Protein,Fat,Carbohydrates,Sodium,Price,Tags
-Lawson,Karaage-kun (regular),220,14,14,8,1.6,216,"Meat, Chicken"
-Lawson,Niku-man,260,7.9,10.6,33.9,0.8,130,"Meat, Chinese"
-Lawson,Vanilla Ice Cream,196,3.9,10.5,25.9,0.2,260,Dessert
-Lawson,L Chicken,270,17.4,17.1,11.7,1.8,180,Chicken
-Lawson,Iced Cafe Latte (M),84,4,4.7,6.4,0.1,170,Coffee
-Seven Eleven,Niku-man,233,7,8.9,31.9,0.8,140,"Meat, Chinese"
-Seven Eleven,Sausage Dog,185,6.6,11.2,14.7,1.1,149,Meat
-Seven Eleven,Iced Coffee (R),9,0.4,0.1,1.7,0,100,Coffee
-Seven Eleven,Daikon,8,0.3,0.1,1.9,0.5,95,Vegetable
-Seven Eleven,Spiced Chicken,198,13.5,10.3,13.1,1.4,203,"Chicken, Spicy"
-McDonalds,Big Mac,525,26,28.3,41.8,2.6,390,"Burger, Meat"
-McDonalds,Hamburger,256,12.8,9.4,30.3,1.4,110,"Burger, Meat"
-McDonalds,Cheeseburger,307,15.8,13.4,30.8,1.9,140,"Burger, Meat"
-McDonalds,Fries (M),410,5.3,20.6,51,0.8,280,Snack
-Denny's,Hamburg & Shrimp Fry,595,32.1,35.6,36.6,4.1,1098,"Meat, Seafood"
-Denny's,Chicken Nanban,836,32,31.1,104.8,6.4,1208,Chicken
-Denny's,Scramble Egg Breakfast,384,16.3,32.1,5.6,1.7,658,"Breakfast, Egg"
-Yoshinoya,Gyudon (R),635,20,20.4,89,2.7,387,"Beef, Donburi, Meat, Rice"
-Yoshinoya,Calbi Don,785,20.8,34,91.5,2.1,387,"Beef, Meat, Donburi"
-Yoshinoya,Pork Don,601,14.4,18.5,88.1,2.3,602,"Beef, Meat, Donburi"
-Freshness Burger,Freshness Burger,385,14.3,20.6,33.4,,500,"Burger, Meat"
-Freshness Burger,Freshness Cheeseburger,442,17.5,25,34.4,,600,"Burger, Meat"
-Freshness Burger,Teriyaki Chicken Burger,428,17.2,24.5,31.3,,420,"Burger, Meat"
-Freshness Burger,Hot Dog,342,11.4,20.6,27,,360,Meat
-Marugame,Kake Udon (Medium),299,9.5,1.3,62.3,5.7,300,Noodles
-Marugame,Toro-Tama Udon,400,16,6.5,68.2,4.1,690,Noodles
-Marugame,Curry Udon,559,14,19.2,81.8,6.3,690,"Noodles, Curry"
-Marugame,Tsukimi-Wakame Udon,402,18.2,8,65.6,6.5,998,Noodles
-Burger King,Whopper,782,30.4,51.8,49.3,2.5,490,"Burger, Meat"
-Burger King,Chicken Nuggets (8 pcs),377,22.3,20.2,26.5,2.2,200,"Chicken, Meat"
-Burger King,Tartar Chicken,401,14.9,20.5,46.4,1.8,290,"Chicken, Meat"
-Burger King,Fish Burger,165,456,16,26.6,46.7,250,"Fish, Meat, Burger"
-Coco Ichibanya,Pork Curry,755,11.5,20,126.5,3.2,514,Curry
-Sukiya,Gyudon,733,22.9,25,104.1,2.5,350,Donburi
-Family Mart,Famichiki,251,12.7,15.7,14.8,1.5,180,Snack
+Restaurant,Meal,Calories,Protein,Fat,Carbohydrates,Sodium,Price,Tags,Image_url
+Denny's,Chicken Nanban,836,32,31.1,104.8,6.4,1208,Chicken,https://www.dennys.jp/images/menu/chicken-nanban-s.jpg
+Yoshinoya,Calbi Don,785,20.8,34,91.5,2.1,387,"Beef, Meat, Donburi",https://www.yoshinoya.com/wp-content/uploads/2020/05/25105827/gyu-karubi-don_202005.jpg
+Burger King,Whopper,782,30.4,51.8,49.3,2.5,490,"Burger, Meat",https://di7x3yh836phz.cloudfront.net/images/menu/normal/d5bd8376-47a6-422f-be80-ecd6e47c6e47.png
+Coco Ichibanya,Pork Curry,755,11.5,20,126.5,3.2,514,Curry,https://www.ichibanya.co.jp/sys/upload/save/1410578805d4d1ddbaf483.png
+Sukiya,Gyudon,733,22.9,25,104.1,2.5,350,Donburi,https://www.sukiya.jp/menu/img/in/photo_gyudon_100100.jpg
+Yoshinoya,Gyudon (R),635,20,20.4,89,2.7,387,"Beef, Donburi, Meat, Rice",https://www.yoshinoya.com/wp-content/uploads/2020/05/25105825/gyu-don_20005.jpg
+Yoshinoya,Pork Don,601,14.4,18.5,88.1,2.3,602,"Pork, Meat, Donburi",https://www.yoshinoya.com/wp-content/uploads/2021/01/08170354/buta-don-gomanashi.jpg
+Denny's,Hamburg & Shrimp Fry,595,32.1,35.6,36.6,4.1,1098,"Meat, Seafood",https://www.dennys.jp/images/menu/beef-friedshrimp-s.jpg
+Marugame,Curry Udon,559,14,19.2,81.8,6.3,690,"Noodles, Curry",https://www.marugame-seimen.com/uploads/items/img1_path60134c7254cba.png
+McDonalds,Big Mac,525,26,28.3,41.8,2.6,390,"Burger, Meat",https://www.mcdonalds.co.jp/product_images/10/1210-Big-Mac.m.png?20210104095924
+Freshness Burger,Freshness Cheeseburger,442,17.5,25,34.4,,600,"Burger, Meat",https://www.freshnessburger.co.jp/images/menu/freshness_cheese_burger.jpg?ver=190920_183319
+Freshness Burger,Teriyaki Chicken Burger,428,17.2,24.5,31.3,,420,"Burger, Meat",https://www.freshnessburger.co.jp/images/menu/teriyaki_chicken_burger.jpg?ver=190920_183315
+McDonalds,Fries (M),410,5.3,20.6,51,0.8,280,Snack,https://www.mcdonalds.co.jp/product_images/18/2020-McFry-M.png
+Marugame,Tsukimi-Wakame Udon,402,18.2,8,65.6,6.5,998,Noodles,https://www.marugame-seimen.com/uploads/items/img1_path5e9814868249b.png
+Burger King,Tartar Chicken,401,14.9,20.5,46.4,1.8,290,"Chicken, Meat",https://di7x3yh836phz.cloudfront.net/images/menu/normal/d650d0e9-5f8b-4b13-af29-ab724f552438.png
+Marugame,Toro-Tama Udon,400,16,6.5,68.2,4.1,690,Noodles,https://www.marugame-seimen.com/uploads/items/img1_path5e9817f259490.png
+Freshness Burger,Freshness Burger,385,14.3,20.6,33.4,,500,"Burger, Meat",https://www.freshnessburger.co.jp/images/menu/freshness_burger.jpg?ver=190921_162649
+Denny's,Scramble Egg Breakfast,384,16.3,32.1,5.6,1.7,658,"Breakfast, Egg",https://www.dennys.jp/images/menu/dennys-morning-scrambled-egg-s.jpg
+Burger King,Chicken Nuggets (8 pcs),377,22.3,20.2,26.5,2.2,200,"Chicken, Meat",https://di7x3yh836phz.cloudfront.net/images/menu/normal/49cc0fc5-eb50-4aa1-9f68-9a989ddb6dde.png
+Freshness Burger,Hot Dog,342,11.4,20.6,27,,360,Meat,https://www.freshnessburger.co.jp/images/menu/hot_dog.jpg?ver=190921_162646
+McDonalds,Cheeseburger,307,15.8,13.4,30.8,1.9,140,"Burger, Meat",https://www.mcdonalds.co.jp/product_images/2/1020-Cheese-Burger.png?20201222104933
+Marugame,Kake Udon (Medium),299,9.5,1.3,62.3,5.7,300,Noodles,https://www.marugame-seimen.com/uploads/items/img1_path5e9818346f0b9.png
+Lawson,L Chicken,270,17.4,17.1,11.7,1.8,180,Chicken,https://www.lawson.co.jp/recommend/original/detail/img/l534447_2.png
+Lawson,Niku-man,260,7.9,10.6,33.9,0.8,130,"Meat, Chinese",https://mldata.lawson.co.jp/recommend/original/detail/img/l599799.png
+McDonalds,Hamburger,256,12.8,9.4,30.3,1.4,110,"Burger, Meat",https://www.mcdonalds.co.jp/product_images/1/1010-Hamburger.png?20210216223102
+Family Mart,Famichiki,251,12.7,15.7,14.8,1.5,180,"Snack, Chicken",https://www.lawson.co.jp/recommend/original/detail/img/l599799.png
+Seven Eleven,Niku-man,233,7,8.9,31.9,0.8,140,"Meat, Chinese",https://img.7api-01.dp1.sej.co.jp/item-image/150140/311F7FC17600447DA23F1728163502EF.jpg
+Lawson,Karaage-kun (regular),220,14,14,8,1.6,216,"Meat, Chicken",https://www.lawson.co.jp/recommend/original/detail/img/l456071_3.png
+Seven Eleven,Spiced Chicken,198,13.5,10.3,13.1,1.4,203,"Chicken, Spicy",https://img.7api-01.dp1.sej.co.jp/item-image/150045/BDCD35825DBEF3EF5FC736543E87B5A8.jpg
+Lawson,Vanilla Ice Cream,196,3.9,10.5,25.9,0.2,260,Dessert,https://www.lawson.co.jp/recommend/original/detail/img/lsoftice_01_1.png
+Seven Eleven,Sausage Dog,185,6.6,11.2,14.7,1.1,149,Meat,https://img.7api-01.dp1.sej.co.jp/item-image/150264/FFEBC9E94898590021C8E745D6590885.jpg
+Burger King,Fish Burger,547,20,26.8,56.7,3.3,340,"Fish, Meat, Burger",https://di7x3yh836phz.cloudfront.net/images/menu/normal/9b3ed4c5-4dc0-4648-93a2-410f61797ba7.png
+Lawson,Iced Cafe Latte (M),84,4,4.7,6.4,0.1,170,Coffee,https://www.lawson.co.jp/recommend/original/detail/img/l_coffee014.png
+Seven Eleven,Iced Coffee (R),9,0.4,0.1,1.7,0,100,Coffee,https://img.7api-01.dp1.sej.co.jp/item-image/140323/8C26A1BBC3D5BC343F61B85C8C28C6FD.jpg
+Seven Eleven,Daikon,8,0.3,0.1,1.9,0.5,95,Vegetable,https://img.7api-01.dp1.sej.co.jp/item-image/120078/FE75B25061B5E365BF9A5EFE32A87CAD.jpg

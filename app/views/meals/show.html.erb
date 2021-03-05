@@ -1,7 +1,8 @@
 <div class="container-body">
   <%# <h1>Nutrition Info</h1> %>
   <div class="card-detail card-detail-show">
-    <img src="https://via.placeholder.com/80x60" alt="">
+    <%= cl_image_tag @meal.photo.key, crop: :fill %>
+    <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
     <h2><%= @meal.name%></h2>
     <p><%= @meal.restaurant.name %></p>
   </div>
