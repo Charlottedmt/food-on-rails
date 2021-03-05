@@ -1,7 +1,7 @@
 <% if @choice %>
   <%= "it's inside"%>
   <%# <button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> %>
-  <%= render 'shared/modal_google' %>
+  <%= render 'shared/modal_google', :choice => @choice, :current_position => @current_position %>
 <%end%>
 <div class="container-body">
   <h3 class="text-center">Your latest meal:</h3>
@@ -23,7 +23,7 @@
       <p>restaurant</p>
     </div>
   </div>
-  
+
   <hr>
   <div class="text-center">
     <h4 style="margin-bottom: 64px;">Account</h4>
