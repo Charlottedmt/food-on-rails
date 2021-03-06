@@ -7,6 +7,8 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
+require("chartkick")
+require("chart.js")
 
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -36,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  google.charts.load('current', {'packages':['gauge']});
+  google.charts.load('current', { 'packages': ['gauge'] });
   google.charts.setOnLoadCallback(drawChart);
   google.charts.setOnLoadCallback(drawChart2);
   google.charts.setOnLoadCallback(drawChart3);

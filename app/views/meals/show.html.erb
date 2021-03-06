@@ -19,6 +19,10 @@
   </div>
   <div class="container-nutritional-info">
     <h3 class="center-text">Nutrition Info</h3>
+    <div class="container-nutrition-graphs">
+      <%= pie_chart [["Calories", @meal.calories], ["Daily Allowance", 2000]], colors: [ '#FF673B', '#FFF0EB' ] %>
+      <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ '#FF5757' ] %>
+    </div>
     <p>Calories: <%= @meal.calories%>kcal</p>
     <p>Proteins: <%= @meal.proteins%>g</p>
     <p>Carbohydrates: <%= @meal.carbohydrates%>g</p>
