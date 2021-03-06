@@ -26,6 +26,7 @@
     <p>Sodium: <%= @meal.sodium%>g</p>
     <h3>The Benefits:</h3>
   </div>
+  <%= bar_chart Shirt.group(:size).sum(:price) %>
   <div>
     <% if current_user.goal == "healty" %>
       <%= render 'goals/healthy' %>

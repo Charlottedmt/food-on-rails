@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
 
+gem "chartkick"
+
 gem 'acts-as-taggable-on', '~> 6.0'
 
 gem 'cloudinary', '~> 1.16.0'
