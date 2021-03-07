@@ -5,40 +5,30 @@
     <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
     <h2><%= @meal.name%></h2>
     <p><%= @meal.restaurant.name %></p>
+    <div class="card-choice-right">
+      <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
+      <%= simple_form_for [ @meal, @choice ] do |f| %>
+        <%= f.association :meal, as: :hidden, input_html: { value: @meal.id }%>
+        <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
+        <%= f.submit "GO", class: "btn btn-primary" %>
+      <% end %>
+      <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
+      <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
+    </div>
   </div>
   <hr>
-  <div class="card-choice-right">
-    <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
-    <%= simple_form_for [ @meal, @choice ] do |f| %>
-      <%= f.association :meal, as: :hidden, input_html: { value: @meal.id }%>
-      <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-      <%= f.submit "GO", class: "btn btn-primary" %>
-    <% end %>
-    <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
-    <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
-  </div>
   <div class="container-nutritional-info">
-    <h3 class="center-text">Nutrition Info</h3>
-    <div class="container-nutrition-graphs">
-      <%= pie_chart [["Calories", @meal.calories], ["Daily Allowance", 2000]], colors: [ '#FF673B', '#FFF0EB' ] %>
-      <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ '#FF5757' ] %>
+    <div class="container-calories-graphs">
+      <h3 class="center-text">Calories</h3>
+      <%= pie_chart [["Current Meal", @meal.calories], ["Calories in a Day", 2000 - @meal.calories]], colors: [ '#FF673B', '#FFF0EB' ], suffix: " kcal", legend: "bottom" %>
     </div>
-    <p>Calories: <%= @meal.calories%>kcal</p>
-    <p>Proteins: <%= @meal.proteins%>g</p>
-    <p>Carbohydrates: <%= @meal.carbohydrates%>g</p>
-    <p>Fat: <%= @meal.fat%>g</p>
-    <p>Sodium: <%= @meal.sodium%>g</p>
-    <h3>The Benefits:</h3>
+    <div class="container-macros-graphs">
+      <h3 class="center-text">Nutrients</h3>
+      <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ '#FF5757' ], suffix: " grams" %>
+    </div>
   </div>
   <div>
-    <% if current_user.goal == "healty" %>
-      <%= render 'goals/healthy' %>
-    <% end %>
-    <% if current_user.goal == "lose_weight" %>
-      <%= render 'goals/lose_weight' %>
-    <% end %>
-    <% if current_user.goal == "gain_muscle" %>
-      <%= render 'goals/gain_muscle' %>
-    <% end %>
+    <h1>To Delete</h1>
+    <p>adding text to show graphs better</p>
   </div>
 </div>
