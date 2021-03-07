@@ -31,6 +31,7 @@ CSV.foreach(filepath, csv_options) do |row|
   restaurant = Restaurant.where(name: row['Restaurant']).first_or_create!
   puts "Creating meal..."
   file = URI.open(row['Image_url'])
+  restaurant_file = URI.open(row['logo_url'])
   # if statement to assign correct value for filename & content_type
   regex_jpg = /jpg/
   if regex_jpg.match(row['Image_url'])
@@ -40,6 +41,20 @@ CSV.foreach(filepath, csv_options) do |row|
     photo_filename = 'nes.png'
     photo_content_type = 'image/png'
   end
+
+  logo_regex_jpg = /jpg/
+  logo_regex_png = /png/
+  if logo_regex_jpg.match(row['logo_url'])
+    logo_photo_filename = 'nes.jpg'
+    logo_photo_content_type = 'image/jpg'
+  elsif logo_regex_png.match(row['logo_url'])
+    logo_photo_filename = 'nes.png'
+    logo_photo_content_type = 'image/png'
+  else
+    logo_photo_filename = 'nes.svg'
+    logo_photo_content_type = 'image/svg'
+  end
+
   meal = Meal.new(
     name: row['Meal'],
     calories: row['Calories'],
@@ -53,6 +68,7 @@ CSV.foreach(filepath, csv_options) do |row|
   )
   meal.restaurant = restaurant
   meal.photo.attach(io: file, filename: photo_filename, content_type: photo_content_type)
+  restaurant.photo.attach(io: restaurant_file, filename: logo_photo_filename, content_type: logo_photo_content_type)
   meal.save!
 end
 puts "Retrieving Address Log..."
