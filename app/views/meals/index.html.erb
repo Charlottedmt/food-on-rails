@@ -33,22 +33,23 @@
           <div class="card-choice-description">
             <h3><%= meal.name %></h3>
             <p><%= meal.restaurant.name %></p>
-            <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
+            <p><%= meal.score %>
+              <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
+            </div>
+            <div class="card-choice-right">
+              <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
+              <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
+              <%= simple_form_for [ meal, @choice ] do |f| %>
+                <%=  hidden_field_tag :lat, nil, class: "hidden-lat" %>
+                <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
+                <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
+                <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
+                <%= f.submit "GO", class: "btn btn-primary"%>
+              <% end %>
+              <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
+            </div>
           </div>
-          <div class="card-choice-right">
-            <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
-            <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
-            <%= simple_form_for [ meal, @choice ] do |f| %>
-              <%=  hidden_field_tag :lat, nil, class: "hidden-lat" %>
-              <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
-              <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
-              <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-              <%= f.submit "GO", class: "btn btn-primary"%>
-            <% end %>
-            <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
-          </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>

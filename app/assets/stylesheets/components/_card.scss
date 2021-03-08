@@ -1,3 +1,5 @@
+$card-border-radius: 8px;
+
 // meal index meal cards
 .cards-choice {
   width: 100%;
@@ -10,11 +12,14 @@
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 8px 0 8px 0;
   position: relative;
+  background-color: white;
+  border-radius: $card-border-radius;
 }
 .card-choice img{
   width: 30%;
   height: 100%;
   padding-right: 8px;
+  border-radius: $card-border-radius 0 0 $card-border-radius;
 }
 .card-choice-description h3, .card-choice-description p {
   margin: 0;
@@ -30,6 +35,7 @@
 .new_choice .btn {
   height: 52px;
   width: 52px;
+  border-radius: $card-border-radius;
 }
 
 .show-btn {
@@ -59,7 +65,7 @@
   left: 16px;
   border: 0 solid $primary-brand-color;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
-  }
+  border-radius: $card-border-radius;
 }
 
 .card-detail img{
@@ -102,7 +108,7 @@
   margin: 4px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   background-color: white;
-  border-radius: 5px;
+  border-radius: $card-border-radius;
 }
 .scrolling-card p{
   margin: 4px;
@@ -120,7 +126,7 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: $card-border-radius;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   a{
     text-decoration: none;
