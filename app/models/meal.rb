@@ -4,6 +4,7 @@ class Meal < ApplicationRecord
   has_many :choices, dependent: :destroy
   validates :name, presence: true
   validates :price, presence: true
+  validates :score, presence: true
   validate :validate_attrlist
   acts_as_taggable_on :tags
   has_one_attached :photo
@@ -26,22 +27,42 @@ class Meal < ApplicationRecord
   end
 
   def calorie_cutoffs
-  case calories
-  when 0...400 then :'#246A73'
-  when 400..600 then :'#E87EA1'
-  when 600..1000 then :'#F8F32B'
-  end
+    case calories
+    when 0...400 then :'#246A73'
+    when 400..600 then :'#E87EA1'
+    when 600..1000 then :'#F8F32B'
+    end
   end
 
   def protein_cutoffs
+    case proteins
+    when 0...10 then :'#F40000'
+    when 10..20 then :'#FCBA04'
+    when 20..1000 then :'#8CD867'
+    end
   end
 
   def fat_cutoffs
+    case fat
+    when 0...10 then :'#8CD867'
+    when 10..20 then :'#FCBA04'
+    when 20..1000 then :'#F40000'
+    end
   end
 
   def sodium_cutoffs
+    case sodium
+    when 0...1.5 then :'#8CD867'
+    when 1.5..2.5 then :'#FCBA04'
+    when 2.5..100 then :'#F40000'
+    end
   end
 
   def carbs_cutoffs
+    case carbohydrates
+    when 0...30 then :'#8CD867'
+    when 30..50 then :'#FCBA04'
+    when 50..1000 then :'#F40000'
+    end
   end
 end

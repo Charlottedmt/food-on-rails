@@ -67,7 +67,7 @@
   padding-top: 18%;
 }
 
-.result-icon img[src*="https://image.flaticon.com/icons/png/128/2599/2599612.png"] {
+.result-icon img[src*="https://image.flaticon.com/icons/png/512/2599/2599597.png"] {
   width: 40px;
   height: auto;
   bottom: 80%;
@@ -94,5 +94,6 @@
   height: auto;
   bottom: 74%;
   right: 32%;
-  filter: grayscale(100%);
+  // filter: grayscale(100%);
+  filter: invert(54%) sepia(48%) saturate(3994%) hue-rotate(337deg) brightness(104%) contrast(101%);
 }
