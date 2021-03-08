@@ -22,19 +22,85 @@ a:hover
   margin: 8px;
 }
 
-// .gain-weight {
-//   background-image: url(https://images.unsplash.com/photo-1517344800994-80b20463999c?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80)
-//   linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3))
-// }
-// .goal {
-//   position: relative;
-//   img {
-//     width: 100%;
-//     object-fit: cover;
+.body {
+  background-position: center;
+  background-image: url("option3.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 864px;
+  position: relative;
+  padding-top: 20%;
+  padding-left: 10%;
+}
 
-//   }
-//   p {
-//     position: absolute;
-//     top: 50%;
-//   }
-// }
+.body h2 {
+  font-family: "Kanit", sans-serif;
+  font-size: 312%;
+}
+
+.body h4 {
+  font-family: "Kanit", sans-serif;
+  font-size: 156%;
+  margin-top: 5%;
+}
+
+.home-buttons {
+  position: absolute;
+  bottom: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.fork-knife{
+  height: 55px;
+  width: 330px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2%;
+  padding-top: 2px;
+  padding-left: 1%;
+  margin-bottom: 6%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fork-knife img {
+  height: 70%;
+  margin-top: 1%;
+  margin-right: 3%;
+}
+
+.fork-knife p {
+  margin-top: 4%;
+  margin-left: 1%;
+  margin-right: 13%;
+  font-family: "Lato", sans-serif;
+  font-size: 111%;
+}
+
+.drink {
+  height: 55px;
+  width: 330px;
+  border-radius: 2%;
+  background: rgba(255, 255, 255, 0.2);
+  margin-bottom: -4%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.drink img {
+  height: 75%;
+  width: 6%;
+  margin-left: 2%;
+  margin-right: 5%;
+}
+
+.drink p {
+  text-align: left;
+  margin-left: 10%;
+  margin-top: 4%;
+  font-family: "Lato", sans-serif;
+  font-size: 111%;
+}
+
+
