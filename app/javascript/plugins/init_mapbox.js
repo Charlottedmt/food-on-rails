@@ -54,7 +54,14 @@ const initMapbox = () => {
 
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
-      new mapboxgl.Marker()
+      // Create a HTML element for your custom marker
+      const icon = document.createElement('div');
+      icon.className = 'marker';
+      icon.style.backgroundImage = `url('${marker.image_url}')`;
+      icon.style.backgroundSize = 'contain';
+      icon.style.width = '25px';
+      icon.style.height = '25px';
+      new mapboxgl.Marker(icon)
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     })
