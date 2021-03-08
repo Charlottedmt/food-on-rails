@@ -1,12 +1,20 @@
 module ScoreHelper
-  def get_alert_class(status)
-    case status
-    when "pending"
-      return "flash-warning"
-    when "confirmed"
-      return "flash-success"
-    when "rejected"
-      return "flash-danger"
+  def get_score_class(score)
+    if score > 70
+      return "score-success"
+    elsif (51..70).cover?(score)
+      return "score-warning"
+    else
+      return "score-danger"
+    end
+  end
+  def get_score_icon(score)
+    if score > 70
+      return "caret-up"
+    elsif (51..70).cover?(score)
+      return "minus"
+    else
+      return "caret-down"
     end
   end
 end

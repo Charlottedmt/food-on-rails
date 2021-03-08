@@ -15,6 +15,27 @@ $card-border-radius: 8px;
   background-color: white;
   border-radius: $card-border-radius;
 }
+
+.card-choice-middle {
+  display: flex;
+  position: absolute;
+  bottom: 22%;
+  right: 20%;
+  
+
+  .score-success {
+    color: #1EDD88;
+  }
+
+  .score-warning {
+    color: #FFC65A;
+  }
+
+  .score-danger {
+    color: #FD1015;
+  }
+}
+
 .card-choice img{
   width: 30%;
   height: 100%;
@@ -30,6 +51,7 @@ $card-border-radius: 8px;
 }
 .card-choice-right {
   margin-left: auto;
+  position: relative;
 }
 
 .new_choice .btn {
@@ -38,15 +60,19 @@ $card-border-radius: 8px;
   border-radius: $card-border-radius;
 }
 
-.show-btn {
-  position: absolute;
-  border-radius: 50%;
-  height: 48px;
-  width: 48px;
-  top: 8px;
-  right: 16px;
-  border: 0 solid $primary-brand-color;
-  box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+.meals-show-form {
+
+  .show-btn {
+    position: absolute;
+    border-radius: 50%;
+    height: 48px;
+    width: 48px;
+    top: 8px;
+    right: 16px;
+    border: 0 solid $primary-brand-color;
+    box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
 }
 
 // meal show, review, and favorites card templates
@@ -55,7 +81,6 @@ $card-border-radius: 8px;
   text-align: center;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 8px 0 8px 0;
-}
 
   .show-restaurant {
   position: absolute;
@@ -67,8 +92,9 @@ $card-border-radius: 8px;
   border: 0 solid $primary-brand-color;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
   border-radius: $card-border-radius;
-}
+  }
 
+}
 .card-detail img{
   width: 100%;
   height: 50%;
