@@ -37,28 +37,36 @@
 
 <!-- NEW TESTTTTT -->
 <div class="container">
-  <div class="claim text-center mt-5">
-    <h1> We help you choose the <strong>BEST</strong> of the <em>WORST</em> </h1>
-    <p><em> 100% (guilty) free app <em></p>
-  </div>
-  <!--<div class="button button--surtur">
-    <i class="fas fa-wine-bottle w3-text icon" style="font-size:64px"></i>
-  </div>-->
-  <div class="button">
-    <%= link_to meals_path do %>
-    <i class="fas fa-wine-bottle w3-text-black icon" style="font-size:58px">
-    <p>
-    Drinks</p></i>
-    <% end %>
-  </div>
-  <div class="button">
-    <%= link_to meals_path do %>
-    <i class="fas fa-utensils w3-text-black icon" style="font-size:58px"></i>
-    <p>
-    Food</p></i>
-    <% end %>
+  <div class="container-home">
+    <div class="claim text-center mt-5">
+      <h1> When you don't have choice, <h1>
+      <h1>pick the <span style="color: #bc4d2f; text-shadow: 3px 3px 0px white">BEST</span> </h1>
+    </div>
+
+    <div class="logo">
+      <%= image_tag "logotransparent.png"%>
+    </div>
+
+    <div class="buttons">
+      <div class="button-food">
+        <%= link_to meals_path do %>
+        Pick my food  <i class="fas fa-utensils"></i>
+        <% end %>
+      </div>
+      <div class="button-food">
+        <%= link_to meals_path do %>
+        Pick my drinks  <i class="fas fa-mug-hot"></i>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>
+
+
+
+
+
+
 
 
 
