@@ -46,9 +46,12 @@ const initMapbox = () => {
       container: 'map',
       style: 'mapbox://styles/mapbox/streets-v10'
     });
-    const fitMapToMarkers = (map, markers) => {
+    const fitMapToMarkers = (map, markers, current_position) => {
+      console.log(map);
+      console.log(markers);
+      console.log(current_position);
       const bounds = new mapboxgl.LngLatBounds();
-      markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+      markers.forEach(marker => bounds.extend([marker.lng, marker.lat, current_position.lng, current_position.lat]));
       map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
     };
 
@@ -65,9 +68,9 @@ const initMapbox = () => {
         .setLngLat([ marker.lng, marker.lat ])
         .addTo(map);
     })
-
+    const current_position = JSON.parse(mapElement.dataset.current_position);
     userCurrentPosition(map, mapElement);
-    fitMapToMarkers(map, markers);
+    fitMapToMarkers(map, markers, current_position);
   }
 };
 export { initMapbox };
