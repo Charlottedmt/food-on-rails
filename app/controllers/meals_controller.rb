@@ -70,7 +70,7 @@ class MealsController < ApplicationController
         lng: location.longitude,
         # image_url: helpers.asset_url('<%= cl_image_path location.restaurant.photo.key %>')
         # image_url: helpers.asset_url('<%= cl_image_path restaurant.photo.key %>')
-        image_url: helpers.asset_url('https://www.sukiya.jp/en/images/logo_sukiya.jpg')
+        image_url: helpers.cl_image_path(location.restaurant.photo.key)
         # image_url: helpers.asset_url('<%= location.restaurant.logo_url %>')
       }
     end
