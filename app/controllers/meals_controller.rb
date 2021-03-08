@@ -9,22 +9,22 @@ class MealsController < ApplicationController
       if params[:query].present?
         search(@meals, params[:query])
         @meals = @results.first(3)
-        # location(@meals)
+        
       else
         @meals = @meals.first(3)
         @user = current_user
-        # location(@meals)
+        
       end
     else
       @meals = @meals.tagged_with('Drinks', :exclude => true)
       if params[:query].present?
         search(@meals, params[:query])
         @meals = @results.first(3)
-        # location(@meals)
+       
       else
         @meals = @meals.first(3)
         @user = current_user
-        # location(@meals)
+        
       end
     end
     @current_position =
@@ -42,17 +42,6 @@ class MealsController < ApplicationController
       }
       end
   end
-
-  # def location(meals)
-  #   @locations = Location.joins(:meals).where(meals: { id: meals })
-  #   @markers = @locations.geocoded.map do |location|
-  #     {
-  #       lat: location.latitude,
-  #       lng: location.longitude,
-  #       image_url: helpers.cl_image_path(location.restaurant.photo.key)
-  #     }
-  #   end
-  # end
 
   def search(meals, params)
     search = meals.search_by_preferences(params)
