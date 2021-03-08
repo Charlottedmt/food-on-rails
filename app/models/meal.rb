@@ -4,6 +4,7 @@ class Meal < ApplicationRecord
   has_many :choices, dependent: :destroy
   validates :name, presence: true
   validates :price, presence: true
+  validates :score, presence: true
   validate :validate_attrlist
   acts_as_taggable_on :tags
   has_one_attached :photo

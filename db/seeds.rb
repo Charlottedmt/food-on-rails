@@ -63,6 +63,7 @@ CSV.foreach(filepath, csv_options) do |row|
     carbohydrates: row['Carbohydrates'],
     sodium: row['Sodium'],
     price: row['Price'],
+    score: row['Food Score'],
     tag_list: row['Tags'],
     photo: row['Image_url']
   )
