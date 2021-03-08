@@ -4,7 +4,7 @@
     <%= cl_image_tag @meal.photo.key, crop: :fill %>
     <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
     <h2><%= @meal.name%></h2>
-    <div class="card-choice-right">
+    <div class="meals-show-form">
       <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
       <%= simple_form_for [ @meal, @choice ] do |f| %>
         <%= f.association :meal, as: :hidden, input_html: { value: @meal.id }%>
