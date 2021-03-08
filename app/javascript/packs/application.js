@@ -38,7 +38,7 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
   initMapbox();
-  google.charts.load('current', {'packages':['gauge']});
+  google.charts.load('current', { 'packages': ['gauge'] });
   google.charts.setOnLoadCallback(drawChart);
   google.charts.setOnLoadCallback(drawChart2);
   google.charts.setOnLoadCallback(drawChart3);

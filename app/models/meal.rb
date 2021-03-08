@@ -24,4 +24,24 @@ class Meal < ApplicationRecord
       errors[:nutrition_infos] << "Can't be blank"
     end
   end
+
+  def calorie_cutoffs
+  case calories
+  when 0...400 then :'#246A73'
+  when 400..600 then :'#E87EA1'
+  when 600..1000 then :'#F8F32B'
+  end
+  end
+
+  def protein_cutoffs
+  end
+
+  def fat_cutoffs
+  end
+
+  def sodium_cutoffs
+  end
+
+  def carbs_cutoffs
+  end
 end

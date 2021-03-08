@@ -4,7 +4,13 @@
 
 .container-nutritional-info{
   margin: 0 20% 0 20%;
+  display: flex;
 }
 .container-nutritional-info h3{
   margin-bottom: 16px;
 }
+
+// .container--graphs {
+//   display: flex;
+//   justify-content: space-between;
+// }

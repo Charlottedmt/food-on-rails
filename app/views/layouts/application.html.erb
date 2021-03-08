@@ -4,9 +4,11 @@
     <title>FoodOnRails</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
     <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -22,6 +24,7 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" data-turbolinks-track='reload' defer=true></script>
   </head>
   <body>
     <%=render 'shared/navbar'%>
