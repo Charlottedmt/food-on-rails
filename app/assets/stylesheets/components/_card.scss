@@ -18,6 +18,7 @@ $card-border-radius: 8px;
 
 .card-choice-middle {
   display: flex;
+  align-items: center;
   position: absolute;
   bottom: 22%;
   right: 20%;
@@ -34,6 +35,11 @@ $card-border-radius: 8px;
   .score-danger {
     color: #FD1015;
   }
+
+  i {
+    padding-bottom: 57%;
+  }
+
 }
 
 .card-choice img{
@@ -81,6 +87,7 @@ $card-border-radius: 8px;
   text-align: center;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 8px 0 8px 0;
+  z-index: -1;
 
   .show-restaurant {
   position: absolute;

@@ -12,7 +12,7 @@ module ScoreHelper
     if score > 70
       return "caret-up"
     elsif (51..70).cover?(score)
-      return "minus"
+      return "minus small align-middle"
     else
       return "caret-down"
     end
