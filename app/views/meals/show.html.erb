@@ -26,7 +26,7 @@
       <h3 class="center-text">Nutrients</h3>
       <%# library => { :series => { 0 => { color: "red" } } %>
       <%# <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], suffix: " grams", scales: {display: false, yAxes: [{ticks: {autoSkip: false}}]} %>
-      <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Sodium", data: {Sodium: @meal.sodium}}], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], suffix: " grams", legend: false %>
+      <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Sodium", data: {Sodium: @meal.sodium}}], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], library: { scales: { yAxes: [{ gridLines: { display: false } }]}}, suffix: " grams", legend: false %>
     </div>
   </div>
   <div>
