@@ -38,7 +38,7 @@
     // justify-content:space-between;
     margin: 2.5%;
   .btn {
-    margin-top: 16px;
+    width: 21%;
   }
   p {
     margin-bottom: 0px;
@@ -47,5 +47,14 @@
   .btn:hover {
     box-shadow: -3px -3px 7px #88828a;
     background-color: #8205b4;
+  }
+
+  .form-control {
+    width: 89%;
+  }
+
+  .form-meal {
+    display: flex;
+    align-items: center;
   }
 

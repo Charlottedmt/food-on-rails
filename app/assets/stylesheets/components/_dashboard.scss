@@ -38,3 +38,61 @@
   overflow-y: hidden;
   white-space: nowrap;
 }
+
+.results {
+  text-align: center;
+}
+
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+}
+
+.col-6 {
+  max-width: 47%;
+}
+
+.result-cards {
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  position: relative;
+  margin: 4px;
+  width: 112px;
+  height: 112px;
+  border-radius: 6%;
+}
+
+.result-cards p {
+  padding-top: 18%;
+}
+
+.result-icon img[src*="https://image.flaticon.com/icons/png/128/2599/2599612.png"] {
+  width: 40px;
+  height: auto;
+  bottom: 80%;
+  right: 37%;
+}
+
+.result-icon img[src*="https://img.icons8.com/ios/452/salt-bae.png"] {
+  width: 40px;
+  height: auto;
+  bottom: 80%;
+  right: 38%;
+}
+
+.result-icon img[src*="https://icon-library.com/images/muscles_gym_training_protein-512.png"] {
+  width: 40px;
+  height: auto;
+  bottom: 80%;
+  right: 38%;
+}
+
+.result-icon img {
+  position: absolute;
+  width: 64px;
+  height: auto;
+  bottom: 74%;
+  right: 32%;
+  filter: grayscale(100%);
+}
