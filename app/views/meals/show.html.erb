@@ -24,7 +24,7 @@
     </div>
     <div class="container-macros-graphs">
       <h3 class="center-text">Nutrients</h3>
-      <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ '#FF5757' ], suffix: " grams" %>
+      <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ @meal.calorie_cutoffs ], suffix: " grams", scales: {display: false, yAxes: [{ticks: {autoSkip: false}}]} %>
     </div>
   </div>
   <div>
