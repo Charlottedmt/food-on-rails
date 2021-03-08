@@ -4,17 +4,17 @@
     <%= cl_image_tag @meal.photo.key, crop: :fill %>
     <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
     <h2><%= @meal.name%></h2>
-    <p><%= @meal.restaurant.name %></p>
     <div class="card-choice-right">
       <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
       <%= simple_form_for [ @meal, @choice ] do |f| %>
         <%= f.association :meal, as: :hidden, input_html: { value: @meal.id }%>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-        <%= f.submit "GO", class: "btn btn-primary" %>
+        <%= f.submit "GO", class: "show-btn btn-primary" %>
       <% end %>
       <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
       <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
     </div>
+    <%= cl_image_tag @meal.restaurant.photo.key, crop: :fill, class: "show-restaurant"%>
   </div>
   <hr>
   <div class="container-nutritional-info">
