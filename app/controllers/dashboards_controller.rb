@@ -11,6 +11,7 @@ class DashboardsController < ApplicationController
     @choices = policy_scope(Choice)
     @average_score = current_user.meals.where(choices: { created_at: Time.current.beginning_of_month..Time.current.end_of_month }).average(:score)
     @last_month = current_user.meals.where(choices: { created_at: (Time.current.beginning_of_month - 1.month)..(Time.current.end_of_month - 1.month) }).average(:score)
+    numbers_total(@choices)
   end
 
   def numbers_total(choices)
@@ -31,10 +32,10 @@ class DashboardsController < ApplicationController
   end
 
   def equivalence(calories, fat, sodium, carbohydrates, proteins)
-    @bike = ((calories / 300) * 30).round(1)
-    @pizza = fat / 50
-    @bread = carbohydrates / 15
-    @egg = (proteins / 6).round(1)
-    @salt = (sodium / 2.3).round(1)
+    @bike = ((calories / 300) * 30).round
+    @pizza = (fat / 50).round
+    @bread = (carbohydrates / 15).round
+    @egg = (proteins / 6).round
+    @salt = (sodium / 2.3).round
   end
 end
