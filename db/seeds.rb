@@ -30,7 +30,10 @@ filepath    = 'lib/nutrition_info.csv'
 CSV.foreach(filepath, csv_options) do |row|
   puts "Finding restaurant...thanks to Doug's advice..."
   restaurant = Restaurant.where(name: row['Restaurant']).first_or_create!
-  puts "Creating meal..."
+  puts "#{restaurant.name}"
+  p row['Image_url']
+  p row['logo_url']
+  puts ""
   file = URI.open(row['Image_url'])
   restaurant_file = URI.open(row['logo_url'])
   # if statement to assign correct value for filename & content_type
@@ -42,6 +45,7 @@ CSV.foreach(filepath, csv_options) do |row|
     photo_filename = 'nes.png'
     photo_content_type = 'image/png'
   end
+  puts "Creating meal..."
 
   logo_regex_jpg = /jpg/
   logo_regex_png = /png/
