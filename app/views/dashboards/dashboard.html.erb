@@ -28,7 +28,7 @@
         <img src="https://static.thenounproject.com/png/1180285-200.png" alt="calorie icon">
       </div>
       <p>Calories saved</p>
-      <h4><strong><%= @calories %> kcal</strong></h4>
+      <h4><strong><%= @calories.round(1) %> kcal</strong></h4>
       <%= @bike %> minutes of bicycling
     </div>
     <div class="result-cards col-6">
@@ -36,7 +36,7 @@
         <img src="https://image.flaticon.com/icons/png/512/2599/2599597.png" alt="fat-icon">
       </div>
       <p>Fat saved</p>
-      <h4><strong><%= @fat %> grams</strong></h4>
+      <h4><strong><%= @fat.round(1) %> grams</strong></h4>
       <%= @pizza %> whole pizzas
     </div>
   </div>
@@ -46,7 +46,7 @@
         <img src="https://img.icons8.com/ios/452/salt-bae.png" alt="salt-bae">
       </div>
       <p>Sodium saved</p>
-      <h4><strong><%= @sodium %> grams</strong></h4>
+      <h4><strong><%= @sodium.round(1) %> grams</strong></h4>
       <%= @salt %> table spoons of salt
     </div>
     <div class="result-cards col-6">
@@ -54,7 +54,7 @@
         <img src="https://icon-library.com/images/muscles_gym_training_protein-512.png" alt="protein-icon">
       </div>
       <p>Protein gained</p>
-      <h4><strong><%= @proteins %> grams</strong></h4>
+      <h4><strong><%= @proteins.round(1) %> grams</strong></h4>
       <%= @egg %> eggs
     </div>
   </div>
