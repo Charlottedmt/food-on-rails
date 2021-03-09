@@ -14,10 +14,10 @@
       </div>
       <div class="modal-footer" data-current_position="<%=current_position.to_json %>">
        <!-- <p><%= link_to "Yes, please", "https://www.google.com/maps/dir/'#{params[:lat]},#{params[:lon]}'/'#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}'", :target => "_blank", class: "btn btn-primary"%></p> -->
-        <p><%= link_to "Yes, please","https://www.google.com/maps/dir/?api=1&origin=#{params[:lat]},#{params[:lon]}&destination=#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}", :target => "_blank", class: "btn btn-primary"%></p>
         <p><%= link_to "No, thanks", dashboard_path, class: "btn btn-secondary"%></p>
+        <p><%= link_to "Yes, please","https://www.google.com/maps/dir/?api=1&origin=#{params[:lat]},#{params[:lon]}&destination=#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}", :target => "_blank", class: "btn btn-primary"%></p>
       </div>
     </div>
   </div>
 </div>
-<div id="exampleModal" class="modal-backdrop fade"></div>
+
