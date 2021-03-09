@@ -3,8 +3,8 @@
 }
 
 .card-detail {
-  position: sticky;
-  top: 9%;
+  // position: sticky;
+  // top: 9%;
   overflow: hidden;
   background-color: $primary-brand-color;
   border-radius: 5%;
@@ -19,13 +19,13 @@
   border-radius: 5%;
   margin-top: -2%;
   padding-top: 3%;
-  position: sticky;
-  top: 16%;
+  // position: sticky;
+  // top: 16%;
   box-shadow: 2px 1px 18px 1px rgba(0, 0, 0, 0.2);
 }
 
 hr {
-  position: sticky;
+  // position: sticky;
   z-index: -2;
 }
 

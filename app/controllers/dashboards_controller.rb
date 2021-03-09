@@ -5,11 +5,12 @@ class DashboardsController < ApplicationController
     @current_position =
       {
         lat: params['lat'].to_f,
-        lng: params['lon'].to_f,
+        lng: params['lon'].to_f
       }
-    if params[:choice_id].present?
-      @choice = Choice.find(params[:choice_id])
-    end
+    @choice = Choice.find(params[:choice_id]) if params[:choice_id].present?
     @choices = policy_scope(Choice)
+  end
+
+  def calculate
   end
 end
