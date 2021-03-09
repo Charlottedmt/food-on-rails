@@ -26,9 +26,9 @@ module ScoreHelper
       return "#{current_month - last_month} point"
     else
       if (current_month - last_month).positive?
-        return "+#{current_month - last_month} points"
+        return "+#{(current_month - last_month).round(2)} points"
       else
-        return "#{current_month - last_month} points"
+        return "#{(current_month - last_month).round(2)} points"
       end
     end
   end
@@ -59,9 +59,9 @@ module ScoreHelper
       return "#{current_month - nationwide} point"
     else
       if (current_month - nationwide).positive?
-        return "+#{current_month - nationwide} points"
+        return "+#{(current_month - nationwide).round(2)} points"
       else
-        return "#{current_month - nationwide} points"
+        return "#{(current_month - nationwide).round(2)} points"
       end
     end
   end
