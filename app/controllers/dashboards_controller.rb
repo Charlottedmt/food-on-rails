@@ -3,10 +3,10 @@ class DashboardsController < ApplicationController
 
   def dashboard
     @current_position =
-      {
-        lat: params['lat'].to_f,
-        lng: params['lon'].to_f,
-      }
+    {
+      lat: params['lat'].to_f,
+      lng: params['lon'].to_f,
+    }
     if params[:choice_id].present?
       @choice = Choice.find(params[:choice_id])
     end
