@@ -23,11 +23,11 @@ class DashboardsController < ApplicationController
     @proteins = 0
 
     choices_array = choices.each do |choice|
-      @calories += choice.meal.calories
-      @fat += choice.meal.fat
-      @sodium += choice.meal.sodium
-      @carbohydrates += choice.meal.carbohydrates
-      @proteins += choice.meal.proteins
+      @calories += choice.meal.calories || 0
+      @fat += choice.meal.fat || 0
+      @sodium += choice.meal.sodium || 0
+      @carbohydrates += choice.meal.carbohydrates || 0
+      @proteins += choice.meal.proteins || 0
     end
     equivalence(@calories, @fat, @sodium, @carbohydrates, @proteins)
   end
