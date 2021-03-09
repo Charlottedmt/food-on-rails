@@ -29,52 +29,67 @@
 
 .dashboard-top {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   margin: 0 16px;
-  background-color: $primary-brand-color;
+  border: 2px solid $primary-brand-color;
   opacity: 92%;
   border-radius: 16px;
   box-shadow: 2px 2px 9px rgba(0,0,0,0.2);
   padding-top: 8px;
 }
 
+.arrow-border {
+  height: 64px;
+  width: 64px;
+  border-radius: 50%;
+}
+
 .score-last-month {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  
+  align-items: center;
   width: 184px;
   i {
     font-size: 56px;
     color: white;
+    transform: rotateZ(45deg);
   }
   h4 {
     color: white;
     padding-top: 2px;
     margin-bottom: -1px;
+    filter: brightness(92%);
   }
   p {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: white;
+    color: black;
   }
 }
 
 .score-current-month {
+  display: flex;
+  flex-direction: column;
   text-align: center;
-  
+  align-items: center;
   width: 184px;
   i {
     font-size: 56px;
     color: white;
+    transform: rotateZ(45deg);
+    border-radius: 50%;
   }
   h4 {
     color: white;
     padding-top: 2px;
     margin-bottom: -1px;
+    filter: brightness(92%);
   }
   p {
     margin-top: 0px;
     margin-bottom: 0px;
-    color: white;
+    color: black;
   }
 }
 

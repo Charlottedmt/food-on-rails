@@ -10,13 +10,17 @@
 </div>
 <div class="dashboard-top">
   <div class="score-last-month">
-    <i class="fas <%= get_dashboard_arrow(@average_score, @last_month) %>"></i>
-    <h4><strong><%= get_dashboard_score(@last_month, @average_score) %></strong></h4>
-    <p>last month</p>
+    <div class="arrow-border" style="background: <%= get_score_bg_color(@average_score, @last_month) %>;">
+      <i class="fas <%= get_dashboard_arrow(@average_score, @last_month) %>" style="color:<%= get_score_color(@average_score, @last_month) %>;"></i>
+    </div>
+    <h4 style="color:<%= get_score_color(@average_score, @last_month) %>;"><strong><%= get_dashboard_score(@last_month, @average_score) %></strong></h4>
+    <p>last month's avg</p>
   </div>
   <div class="score-current-month">
-    <i class="fas <%= get_nationwide_arrow(@average_score, 54.08) %>"></i>
-    <h4><strong><%= get_nationwide_score(@average_score, 54.08) %></strong></h4>
+    <div class="arrow-border" style="background: <%= get_score_bg_color(@average_score, 54.08) %>;">
+      <i class="fas <%= get_nationwide_arrow(@average_score, 54.08) %>" style="color:<%= get_score_color(@average_score, 54.08) %>;"></i>
+    </div>
+    <h4 style="color:<%= get_score_color(@average_score, 54.08) %>;"><strong><%= get_nationwide_score(@average_score, 54.08) %></strong></h4>
     <p>nationwide avg.</p>
   </div>
 </div>
