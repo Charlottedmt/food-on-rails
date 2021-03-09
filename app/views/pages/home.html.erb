@@ -14,16 +14,16 @@
       <img src="http://cdn.onlinewebfonts.com/svg/img_1366.png" alt="drink">
     </div>
   </div>
-    <div class="buttons">
-      <div class="button-food">
-        <%= link_to meals_path(tag: 'Food') do %>
+  <div class="buttons">
+    <div class="button-food">
+      <%= link_to meals_path(tag: 'Food') do %>
         Pick my food  <i class="fas fa-utensils"></i>
-        <% end %>
-      </div>
-      <div class="button-food">
-        <%= link_to meals_path(tag: 'Drinks') do %>
-        Pick my drinks  <i class="fas fa-mug-hot"></i>
-        <% end %>
-      </div>
+      <% end %>
     </div>
+    <div class="button-food">
+      <%= link_to meals_path(tag: 'Drinks') do %>
+        Pick my drinks  <i class="fas fa-mug-hot"></i>
+      <% end %>
+    </div>
+  </div>
 </div>
