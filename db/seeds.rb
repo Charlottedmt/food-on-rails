@@ -16,7 +16,7 @@ Meal.destroy_all
 addresses = {
   "Coco Ichibanya" => ["1-4-9 Meguro, Meguro City, Tokyo"],
   "Seven Eleven" => ["1-3-1 Shimomeguro, Meguro City, Tokyo"],
-  "McDonalds" => ["2-15-17 Kamiosaki, Shinagawa City, Tokyo"],
+  "McDonalds" => ["2-12-19 Yutenji, Meguro City, Tokyo"],
   "Starbucks" => ["2-16-9 Kamiosaki, Shinagawa City, Tokyo"],
   "Lawson" => ["3-9-1 Meguro, Meguro City, Tokyo"],
   # not actual restauraunt addresses from here, just close to HUB
