@@ -1,29 +1,28 @@
 <div class="body">
-  <h2>Food on Rails</h2>
-  <h4><em> Best of the Worst,<br>
-      Healthy Choices for an
-      <br>
-      Unhealthy Situation</em></h4>
-  <div class="home-buttons">
-    <div class="fork-knife">
-      <p>Healthier choices, start here</p>
-      <img src="https://cdn0.iconfinder.com/data/icons/kitchen-77/100/food-34-512.png" alt="fork-knife">
-    </div>
-    <div class="drink">
-      <p>Drinks only</p>
-      <img src="http://cdn.onlinewebfonts.com/svg/img_1366.png" alt="drink">
-    </div>
+  <div>
+    <h2>Food on Rails</h2>
+    <!-- <h4><em> Best of the Worst,<br>Healthy Choices for an<br>Unhealthy Situation</em></h4> -->
+    <h4>Healthy Choices<br> For <span class="color-orange">Un</span>healthy Situations.</h4>
   </div>
-  <div class="buttons">
-    <div class="button-food">
-      <%= link_to meals_path(tag: 'Food') do %>
-        Pick my food  <i class="fas fa-utensils"></i>
-      <% end %>
-    </div>
-    <div class="button-food">
-      <%= link_to meals_path(tag: 'Drinks') do %>
-        Pick my drinks  <i class="fas fa-mug-hot"></i>
-      <% end %>
+    <div class="container-landing">
+      <div class="card-landing">
+        <div class="btn-landing">
+          <%= link_to meals_path(tag: 'Drinks') do %>
+            <i class="fas fa-mug-hot"></i><br>
+          <% end %>
+        </div>
+        <p>Drinks Only</p>
+      </div>
+
+      <div class="card-landing">      
+       <!-- <div class="btn btn-secondary"> -->
+        <div class="btn-landing">
+          <%= link_to meals_path(tag: 'Food') do %>
+            <i class="fas fa-utensils"></i><br>
+          <% end %>
+        </div>
+        <p>I'm Hungry!</p>
+      </div>
     </div>
   </div>
 </div>
