@@ -1,18 +1,24 @@
-
 .rating {
   display: grid;
   justify-content: center;
   text-align: center;
+  box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, .2);
 }
 
 .rating img {
   margin: 0;
   padding: 0;
-  box-shadow:  -3px -3px 5px #823520,
-                  3px 3px 5px #f6653e;
 }
 
 .rating-icon {
   display: flex;
   justify-content: space-between;
+  font-size: 3em;
+}
+
+.rating-icon-design{
+  border: none;
+  color: $primary-brand-color;
+  background-color: white;
+  margin-top: 4px;
 }
