@@ -51,8 +51,9 @@ const initMapbox = () => {
       icon.className = 'marker';
       icon.style.backgroundImage = `url('${marker.image_url}')`;
       icon.style.backgroundSize = 'contain';
-      icon.style.width = '25px';
-      icon.style.height = '25px';
+      icon.style.width = '35px';
+      icon.style.height = '35px';
+      icon.style.backgroundRepeat = 'no-repeat';
       new mapboxgl.Marker(icon)
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);

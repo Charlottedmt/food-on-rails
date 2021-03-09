@@ -1,7 +1,81 @@
+.dashboard-score {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 90%;
+  height: 72px;
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 24px auto;
+  padding-top: 3%;
+  padding-right: 14px; 
+  box-shadow: 2px 2px 9px rgba(0,0,0,0.2);
+  p {
+    color: $primary-brand-color;
+    font-size: 17px;
+  }
+  .average-score {
+  background-color: $primary-brand-color;
+  border-radius: 50px;
+  width: 56px;
+  height: 56px;
+  text-align: center;
+  color: white;
+  margin-left: 3%;
+  padding-top: 3%;
+  font-size: 24px;
+  }
+}
+
 .dashboard-top {
   display: flex;
-  margin-bottom: 16px;
-  justify-content: center;  
+  justify-content: space-between;
+  margin: 0 16px;
+  background-color: $primary-brand-color;
+  opacity: 92%;
+  border-radius: 16px;
+  box-shadow: 2px 2px 9px rgba(0,0,0,0.2);
+  padding-top: 8px;
+}
+
+.score-last-month {
+  text-align: center;
+  
+  width: 184px;
+  i {
+    font-size: 56px;
+    color: white;
+  }
+  h4 {
+    color: white;
+    padding-top: 2px;
+    margin-bottom: -1px;
+  }
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+  }
+}
+
+.score-current-month {
+  text-align: center;
+  
+  width: 184px;
+  i {
+    font-size: 56px;
+    color: white;
+  }
+  h4 {
+    color: white;
+    padding-top: 2px;
+    margin-bottom: -1px;
+  }
+  p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    color: white;
+  }
 }
 
 #chart_div {
