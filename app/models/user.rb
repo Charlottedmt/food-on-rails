@@ -9,4 +9,5 @@ class User < ApplicationRecord
   # validates :weight, presence: true
   # validates :goal, presence: true
   has_many :choices
+  has_many :meals, through: :choices
 end
