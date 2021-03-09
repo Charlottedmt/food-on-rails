@@ -7,24 +7,20 @@ class MealsController < ApplicationController
     if params[:tag] == 'Drinks'
       @meals = @meals.tagged_with(params[:tag])
       if params[:query].present?
-        search(@meals, params[:query])
+        @meals = search(@meals, params[:query])
         @meals = @meals.sort_by { |meal| -meal.score }.first(3)
-
       else
         @meals = @meals.sort_by { |meal| -meal.score }.first(3)
         @user = current_user
-
       end
     else
       @meals = @meals.tagged_with('Drinks', :exclude => true)
       if params[:query].present?
-        search(@meals, params[:query])
+        @meals = search(@meals, params[:query])
         @meals = @meals.sort_by { |meal| -meal.score }.first(3)
-
       else
         @meals = @meals.sort_by { |meal| -meal.score }.first(3)
         @user = current_user
-
       end
     end
     @current_position =

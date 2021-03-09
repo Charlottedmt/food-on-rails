@@ -6,17 +6,17 @@
 <h2 style="margin-bottom: 16px; text-align: center;">Dashboard</h2>
 <div class="dashboard-score">
   <p>average score:</p>
-  <p class="average-score">83</p>
+  <p class="average-score"><%= @average_score.to_i %></p>
 </div>
 <div class="dashboard-top">
   <div class="score-last-month">
-    <i class="fas fa-long-arrow-alt-down"></i>
-    <h4><strong>-7 points</strong></h4>
+    <i class="fas <%= get_dashboard_arrow(@last_month, @current_month) %>"></i>
+    <h4><strong><%= get_dashboard_score(@last_month, @current_month) %></strong></h4>
     <p>last month</p>
   </div>
   <div class="score-current-month">
-    <i class="fas fa-long-arrow-alt-up"></i>
-    <h4><strong>+22 points</strong></h4>
+    <i class="fas <%= get_dashboard_arrow(@last_month, @current_month) %>"></i>
+    <h4><strong><%= get_dashboard_score(@last_month, @current_month) %></strong></h4>
     <p>current month</p>
   </div>
 </div>
@@ -28,14 +28,16 @@
         <img src="https://static.thenounproject.com/png/1180285-200.png" alt="calorie icon">
       </div>
       <p>Calories saved</p>
-      <h4><strong>2634 kcal</strong></h4>
+      <h4><strong><%= @calories.round(1) %> kcal</strong></h4>
+      <%= @bike %> minutes of bicycling
     </div>
     <div class="result-cards col-6">
       <div class="result-icon">
         <img src="https://image.flaticon.com/icons/png/512/2599/2599597.png" alt="fat-icon">
       </div>
       <p>Fat saved</p>
-      <h4><strong>500 grams</strong></h4>
+      <h4><strong><%= @fat.round(1) %> grams</strong></h4>
+      <%= @pizza %> whole pizzas
     </div>
   </div>
   <div class="row">
@@ -44,14 +46,16 @@
         <img src="https://img.icons8.com/ios/452/salt-bae.png" alt="salt-bae">
       </div>
       <p>Sodium saved</p>
-      <h4><strong>37 grams</strong></h4>
+      <h4><strong><%= @sodium.round(1) %> grams</strong></h4>
+      <%= @salt %> table spoons of salt
     </div>
     <div class="result-cards col-6">
       <div class="result-icon">
         <img src="https://icon-library.com/images/muscles_gym_training_protein-512.png" alt="protein-icon">
       </div>
       <p>Protein gained</p>
-      <h4><strong>50 grams</strong></h4>
+      <h4><strong><%= @proteins.round(1) %> grams</strong></h4>
+      <%= @egg %> eggs
     </div>
   </div>
 </div>
