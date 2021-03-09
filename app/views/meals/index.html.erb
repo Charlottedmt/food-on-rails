@@ -6,21 +6,15 @@
 </div>
 <div class="container">
   <div class="container-body">
-    <div class="center-text">
-      <!--
-      <%# <h2>Hi <%= current_user.username %> &#128075;</h2>
-      <h3>Here are your suggestions!</h3>
-    -->
-    </div>
     <div class="form-preferences">
-      <i> Want to eat something in particular ? </i>
+      <i> Want to eat something in particular? </i>
       <%= form_tag meals_path, method: :get do %>
         <div class="form-meal">
           <%= text_field_tag :query,
           params[:query],
           class: "form-control",
           placeholder: "Burger, salad, chicken, fish..."
-        %>
+          %>
           <%= submit_tag "Search", class: "btn btn-primary" %>
         </div>
       <% end %>
@@ -29,10 +23,9 @@
       <% @meals.each do |meal| %>
         <div class="card-choice">
           <%= cl_image_tag meal.photo.key, height: 80, width: 80, crop: :pad %>
-          <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
           <div class="card-choice-description">
-            <h3><%= meal.name %></h3>
-            <p><%= meal.restaurant.name %></p>
+            <h3 class="heavy-text"><%= meal.name %></h3>
+            <p class="light-text"><%= meal.restaurant.name %></p>
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-middle">
@@ -40,8 +33,6 @@
             <i class="<%= get_score_class(meal.score) %> fas fa-<%= get_score_icon(meal.score) %>"></i>
           </div>
           <div class="card-choice-right">
-            <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
-            <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
             <%= simple_form_for [ meal, @choice ] do |f| %>
               <%=  hidden_field_tag :lat, nil, class: "hidden-lat" %>
               <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
