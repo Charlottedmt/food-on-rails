@@ -2,7 +2,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">How was your meal ?</h5>
+        <h4 class="modal-title" id="exampleModalLabel">How was your meal ?</h4>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -10,17 +10,17 @@
       <div class="modal-body rating">
         <h2><%= choice.meal.name %></h2>
         <br>
-        <%= cl_image_tag choice.meal.photo.key, height: 110, width: 110, padding: 0, crop: :pad %>
+        <%= cl_image_tag choice.meal.photo.key, height: 200, width: 200, padding: 0, crop: :pad %>
         <div class="modal-space rating-icon">
           <%= simple_form_for (choice) do |f| %>
             <%= f.input :rating, as: :text, label: false, input_html: {hidden: true, value: :dislike} %>
-            <%= button_tag type: 'submit' do %>
-              <i class="far fa-thumbs-up"></i>
+            <%= button_tag type: 'submit', class:"rating-icon-design" do %>
+                <i class="far fa-thumbs-up "></i>
             <% end %>
           <% end %>
           <%= simple_form_for (choice) do |f| %>
             <%= f.input :rating, as: :text, label: false, input_html: {hidden: true, value: :like} %>
-            <%= button_tag type: 'submit' do %>
+            <%= button_tag type: 'submit', class:"rating-icon-design" do %>
               <i class="far fa-thumbs-down"></i>
             <% end %>
           <% end%>
