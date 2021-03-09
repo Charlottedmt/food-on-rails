@@ -13,6 +13,7 @@ require "open-uri"
 puts "Destroying all restaurants & meals..."
 Restaurant.destroy_all
 Meal.destroy_all
+
 addresses = {
   "Coco Ichibanya" => ["1-4-9 Meguro, Meguro City, Tokyo"],
   "Seven Eleven" => ["2-2-11 Shimomeguro, Meguro City, Tokyo"],
@@ -30,7 +31,6 @@ filepath    = 'lib/nutrition_info.csv'
 CSV.foreach(filepath, csv_options) do |row|
   puts "Finding restaurant...thanks to Doug's advice..."
   restaurant = Restaurant.where(name: row['Restaurant']).first_or_create!
-  puts "Creating meal..."
   file = URI.open(row['Image_url'])
   restaurant_file = URI.open(row['logo_url'])
   # if statement to assign correct value for filename & content_type
@@ -55,7 +55,6 @@ CSV.foreach(filepath, csv_options) do |row|
     logo_photo_filename = 'nes.svg'
     logo_photo_content_type = 'image/svg'
   end
-
   meal = Meal.new(
     name: row['Meal'],
     calories: row['Calories'],
@@ -72,6 +71,7 @@ CSV.foreach(filepath, csv_options) do |row|
   meal.photo.attach(io: file, filename: photo_filename, content_type: photo_content_type)
   restaurant.photo.attach(io: restaurant_file, filename: logo_photo_filename, content_type: logo_photo_content_type)
   meal.save!
+  puts "Creating meal #{meal.id}..."
 end
 puts "Retrieving Address Log..."
 Restaurant.all.each do |restaurant|
@@ -80,6 +80,29 @@ Restaurant.all.each do |restaurant|
     Location.where(address: address, restaurant: restaurant).first_or_create!
   end
 end
+
+puts "Creating default user..."
+admin = User.first_or_create!(
+  email: "admin@foodonrails.com",
+  password: "password"
+)
+puts "User created and retrieving last month's data..."
+
+udon = Meal.where(name: "Tsukimi-Wakame Udon").first
+
+4.times do
+  Choice.create!(
+    user: admin,
+    meal: udon
+  )
+end
+
+Choice.all.each do |choice|
+  choice.created_at = Date.new(2021, 02, 01)
+  choice.save!
+end
+
+puts "Last month's choices retrieved"
 # After restaurants are created, insert the value into the approriate key
 # e.g. Cocoichiban has address "123 Address", so if restaurant is created with name "Cocoichiban", then insert address into it
 puts "All meals added!"

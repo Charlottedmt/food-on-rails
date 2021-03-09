@@ -133,7 +133,7 @@
   position: relative;
   margin: 4px;
   width: 112px;
-  height: 112px;
+  height: 160px;
   border-radius: 6%;
 }
 
@@ -144,21 +144,21 @@
 .result-icon img[src*="https://image.flaticon.com/icons/png/512/2599/2599597.png"] {
   width: 40px;
   height: auto;
-  bottom: 80%;
+  bottom: 87%;
   right: 37%;
 }
 
 .result-icon img[src*="https://img.icons8.com/ios/452/salt-bae.png"] {
   width: 40px;
   height: auto;
-  bottom: 80%;
+  bottom: 87%;
   right: 38%;
 }
 
 .result-icon img[src*="https://icon-library.com/images/muscles_gym_training_protein-512.png"] {
   width: 40px;
   height: auto;
-  bottom: 80%;
+  bottom: 87%;
   right: 38%;
 }
 
@@ -166,7 +166,7 @@
   position: absolute;
   width: 64px;
   height: auto;
-  bottom: 74%;
+  bottom: 81%;
   right: 32%;
   // filter: grayscale(100%);
   filter: invert(54%) sepia(48%) saturate(3994%) hue-rotate(337deg) brightness(104%) contrast(101%);
