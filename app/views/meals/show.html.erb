@@ -4,33 +4,29 @@
     <%= cl_image_tag @meal.photo.key, crop: :fill %>
     <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
     <h2><%= @meal.name%></h2>
-    <p><%= @meal.restaurant.name %></p>
-    <div class="card-choice-right">
+    <div class="meals-show-form">
       <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
       <%= simple_form_for [ @meal, @choice ] do |f| %>
         <%= f.association :meal, as: :hidden, input_html: { value: @meal.id }%>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-        <%= f.submit "GO", class: "btn btn-primary" %>
+        <%= f.submit "GO", class: "show-btn btn-primary" %>
       <% end %>
       <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
       <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
     </div>
+    <%= cl_image_tag @meal.restaurant.photo.key, crop: :fill, class: "show-restaurant"%>
   </div>
   <hr>
   <div class="container-nutritional-info">
     <div class="container-calories-graphs">
-      <h3 class="center-text">Calories</h3>
-      <%= pie_chart [["Current Meal", @meal.calories], ["Calories in a Day", 2000 - @meal.calories]], colors: [ '#FF673B', '#FFF0EB' ], suffix: " kcal", legend: "bottom" %>
+      <h3 class="center-text">Recommended Calories Per Day</h3>
+      <%= pie_chart [["This Meal", @meal.calories], ["Remaining Calories", 2000 - @meal.calories]], colors: [ '#FF673B', '#FFF0EB' ], suffix: " kcal", legend: "bottom" %>
     </div>
     <div class="container-macros-graphs">
       <h3 class="center-text">Nutrients</h3>
       <%# library => { :series => { 0 => { color: "red" } } %>
       <%# <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], suffix: " grams", scales: {display: false, yAxes: [{ticks: {autoSkip: false}}]} %>
-      <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Sodium", data: {Sodium: @meal.sodium}}], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], suffix: " grams", legend: false %>
+      <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Sodium", data: {Sodium: @meal.sodium}}], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], library: { scales: { yAxes: [{ gridLines: { display: false } }]}}, suffix: " grams", legend: false %>
     </div>
-  </div>
-  <div>
-    <h1>To Delete</h1>
-    <p>adding text to show graphs better</p>
   </div>
 </div>

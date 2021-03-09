@@ -17,6 +17,7 @@ module ScoreHelper
       return "caret-down"
     end
   end
+
   def get_dashboard_score(score)
   end
 end

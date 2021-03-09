@@ -14,15 +14,15 @@ puts "Destroying all restaurants & meals..."
 Restaurant.destroy_all
 Meal.destroy_all
 addresses = {
-  "Coco Ichibanya" => ["1 Chome-4-9 Meguro, Meguro City, Tokyo"],
-  "Seven Eleven" => ["1 Chome-3-1 Shimomeguro, Meguro City, Tokyo"],
-  "McDonalds" => ["2 Chome-15-17 Kamiosaki, Shinagawa City, Tokyo"],
-  "Starbucks" => ["2 Chome-16-9 Kamiosaki, Shinagawa City, Tokyo"],
-  "Lawson" => ["3 Chome-9-1 Meguro, Meguro City, Tokyo"],
+  "Coco Ichibanya" => ["1-4-9 Meguro, Meguro City, Tokyo"],
+  "Seven Eleven" => ["1-3-1 Shimomeguro, Meguro City, Tokyo"],
+  "McDonalds" => ["2-12-19 Yutenji, Meguro City, Tokyo"],
+  "Starbucks" => ["2-16-9 Kamiosaki, Shinagawa City, Tokyo"],
+  "Lawson" => ["3-9-1 Meguro, Meguro City, Tokyo"],
   # not actual restauraunt addresses from here, just close to HUB
-  "Denny's" => ["2 Chome−11−9 Meguro, Meguro City, Tokyo"],
-  "Burger King" => ["2 Chome−11−8 Meguro, Meguro City, Tokyo"],
-  "Freshness Burger" => ["2 Chome-10-4 Meguro, Meguro City, Tokyo"]
+  "Denny's" => ["2−11−9 Meguro, Meguro City, Tokyo"],
+  "Burger King" => ["2−11−8 Meguro, Meguro City, Tokyo"],
+  "Freshness Burger" => ["2-10-4 Meguro, Meguro City, Tokyo"]
 }
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 filepath    = 'lib/nutrition_info.csv'
@@ -74,7 +74,7 @@ CSV.foreach(filepath, csv_options) do |row|
 end
 puts "Retrieving Address Log..."
 Restaurant.all.each do |restaurant|
-  next unless addresses.key?(restaurant.name)
+  next unless addresses.key?(restaurant.name) #skip
   addresses[restaurant.name].each do |address|
     Location.where(address: address, restaurant: restaurant).first_or_create!
   end
