@@ -29,8 +29,4 @@
       <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Sodium", data: {Sodium: @meal.sodium}}], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], library: { scales: { yAxes: [{ gridLines: { display: false } }]}}, suffix: " grams", legend: false %>
     </div>
   </div>
-  <div>
-    <h1>To Delete</h1>
-    <p>adding text to show graphs better</p>
-  </div>
 </div>
