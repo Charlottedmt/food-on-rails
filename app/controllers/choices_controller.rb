@@ -29,7 +29,8 @@ class ChoicesController < ApplicationController
   def update
     @choice = Choice.find(params[:id])
     @choice.update(choices_params)
-    redirect_to dashboard_path
+    authorize @choice
+    redirect_to root_path
   end
 
   def choices_params

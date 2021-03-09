@@ -3,5 +3,6 @@ class PagesController < ApplicationController
 
   def home
     @meals = Meal.all
+    @choices = current_user.choices
   end
 end
