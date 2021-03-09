@@ -1,3 +1,11 @@
+<% @choices.each do |choice| %>
+  <% if choice.unrated? %>
+  <% "it's inside"%>
+  <%# <button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> %>
+  <%= render 'shared/modal_rating',  :choice => choice %>
+  <% end %>
+<% end %>
+
 <div class="body">
   <div>
     <h2>Food on Rails</h2>

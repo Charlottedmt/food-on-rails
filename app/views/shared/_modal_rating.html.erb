@@ -1,0 +1,32 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">How was your meal ?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body rating">
+        <h2><%= choice.meal.name %></h2>
+        <br>
+        <%= cl_image_tag choice.meal.photo.key, height: 110, width: 110, padding: 0, crop: :pad %>
+        <div class="modal-space rating-icon">
+          <%= simple_form_for (choice) do |f| %>
+            <%= f.input :rating, as: :text, label: false, input_html: {hidden: true, value: :dislike} %>
+            <%= button_tag type: 'submit' do %>
+              <i class="far fa-thumbs-up"></i>
+            <% end %>
+          <% end %>
+          <%= simple_form_for (choice) do |f| %>
+            <%= f.input :rating, as: :text, label: false, input_html: {hidden: true, value: :like} %>
+            <%= button_tag type: 'submit' do %>
+              <i class="far fa-thumbs-down"></i>
+            <% end %>
+          <% end%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
