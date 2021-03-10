@@ -26,9 +26,6 @@
           <div class="card-choice-description">
             <h3 class="heavy-text"><%= meal.name %></h3>
             <p class="light-text"><%= meal.restaurant.name %></p>
-            <%= carb_cutoff_score(meal.carbohydrates) %>
-            <%= carb_ratio_score(meal.carbohydrates, meal.calories) %>
-            <%= carb_bonus_score(meal.carbohydrates) %>
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-middle">
