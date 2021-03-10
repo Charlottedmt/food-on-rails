@@ -1,5 +1,6 @@
 .loader{
   position: fixed;
+  opacity: 1;
   width: 100vw;
   height: 100vh;
   top: 0;
@@ -7,8 +8,10 @@
   background-color:$primary-brand-color;
   z-index: 2;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 
   p {
     color: white;
@@ -21,7 +24,9 @@
 }
 
 .loader.loaded{
-  animation: disappear 2s 2s forwards;
+  opacity: 0;
+  z-index: -1;
+  transition: 2s 4s;
 }
 
 @keyframes disappear {
@@ -33,3 +38,17 @@
     z-index: -1;
   }
 }
+
+.spinner {
+  animation: spin 5s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotateZ(0);
+  }
+  100% {
+    transform: scaleZ(360deg);
+  }
+}
+

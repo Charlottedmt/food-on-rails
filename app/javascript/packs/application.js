@@ -33,13 +33,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { drawChart } from '../components/gauge';
 import { drawChart2 } from '../components/gauge';
 import { drawChart3 } from '../components/gauge';
-import { openBootstrapModal } from '../controllers/open_bootstrap_modal'
-import { initLoader } from '../components/loader'
+import { openBootstrapModal } from '../controllers/open_bootstrap_modal';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
-  initLoader();
   initMapbox();
   google.charts.load('current', { 'packages': ['gauge'] });
   google.charts.setOnLoadCallback(drawChart);
