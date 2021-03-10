@@ -2,7 +2,7 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
 
   def index
-    @meals = policy_scope(Meal).where.not(sodium: nil)
+    @meals = policy_scope(Meal)
     @choice = Choice.new
     if params[:tag] == 'Drinks'
       @switch = true

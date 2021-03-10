@@ -1,4 +1,4 @@
-<%= render 'shared/loading' %>
+<%#= render 'shared/loading'> %>
 <div id="map"
      data-markers="<%= @markers.to_json %>"
      data-current_position="<%= @current_position.to_json %>"
@@ -22,7 +22,7 @@
     <div class="cards-choice">
       <% @meals.first(3).each do |meal| %>
         <div class="card-choice">
-          <%= cl_image_tag meal.photo.key, height: 80, width: 80, crop: :pad %>
+          <%= cl_image_tag(meal.photo.key, height: 80, width: 80, crop: :pad) if meal.photo.attached? %>
           <div class="card-choice-description">
             <h3 class="heavy-text"><%= meal.name %></h3>
             <p class="light-text"><%= meal.restaurant.name %></p>
@@ -59,7 +59,7 @@
       <div class="cards-choice hidden" data-load-target="cards">
         <% @meals.drop(3).each do |meal| %>
           <div class="card-choice">
-            <%= cl_image_tag meal.photo.key, height: 80, width: 80, crop: :pad %>
+            <%= cl_image_tag(meal.photo.key, height: 80, width: 80, crop: :pad) if meal.photo.attached? %>
             <div class="card-choice-description">
               <h3 class="heavy-text"><%= meal.name %></h3>
               <p class="light-text"><%= meal.restaurant.name %></p>
