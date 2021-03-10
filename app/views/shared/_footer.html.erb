@@ -1,13 +1,13 @@
 <footer>
   <div class="nav-icon-align">
-    <div> <%= link_to root_path do%>
-      <i class="fas fa-hamburger"></i>
-    <% end %></div>
     <div data-controller="geolocation"> <%= link_to meals_path, data: { geolocation_target: "link" } do%>
       <div><i class="fas fa-map-marker-alt"></i></div>
     <% end %></div>
+    <div> <%= link_to root_path do%>
+      <i class="fas fa-hamburger"></i>
+    <% end %></div>
     <div> <%= link_to dashboard_path do%>
-      <div><i class="fas fa-user-circle"></i></div>
+      <div><i class="fas fa-chart-line"></i></div>
     <% end %></div>
   </div>
 </footer>
