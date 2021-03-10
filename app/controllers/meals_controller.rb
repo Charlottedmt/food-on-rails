@@ -2,33 +2,33 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
 
   def index
-    @meals = policy_scope(Meal) #.where.not(sodium: nil)
+    @meals = policy_scope(Meal).where.not(sodium: nil)
     @choice = Choice.new
     if params[:tag] == 'Drinks'
       @meals = @meals.tagged_with(params[:tag])
       if params[:query].present?
         @meals = search(@meals, params[:query])
-        @meals = @meals.sort_by { |meal| -meal.score }.first(20)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(20)
       else
-        @meals = @meals.sort_by { |meal| -meal.score }.first(20)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(20)
         @user = current_user
       end
     else
-      @meals = @meals.tagged_with('Drinks', :exclude => true)
+      @meals = @meals.tagged_with('Drinks', exclude: true)
       if params[:query].present?
         @meals = search(@meals, params[:query])
-        @meals = @meals.sort_by { |meal| -meal.score }.first(20)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(20)
       else
-        @meals = @meals.sort_by { |meal| -meal.score }.first(20)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(20)
         @user = current_user
       end
     end
     @current_position =
-    {
-      lat: params['lat'].to_f,
-      lng: params['lon'].to_f,
-      image_url: helpers.asset_url('user_position.png')
-    }
+      {
+        lat: params['lat'].to_f,
+        lng: params['lon'].to_f,
+        image_url: helpers.asset_url('user_position.png')
+      }
     @locations = Location.joins(:meals).where(meals: { id: @meals })
     @markers = @locations.geocoded.map do |location|
       {
