@@ -29,6 +29,7 @@ class Meal < ApplicationRecord
     end
   end
 
+  # For meal show column graph
   def calorie_cutoffs
     case calories
     when 0...400 then :'#246A73'
@@ -69,8 +70,8 @@ class Meal < ApplicationRecord
     end
   end
 
-  # Food on Rails top secret special food score algorithm
-
+  # Food on Rails top secret special food & drink score algorithm
+  # FOOD SCORES
   # CALORIES
   def calories_cutoff_score
     @cutoff_score = 0
@@ -191,5 +192,117 @@ class Meal < ApplicationRecord
   # TOTAL SCORE
   def food_score
     (sodium_cutoff_score + calories_cutoff_score + carb_score + protein_score + fat_score).round
+  end
+
+  # DRINK SCORES
+
+  # CALORIES
+  def drink_calories_cutoff_score
+    @cutoff_score = 0
+    if calories < 100
+      return @cutoff_score + 30
+    elsif calories > 200
+      return @cutoff_score
+    else
+      return @cutoff_score + 15
+    end
+  end
+
+  # SODIUM
+  def drink_sodium_cutoff_score
+    @cutoff_score = 0
+    if sodium < 1
+      return @cutoff_score + 10
+    elsif sodium > 2
+      return @cutoff_score
+    else
+      return @cutoff_score + 5
+    end
+  end
+
+  # CARBS
+  def drink_carb_ratio_score
+    @ratio_score = 0
+    if ((carbohydrates * 4) / calories) * 100 > 65
+      return @ratio_score
+    elsif ((carbohydrates * 4) / calories) * 100 < 45
+      return @ratio_score + 3
+    else
+      return @ratio_score + 5
+    end
+  end
+
+  def drink_carb_bonus_score
+    @bonus_score = 0
+    if (5..10).cover?(carbohydrates)
+      return @bonus_score + 10 + (10 - carbohydrates)
+    elsif carbohydrates > 10
+      return @bonus_score
+    else
+      return @bonus_score + 20
+    end
+  end
+
+  def drink_carb_score
+    return drink_carb_bonus_score + drink_carb_ratio_score
+  end
+
+  # FAT
+  def drink_fat_ratio_score
+    @ratio_score = 0
+    if ((fat * 9) / calories) * 100 > 35
+      return @ratio_score
+    elsif ((fat * 9) / calories) * 100 < 20
+      return @ratio_score + 3
+    else
+      return @ratio_score + 5
+    end
+  end
+
+  def drink_fat_bonus_score
+    @bonus_score = 0
+    if (1..3).cover?(fat)
+      return @bonus_score + 10 + ((3 - fat) * 2)
+    elsif fat < 1
+      return @bonus_score + 20
+    else
+      return @bonus_score
+    end
+  end
+
+  def drink_fat_score
+    return drink_fat_bonus_score + drink_fat_ratio_score
+  end
+
+  # PROTEIN
+  def drink_protein_ratio_score
+    @ratio_score = 0
+    if ((proteins * 4) / calories) * 100 < 10
+      return @ratio_score
+    elsif ((proteins * 4) / calories) * 100 > 35
+      return @ratio_score + 3
+    else
+      return @ratio_score + 5
+    end
+  end
+
+  def drink_protein_bonus_score
+    @bonus_score = 0
+    if (1..5).cover?(proteins)
+      return @bonus_score + (proteins - 1)
+    elsif proteins > 5
+      return @bonus_score + 5
+    else
+      return @bonus_score
+    end
+  end
+
+  def drink_protein_score
+    return drink_protein_bonus_score + drink_protein_ratio_score
+  end
+
+  # TOTAL SCORE
+  def drink_score
+    (drink_sodium_cutoff_score + drink_calories_cutoff_score + drink_carb_score + drink_protein_score + drink_fat_score).round
   end
 end
