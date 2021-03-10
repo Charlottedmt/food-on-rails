@@ -9,6 +9,16 @@ module ScoreHelper
     end
   end
 
+  def get_score_background(score)
+    if score > 70
+      return "rgba(152, 224, 154, 0.2)"
+    elsif (51..70).cover?(score)
+      return "rgba(244, 240, 195, 0.9)"
+    else
+      return "rgba(237, 83, 85,0.2)"
+    end
+  end
+
   def get_score_icon(score)
     if score > 70
       return "caret-up"

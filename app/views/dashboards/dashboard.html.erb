@@ -3,9 +3,9 @@
   <%# <button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> %>
   <%= render 'shared/modal_google', :choice => @choice, :current_position => @current_position %>
 <%end%>
-<h2 style="margin-bottom: 16px; text-align: center;">Dashboard</h2>
+<h2 style="margin: 16px 0; text-align: center;">Dashboard</h2>
 <div class="dashboard-score">
-  <p>average score:</p>
+  <p>Average Score</p>
   <p class="average-score"><%= @average_score.to_i %></p>
 </div>
 <div class="dashboard-top">

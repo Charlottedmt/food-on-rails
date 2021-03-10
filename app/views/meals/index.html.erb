@@ -1,10 +1,10 @@
+<%= render 'shared/loading' %>
 <div id="map"
-     <%# style="width: 100%; height: 600px;" %>
      data-markers="<%= @markers.to_json %>"
      data-current_position="<%= @current_position.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
-<div class="container">
+<div class="container container-meal-index">
   <div class="container-body">
     <div class="form-preferences">
       <i> Want to eat something in particular? </i>
@@ -20,7 +20,7 @@
       <% end %>
     </div>
     <div class="cards-choice">
-      <% @meals.each do |meal| %>
+      <% @meals.first(3).each do |meal| %>
         <div class="card-choice">
           <%= cl_image_tag meal.photo.key, height: 80, width: 80, crop: :pad %>
           <div class="card-choice-description">
@@ -29,8 +29,13 @@
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-middle">
-            <p class="index-score <%= get_score_class(meal.score) %>"><%= meal.score %></p>
-            <i class="<%= get_score_class(meal.score) %> fas fa-<%= get_score_icon(meal.score) %>"></i>
+            <% if @switch.nil? %>
+              <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
+              <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+            <% else %>
+              <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
+              <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
+            <% end %>
           </div>
           <div class="card-choice-right">
             <%= simple_form_for [ meal, @choice ] do |f| %>
@@ -38,12 +43,49 @@
               <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
               <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
               <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-              <%= f.submit "GO", class: "btn btn-primary"%>
+              <%= button_tag "GO", type: :submit, class: "btn btn-primary" do %>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>GO</p>
+              <% end %>
             <% end %>
             <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
           </div>
         </div>
       <% end %>
+    </div>
+    <div class="more-card-choices" data-controller="load">
+      <button class="btn" data-load-target="button" data-action="click->load#loadMore">More</button>
+      <div class="cards-choice hidden" data-load-target="cards">
+        <% @meals.drop(3).each do |meal| %>
+          <div class="card-choice">
+            <%= cl_image_tag meal.photo.key, height: 80, width: 80, crop: :pad %>
+            <div class="card-choice-description">
+              <h3 class="heavy-text"><%= meal.name %></h3>
+              <p class="light-text"><%= meal.restaurant.name %></p>
+              <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
+            </div>
+            <div class="card-choice-middle">
+                        <% if @switch.nil? %>
+              <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
+              <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+            <% else %>
+              <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
+              <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
+            <% end %>
+            </div>
+            <div class="card-choice-right">
+              <%= simple_form_for [ meal, @choice ] do |f| %>
+                <%=  hidden_field_tag :lat, nil, class: "hidden-lat" %>
+                <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
+                <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
+                <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
+                <%= f.submit "GO", class: "btn btn-primary"%>
+              <% end %>
+              <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
+            </div>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

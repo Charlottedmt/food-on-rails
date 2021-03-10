@@ -1,13 +1,30 @@
 <footer>
   <div class="nav-icon-align">
-    <div> <%= link_to root_path do%>
-      <i class="fas fa-hamburger"></i>
-    <% end %></div>
+    <!-- removing locate button from footer
     <div data-controller="geolocation"> <%= link_to meals_path, data: { geolocation_target: "link" } do%>
       <div><i class="fas fa-map-marker-alt"></i></div>
     <% end %></div>
-    <div> <%= link_to dashboard_path do%>
-      <div><i class="fas fa-user-circle"></i></div>
-    <% end %></div>
+    -->
+    <div>
+      <% if user_signed_in? %>
+        <%= link_to destroy_user_session_path, method: :delete do %>
+          <i class="fas fa-door-closed"></i>
+        <% end %>
+      <% else %>
+        <%= link_to new_user_session_path do %>
+          <i class="fas fa-door-open"></i>
+        <% end %>
+      <% end %>
+    </div>
+    <div> 
+      <%= link_to root_path do%>
+        <i class="fas fa-hamburger"></i>
+      <% end %>
+    </div>
+    <div> 
+      <%= link_to dashboard_path do%>
+        <i class="fas fa-chart-line"></i>
+      <% end %>
+    </div>
   </div>
 </footer>
