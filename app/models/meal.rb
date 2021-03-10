@@ -16,6 +16,9 @@ class Meal < ApplicationRecord
   include PgSearch::Model
   pg_search_scope :search_by_preferences,
                   against: :name,
+                  associated_against: {
+                    restaurant: :name
+                   },
                   using: {
                     tsearch: { prefix: true } # <-- now `superman batm` will return something!
                   }
