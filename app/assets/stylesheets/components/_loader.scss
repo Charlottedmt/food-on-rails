@@ -4,15 +4,24 @@
   height: 100vh;
   top: 0;
   left: 0;
-  background-color: white;
+  background-color:$primary-brand-color;
   z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
+
+  p {
+    color: white;
+    font-size: 2rem
+  }
+  i {
+    color: white;
+    font-size: 5rem;
+  }
 }
 
 .loader.loaded{
-  animation: disappear 2s 0s forwards;
+  animation: disappear 2s 2s forwards;
 }
 
 @keyframes disappear {
