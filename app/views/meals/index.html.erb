@@ -28,9 +28,11 @@
             <p class="light-text"><%= meal.restaurant.name %></p>
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
-          <div class="card-choice-middle">
-            <p class="index-score <%= get_score_class(meal.score) %>"><%= meal.score %></p>
-            <i class="<%= get_score_class(meal.score) %> fas fa-<%= get_score_icon(meal.score) %>"></i>
+          <div class="card-choice-middle" style="background: <%= get_score_background(meal.score) %>;">
+            <div class="index-score">
+              <p class="<%= get_score_class(meal.score) %>"><%= meal.score %></p>
+              <i class="<%= get_score_class(meal.score) %> fas fa-<%= get_score_icon(meal.score) %>"></i>
+            </div>
           </div>
           <div class="card-choice-right">
             <%= simple_form_for [ meal, @choice ] do |f| %>
@@ -38,7 +40,10 @@
               <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
               <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
               <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-              <%= f.submit "GO", class: "btn btn-primary"%>
+              <%= button_tag "GO", type: :submit, class: "btn btn-primary" do %>
+                <i class="fas fa-map-marker-alt"></i>
+                <p>GO</p>
+              <% end %>
             <% end %>
             <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
           </div>
