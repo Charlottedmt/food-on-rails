@@ -8,9 +8,9 @@ class MealsController < ApplicationController
       @meals = @meals.tagged_with(params[:tag])
       if params[:query].present?
         @meals = search(@meals, params[:query])
-        @meals = @meals.sort_by { |meal| -meal.food_score }.first(20)
+        @meals = @meals.sort_by { |meal| -meal.drink_score }.first(20)
       else
-        @meals = @meals.sort_by { |meal| -meal.food_score }.first(20)
+        @meals = @meals.sort_by { |meal| -meal.drink_score }.first(20)
         @user = current_user
       end
     else
