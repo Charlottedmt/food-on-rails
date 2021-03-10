@@ -1,5 +1,6 @@
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
+import { initLoader } from '../components/loader';
 const addCoordToForm = (coordinates) => {
   const lats = document.querySelectorAll(".hidden-lat")
   lats.forEach((input) => {
@@ -43,6 +44,7 @@ const initMapbox = () => {
       console.log(markers);
       markers.forEach(marker => bounds.extend([marker.lng, marker.lat, current_position.longitude, current_position.latitude]));
       map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 });
+      initLoader();
     };
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
