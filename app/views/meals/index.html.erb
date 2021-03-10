@@ -26,6 +26,10 @@
           <div class="card-choice-description">
             <h3 class="heavy-text"><%= meal.name %></h3>
             <p class="light-text"><%= meal.restaurant.name %></p>
+            <%= protein_cutoff_score(meal.proteins) %>
+            <%= protein_ratio_score(meal.proteins, meal.calories) %>
+            <%= protein_bonus_score(meal.proteins) %>
+            <%= protein_cutoff_score(meal.proteins) + protein_ratio_score(meal.proteins, meal.calories) + protein_bonus_score(meal.proteins)%>
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-middle">
