@@ -5,6 +5,11 @@ $card-border-radius: 8px;
   width: 100%;
   display: grid;
 }
+
+.hidden {
+  display: none;
+}
+
 .card-choice{
   height: 100px;
   display: flex;
@@ -83,6 +88,19 @@ $card-border-radius: 8px;
   }
   p {
     
+  }
+}
+
+.more-card-choices {
+  position: relative;
+  .btn {
+    position: absolute;
+    margin-top: 4%;
+    right: 42%;
+    height: 40px;
+    width: 64px;
+    background-color: $primary-brand-color;
+    color: white;
   }
 }
 

@@ -1,9 +1,7 @@
-<% @choices.each do |choice| %>
-  <% if choice.unrated? %>
+<% if @choice&.unrated? %>
   <% "it's inside"%>
   <%# <button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> %>
-  <%= render 'shared/modal_rating',  :choice => choice %>
-  <% end %>
+  <%= render 'shared/modal_rating',  choice: @choice %>
 <% end %>
 
 <div class="body">
@@ -14,12 +12,12 @@
   </div>
     <div class="container-landing">
       <div class="card-landing">
-        <div class="btn-landing">
+        <div class="btn-landing btn-padding-left">
           <%= link_to meals_path(tag: 'Drinks') do %>
             <i class="fas fa-mug-hot"></i><br>
           <% end %>
         </div>
-        <p>Drinks Only</p>
+        <p>I'm Thirsty</p>
       </div>
 
       <div class="card-landing">      
@@ -29,7 +27,7 @@
             <i class="fas fa-utensils"></i><br>
           <% end %>
         </div>
-        <p>I'm Hungry!</p>
+        <p>I'm Hungry</p>
       </div>
     </div>
   </div>
