@@ -2,24 +2,24 @@ class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
 
   def index
-    @meals = policy_scope(Meal) # .where.not(sodium: nil)
+    @meals = policy_scope(Meal).where.not(sodium: nil)
     @choice = Choice.new
     if params[:tag] == 'Drinks'
       @meals = @meals.tagged_with(params[:tag])
       if params[:query].present?
         @meals = search(@meals, params[:query])
-        @meals = @meals.sort_by { |meal| -meal.score }.first(3)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(3)
       else
-        @meals = @meals.sort_by { |meal| -meal.score }.first(3)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(3)
         @user = current_user
       end
     else
       @meals = @meals.tagged_with('Drinks', exclude: true)
       if params[:query].present?
         @meals = search(@meals, params[:query])
-        @meals = @meals.sort_by { |meal| -meal.score }.first(3)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(3)
       else
-        @meals = @meals.sort_by { |meal| -meal.score }.first(3)
+        @meals = @meals.sort_by { |meal| -meal.food_score }.first(3)
         @user = current_user
       end
     end
