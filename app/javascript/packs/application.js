@@ -25,6 +25,7 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import "controllers"
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
@@ -32,10 +33,13 @@ import { initMapbox } from '../plugins/init_mapbox';
 import { drawChart } from '../components/gauge';
 import { drawChart2 } from '../components/gauge';
 import { drawChart3 } from '../components/gauge';
+import { openBootstrapModal } from '../controllers/open_bootstrap_modal'
+import { initLoader } from '../components/loader'
 
 document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
+  initLoader();
   initMapbox();
   google.charts.load('current', { 'packages': ['gauge'] });
   google.charts.setOnLoadCallback(drawChart);
@@ -43,8 +47,4 @@ document.addEventListener('turbolinks:load', () => {
   google.charts.setOnLoadCallback(drawChart3);
   openBootstrapModal();
 });
-
-import "controllers"
-
-import { openBootstrapModal } from '../controllers/open_bootstrap_modal'
 

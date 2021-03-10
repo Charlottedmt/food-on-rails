@@ -1,0 +1,26 @@
+.loader{
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  background-color: white;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader.loaded{
+  animation: disappear 2s 0s forwards;
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
