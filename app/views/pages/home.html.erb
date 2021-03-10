@@ -5,30 +5,32 @@
 <% end %>
 
 <div class="body">
+  <div class="content"></div>
+</div>
+<div class="body-2">
   <div>
-    <h2>Food on Rails</h2>
+    <h2>Food on <span class="color-red">R</span>ails</h2>
     <!-- <h4><em> Best of the Worst,<br>Healthy Choices for an<br>Unhealthy Situation</em></h4> -->
-    <h4>Healthy Choices<br> For <span class="color-orange">Un</span>healthy Situations.</h4>
+    <h4>Healthy Choices<br> For <span class="color-red">Un</span>healthy Situations.</h4>
   </div>
-    <div class="container-landing">
-      <div class="card-landing">
-        <div class="btn-landing btn-padding-left">
-          <%= link_to meals_path(tag: 'Drinks') do %>
-            <i class="fas fa-mug-hot"></i><br>
-          <% end %>
-        </div>
-        <p>I'm Thirsty</p>
+  <div class="container-landing">
+    <div class="card-landing">
+      <div class="btn-landing btn-padding-left">
+        <%= link_to meals_path(tag: 'Drinks') do %>
+          <i class="fas fa-mug-hot"></i><br>
+        <% end %>
       </div>
+      <p>I'm Thirsty</p>
+    </div>
 
-      <div class="card-landing">      
-       <!-- <div class="btn btn-secondary"> -->
-        <div class="btn-landing">
-          <%= link_to meals_path(tag: 'Food') do %>
-            <i class="fas fa-utensils"></i><br>
-          <% end %>
-        </div>
-        <p>I'm Hungry</p>
+    <div class="card-landing">      
+      <!-- <div class="btn btn-secondary"> -->
+      <div class="btn-landing">
+        <%= link_to meals_path(tag: 'Food') do %>
+          <i class="fas fa-utensils"></i><br>
+        <% end %>
       </div>
+      <p>I'm Hungry</p>
     </div>
   </div>
 </div>
