@@ -10,9 +10,10 @@
   padding: 8px 0;
   // padding-top: 3%;
   // padding-right: 14px; 
-  box-shadow: 2px 2px 9px rgba(0,0,0,0.2);
+  box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
+  background-color: $primary-brand-color;
   p {
-    color: $primary-brand-color;
+    color: white;
     font-size: 1.7rem;
     margin: 0;
   }
@@ -24,10 +25,11 @@
   height: 56px;
   align-items: center;
   justify-content: center;
-  color: white;
+  color: $primary-brand-color;
   margin-left: 3%;
   // padding-top: 3%;
   font-size: 24px;
+  background-color: white;
   }
 }
 
