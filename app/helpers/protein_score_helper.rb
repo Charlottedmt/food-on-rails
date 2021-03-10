@@ -1,4 +1,4 @@
-module FoodScoreHelper
+module ProteinScoreHelper
   def protein_cutoff_score(protein)
     @cutoff_score = 0
     if protein > 10
@@ -34,19 +34,5 @@ module FoodScoreHelper
     else
       return @bonus_score
     end
-  end
-
-  def get_score_class(score)
-    if score > 70
-      return "score-success"
-    elsif (51..70).cover?(score)
-      return "score-warning"
-    else
-      return "score-danger"
-    end
-  end
-
-  def score
-    @calorie_score + @fat_score + @sodium_score + @carbohydrates_score + @proteins_score
   end
 end
