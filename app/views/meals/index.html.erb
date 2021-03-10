@@ -29,8 +29,8 @@
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-middle">
-            <p class="index-score <%= get_score_class(meal.score) %>"><%= meal.score %></p>
-            <i class="<%= get_score_class(meal.score) %> fas fa-<%= get_score_icon(meal.score) %>"></i>
+            <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
+            <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
           </div>
           <div class="card-choice-right">
             <%= simple_form_for [ meal, @choice ] do |f| %>
