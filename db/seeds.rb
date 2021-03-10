@@ -45,61 +45,65 @@ end
 csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
 filepath    = 'lib/restaurant_logo.csv'
 CSV.foreach(filepath, csv_options) do |row|
-puts "Finding restaurant...thanks to Doug's advice..."
-restaurant = Restaurant.where(name: row['Restaurant']).first #.first_or_create!
-p restaurant
+  puts "Finding restaurant...thanks to Doug's advice..."
+  restaurant = Restaurant.where(name: row['Restaurant']).first #.first_or_create!
+  p restaurant
 #   puts "#{restaurant.name}"
 #   p row['logo_url']
 #   puts ""
-unless restaurant.photo.attached?
-  restaurant_file = URI.open(row['logo_url'])
-  logo_regex_jpg = /jpg/
-  logo_regex_png = /png/
-  if logo_regex_jpg.match(row['logo_url'])
-    logo_photo_filename = 'nes.jpg'
-    logo_photo_content_type = 'image/jpg'
-  elsif logo_regex_png.match(row['logo_url'])
-    logo_photo_filename = 'nes.png'
-    logo_photo_content_type = 'image/png'
-  else
-    logo_photo_filename = 'nes.svg'
-    logo_photo_content_type = 'image/svg'
+  unless restaurant.photo.attached?
+    restaurant_file = URI.open(row['logo_url'])
+    logo_regex_jpg = /jpg/
+    logo_regex_png = /png/
+    if logo_regex_jpg.match(row['logo_url'])
+      logo_photo_filename = 'nes.jpg'
+      logo_photo_content_type = 'image/jpg'
+    elsif logo_regex_png.match(row['logo_url'])
+      logo_photo_filename = 'nes.png'
+      logo_photo_content_type = 'image/png'
+    else
+      logo_photo_filename = 'nes.svg'
+      logo_photo_content_type = 'image/svg'
+    end
+    restaurant.photo.attach(io: restaurant_file, filename: logo_photo_filename, content_type: logo_photo_content_type)
   end
-  restaurant.photo.attach(io: restaurant_file, filename: logo_photo_filename, content_type: logo_photo_content_type)
 end
 
-#   # if statement to assign correct value for filename & content_type
-#   p row['Image_url']
-#   file = URI.open(row['Image_url'])
-#   regex_jpg = /jpg/
-#   if regex_jpg.match(row['Image_url'])
-#     photo_filename = 'nes.jpg'
-#     photo_content_type = 'image/jpg'
-#   else
-#     photo_filename = 'nes.png'
-#     photo_content_type = 'image/png'
-#   end
-#   puts "Creating meal..."
-
-
-#   meal = Meal.new(
-#     name: row['Meal'],
-#     calories: row['Calories'],
-#     proteins: row['Protein'],
-#     fat: row['Fat'],
-#     carbohydrates: row['Carbohydrates'],
-#     sodium: row['Sodium'],
-#     price: row['Price'],
-#     score: row['Food Score'],
-#     tag_list: row['Tags'],
-#     photo: row['Image_url']
-#   )
-#   meal.restaurant = restaurant
-#   meal.photo.attach(io: file, filename: photo_filename, content_type: photo_content_type)
-#   meal.save!
-#   puts "Creating meal #{meal.id}..."
-# end
-# puts "Retrieving Address Log..."
+csv_options = { col_sep: ',', quote_char: '"', headers: :first_row }
+filepath    = 'lib/nutrition_info.csv'
+CSV.foreach(filepath, csv_options) do |row|
+  puts "Finding restaurant...thanks to Doug's advice..."
+  restaurant = Restaurant.where(name: row['Restaurant']).first
+    # if statement to assign correct value for filename & content_type
+    p row['Image_url']
+    file = URI.open(row['Image_url'])
+    regex_jpg = /jpg/
+    if regex_jpg.match(row['Image_url'])
+      photo_filename = 'nes.jpg'
+      photo_content_type = 'image/jpg'
+    else
+    photo_filename = 'nes.png'
+    photo_content_type = 'image/png'
+  end
+  puts "Creating meal..."
+  meal = Meal.new(
+    name: row['Meal'],
+    calories: row['Calories'],
+    proteins: row['Protein'],
+    fat: row['Fat'],
+    carbohydrates: row['Carbohydrates'],
+    sodium: row['Sodium'],
+    price: row['Price'],
+    score: row['Food Score'],
+    tag_list: row['Tags'],
+    photo: row['Image_url']
+  )
+  meal.restaurant = restaurant
+  meal.photo.attach(io: file, filename: photo_filename, content_type: photo_content_type)
+  meal.save!
+  puts "Creating meal #{meal.id}..."
+end
+puts "Retrieving Address Log..."
 
 
 puts "Creating default user..."
@@ -121,7 +125,6 @@ end
 Choice.all.each do |choice|
   choice.created_at = Date.new(2021, 02, 01)
   choice.save!
-end
 end
 puts "Last month's choices retrieved"
 # After restaurants are created, insert the value into the approriate key
