@@ -29,8 +29,13 @@
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
           <div class="card-choice-middle">
-            <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
-            <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+            <% if @switch.nil? %>
+              <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
+              <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+            <% else %>
+              <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
+              <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
+            <% end %>
           </div>
           <div class="card-choice-right">
             <%= simple_form_for [ meal, @choice ] do |f| %>
@@ -57,8 +62,13 @@
               <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
             </div>
             <div class="card-choice-middle">
+                        <% if @switch.nil? %>
               <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
               <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+            <% else %>
+              <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
+              <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
+            <% end %>
             </div>
             <div class="card-choice-right">
               <%= simple_form_for [ meal, @choice ] do |f| %>

@@ -5,6 +5,7 @@ class MealsController < ApplicationController
     @meals = policy_scope(Meal).where.not(sodium: nil)
     @choice = Choice.new
     if params[:tag] == 'Drinks'
+      @switch = true
       @meals = @meals.tagged_with(params[:tag])
       if params[:query].present?
         @meals = search(@meals, params[:query])
