@@ -13,6 +13,7 @@ gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
 gem 'chartkick'
 
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
 # Use postgresql as the database for Active Record
@@ -43,6 +44,7 @@ gem 'devise'
 gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
+gem 'rails_admin', '~> 2.0'
 group :development, :test do
   gem 'pry-byebug'
   gem 'pry-rails'
