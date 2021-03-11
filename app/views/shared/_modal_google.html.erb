@@ -2,20 +2,24 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="selection-modal">
         <h5 class="modal-title" id="exampleModalLabel">Excellent choice!</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <h6> <%= "#{choice.meal.name} // #{choice.meal.restaurant.name}" %>
+        <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
-        </button>
+        </button>-->
       </div>
-      <div class="modal-body">
-        Would you want to open GoogleMaps to go there ?
-        <p><%= link_to "Go back to the selection", meals_path %></p>
+      <div class="modal-body" data-current_position="<%=current_position.to_json %>">
+      <div class="btn-google">
+        <p><%= link_to "https://www.google.com/maps/dir/?api=1&destination=#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}#{"&origin=#{params[:lat]},#{params[:lon]}" unless params[:lat].blank?||params[:lon].blank?}", :target => "_blank" do %></p>
+          <i class="fas fa-map-marked-alt btn btn-primary"></i>
+        <% end %>
       </div>
-      <div class="modal-footer" data-current_position="<%=current_position.to_json %>">
-       <!-- <p><%= link_to "Yes, please", "https://www.google.com/maps/dir/'#{params[:lat]},#{params[:lon]}'/'#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}'", :target => "_blank", class: "btn btn-primary"%></p> -->
-        <p><%= link_to "Yes, please","https://www.google.com/maps/dir/?api=1&destination=#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}#{"&origin=#{params[:lat]},#{params[:lon]}" unless params[:lat].blank?||params[:lon].blank?}", :target => "_blank", class: "btn btn-primary"%></p>
-        <p><%= link_to "No, thanks", dashboard_path, class: "btn btn-secondary"%></p>
+      <div class="btn-dashboard">
+        <p><%= link_to dashboard_path do %></p>
+        <i class="fas fa-chart-line btn btn-secondary"></i>
+        <% end %>
+      </div>
       </div>
     </div>
   </div>
