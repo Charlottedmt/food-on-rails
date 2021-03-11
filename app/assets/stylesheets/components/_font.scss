@@ -12,3 +12,11 @@
 .light-text {
   font-weight: 400;
 }
+
+a:active, a:hover {
+  color: $primary-brand-color;
+}
+
+.btn-primary:hover, .btn:hover, .btn-primary:focus {
+  background-color: $secondary-brand-color;
+}
