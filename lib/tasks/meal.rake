@@ -10,4 +10,10 @@ namespace :meal do
       meal.save!
     end
   end
+
+  desc "Scrapping My fitness pal website"
+  task scrape: :environment do
+    ScrapeFitnesspalService.new.call
+  end
+
 end

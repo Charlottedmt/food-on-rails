@@ -1,36 +1,44 @@
 .dashboard-score {
+  position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: left;
   align-items: center;
   // width: 90%;
   // height: 72px;
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.2);
   margin: 24px;
-  padding: 8px 0;
+  padding-top: 2px;
+  padding-bottom: 2px;
   // padding-top: 3%;
   // padding-right: 14px; 
   box-shadow: 4px 4px 10px rgba(0,0,0,0.2);
   background-color: $primary-brand-color;
-  p {
-    color: white;
-    font-size: 1.7rem;
-    margin: 0;
-  }
+
   .average-score {
-  display: flex;
-  background-color: $primary-brand-color;
-  border-radius: 50px;
-  width: 56px;
-  height: 56px;
-  align-items: center;
-  justify-content: center;
-  color: $primary-brand-color;
-  margin-left: 3%;
-  // padding-top: 3%;
-  font-size: 24px;
-  background-color: white;
+    display: flex;;
+    border-radius: 50px;
+    width: 56px;
+    height: 56px;
+    align-items: center;
+    justify-content: center;
+    color: $primary-brand-color;
+    background-color: white;
+    position: absolute;
+    right: 0px;
+    color: $primary-brand-color;
+    font-size: 1.7rem;
+    margin-bottom: 0;
+    margin-right: 8px;
   }
+  .average-score-text {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+  }
+}
+
+.progress {
+  background-color: $secondary-brand-color;
 }
 
 .dashboard-top {
@@ -40,7 +48,7 @@
   border: 2px solid $primary-brand-color;
   opacity: 92%;
   border-radius: 16px;
-  box-shadow: 2px 2px 9px rgba(0,0,0,0.2);
+  box-shadow: 2px 2px 35px rgba(255, 177, 154, 0.5);
   padding-top: 8px;
 }
 

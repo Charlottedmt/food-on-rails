@@ -2,7 +2,7 @@ class Meal < ApplicationRecord
   belongs_to :restaurant
   has_many :locations, through: :restaurant
   has_many :choices, dependent: :destroy
-  validates :name, presence: true
+  validates :name, presence: true, uniqueness: { scope: :restaurant }
   # validates :price, presence: true
   # validates :score, presence: true
   validate :validate_attrlist
@@ -87,27 +87,35 @@ class Meal < ApplicationRecord
   # CARBOHYDRATES
   def carb_ratio_score
     @ratio_score = 0
-    if ((carbohydrates * 4) / calories) * 100 > 65
-      return @ratio_score
-    elsif ((carbohydrates * 4) / calories) * 100 < 45
-      return @ratio_score + 5
+    if carbohydrates
+      if ((carbohydrates * 4) / calories) * 100 > 65
+        return @ratio_score
+      elsif ((carbohydrates * 4) / calories) * 100 < 45
+        return @ratio_score + 5
+      else
+        return @ratio_score + 10
+      end
     else
-      return @ratio_score + 10
+      @ratio_score
     end
   end
 
   def carb_bonus_score
     @bonus_score = 0
-    if (30..50).cover?(carbohydrates)
-      if 50 - carbohydrates < 10
-        return @bonus_score + ((50 - carbohydrates) / 2)
+    if carbohydrates
+      if (30..50).cover?(carbohydrates)
+        if 50 - carbohydrates < 10
+          return @bonus_score + ((50 - carbohydrates) / 2)
+        else
+          return @bonus_score + 5
+        end
+      elsif carbohydrates > 50
+        return @bonus_score
       else
-        return @bonus_score + 5
+        return @bonus_score + 10
       end
-    elsif carbohydrates > 50
-      return @bonus_score
     else
-      return @bonus_score + 10
+      @bonus_score
     end
   end
 
@@ -118,27 +126,35 @@ class Meal < ApplicationRecord
   # FAT
   def fat_ratio_score
     @ratio_score = 0
-    if ((fat * 9) / calories) * 100 > 35
-      return @ratio_score
-    elsif ((fat * 9) / calories) * 100 < 20
-      return @ratio_score + 5
+    if fat
+      if ((fat * 9) / calories) * 100 > 35
+        return @ratio_score
+      elsif ((fat * 9) / calories) * 100 < 20
+        return @ratio_score + 5
+      else
+        return @ratio_score + 10
+      end
     else
-      return @ratio_score + 10
+      @ratio_score
     end
   end
 
   def fat_bonus_score
     @bonus_score = 0
+    if fat
     if (10..20).cover?(fat)
-      if 20 - fat < 5
-        return @bonus_score + (20 - fat)
+        if 20 - fat < 5
+          return @bonus_score + (20 - fat)
+        else
+          return @bonus_score + 5
+        end
+      elsif fat < 10
+        return @bonus_score + 10
       else
-        return @bonus_score + 5
+        return @bonus_score
       end
-    elsif fat < 10
-      return @bonus_score + 10
     else
-      return @bonus_score
+      @bonus_score
     end
   end
 
@@ -149,27 +165,35 @@ class Meal < ApplicationRecord
   # PROTEIN
   def protein_ratio_score
     @ratio_score = 0
-    if ((proteins * 4) / calories) * 100 < 10
-      return @ratio_score
-    elsif ((proteins * 4) / calories) * 100 > 35
-      return @ratio_score + 5
+    if proteins
+      if ((proteins * 4) / calories) * 100 < 10
+        return @ratio_score
+      elsif ((proteins * 4) / calories) * 100 > 35
+        return @ratio_score + 5
+      else
+        return @ratio_score + 10
+      end
     else
-      return @ratio_score + 10
+      @ratio_score
     end
   end
 
   def protein_bonus_score
     @bonus_score = 0
-    if (10..20).cover?(proteins)
-      if proteins - 10 < 5
-        return @bonus_score + (proteins - 10)
+    if proteins
+      if (10..20).cover?(proteins)
+        if proteins - 10 < 5
+          return @bonus_score + (proteins - 10)
+        else
+          return @bonus_score + 5
+        end
+      elsif proteins > 20
+        return @bonus_score + 10
       else
-        return @bonus_score + 5
+        return @bonus_score
       end
-    elsif proteins > 20
-      return @bonus_score + 10
     else
-      return @bonus_score
+      @bonus_score
     end
   end
 
@@ -180,12 +204,16 @@ class Meal < ApplicationRecord
   # SODIUM
   def sodium_cutoff_score
     @cutoff_score = 0
-    if sodium < 1.5
-      return @cutoff_score + 20
-    elsif sodium > 2.5
-      return @cutoff_score
+    if sodium
+      if sodium < 1
+        return @cutoff_score + 10
+      elsif sodium > 2
+        return @cutoff_score
+      else
+        return @cutoff_score + 5
+      end
     else
-      return @cutoff_score + 10
+      @cutoff_score
     end
   end
 
@@ -211,12 +239,16 @@ class Meal < ApplicationRecord
   # SODIUM
   def drink_sodium_cutoff_score
     @cutoff_score = 0
-    if sodium < 1
-      return @cutoff_score + 10
-    elsif sodium > 2
-      return @cutoff_score
+    if sodium
+      if sodium < 1
+        return @cutoff_score + 10
+      elsif sodium > 2
+        return @cutoff_score
+      else
+        return @cutoff_score + 5
+      end
     else
-      return @cutoff_score + 5
+      @cutoff_score
     end
   end
 

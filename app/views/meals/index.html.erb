@@ -1,4 +1,4 @@
-<%= render 'shared/loading' %>
+<%#= render 'shared/loading'> %>
 <div id="map"
      data-markers="<%= @markers.to_json %>"
      data-current_position="<%= @current_position.to_json %>"
@@ -28,15 +28,17 @@
             <p class="light-text"><%= meal.restaurant.name %></p>
             <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
           </div>
-          <div class="card-choice-middle">
-            <% if @switch.nil? %>
+          <% if @switch.nil? %>
+            <div class="card-choice-middle" style="background-color: <%= get_score_background(meal.food_score) %>;">
               <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
               <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
-            <% else %>
+            </div>
+          <% else %>
+            <div class="card-choice-middle" style="background-color: <%= get_score_background(meal.drink_score) %>;">
               <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
               <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
-            <% end %>
-          </div>
+            </div>
+          <% end %>
           <div class="card-choice-right">
             <%= simple_form_for [ meal, @choice ] do |f| %>
               <%=  hidden_field_tag :lat, nil, class: "hidden-lat" %>
@@ -48,7 +50,6 @@
                 <p>GO</p>
               <% end %>
             <% end %>
-            <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
           </div>
         </div>
       <% end %>
@@ -64,24 +65,28 @@
               <p class="light-text"><%= meal.restaurant.name %></p>
               <%= link_to "MORE INFO", meal_path(meal, goal: params[:goal]), class: "text-btn-label" %>
             </div>
-            <div class="card-choice-middle">
-                        <% if @switch.nil? %>
-              <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
-              <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+            <% if @switch.nil? %>
+              <div class="card-choice-middle" style="background-color: <%= get_score_background(meal.food_score) %>;">
+                <p class="index-score <%= get_score_class(meal.food_score) %>"><%= meal.food_score %></p>
+                <i class="<%= get_score_class(meal.food_score) %> fas fa-<%= get_score_icon(meal.food_score) %>"></i>
+              </div>
             <% else %>
-              <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
-              <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
+              <div class="card-choice-middle" style="background-color: <%= get_score_background(meal.drink_score) %>;">
+                <p class="index-score <%= get_score_class(meal.drink_score) %>"><%= meal.drink_score %></p>
+                <i class="<%= get_score_class(meal.drink_score) %> fas fa-<%= get_score_icon(meal.drink_score) %>"></i>
+              </div>
             <% end %>
-            </div>
             <div class="card-choice-right">
               <%= simple_form_for [ meal, @choice ] do |f| %>
                 <%=  hidden_field_tag :lat, nil, class: "hidden-lat" %>
                 <%=  hidden_field_tag :lon, nil, class: "hidden-lon" %>
                 <%= f.association :meal, as: :hidden, input_html: { value: meal.id }%>
                 <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
-                <%= f.submit "GO", class: "btn btn-primary"%>
+                <%= button_tag "GO", type: :submit, class: "btn btn-primary" do %>
+                  <i class="fas fa-map-marker-alt"></i>
+                  <p>GO</p>
+                <% end %>
               <% end %>
-              <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
             </div>
           </div>
         <% end %>
