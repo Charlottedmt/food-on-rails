@@ -17,14 +17,19 @@ a {
 }
 .body h2 {
   text-align: center;
-  font-size: 4.3em;
-  padding-top: 32px;
+  // font-size: 4.3em;
+  font-size: 4em;
+  // padding-top: 32px;
+  padding-top: 56px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
 }
 .body h4 {
-  margin-left: 32px;
-  padding-top: 20px;
-  font-size: 1.5rem;
+  // margin-left: 28px;
+  margin-left: 20px;
+  // padding-top: 20px;
+  padding-top: 56px;
+  // font-size: 1.5rem;
+  font-size: 1.7rem;
   line-height: 34px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
 }
