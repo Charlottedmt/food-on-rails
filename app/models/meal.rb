@@ -12,6 +12,7 @@ class Meal < ApplicationRecord
   scope :max_fat_meal, -> { order(fat: :desc).first }
   scope :max_sodium_meal, -> { order(sodium: :desc).first }
   scope :min_protein_meal, -> { order(proteins: :asc).first }
+  scope :max_carbs_meal, -> { order(carbohydrates: :desc).first }
 
   include PgSearch::Model
   pg_search_scope :search_by_preferences,
@@ -142,7 +143,7 @@ class Meal < ApplicationRecord
   def fat_bonus_score
     @bonus_score = 0
     if fat
-    if (10..20).cover?(fat)
+      if (10..20).cover?(fat)
         if 20 - fat < 5
           return @bonus_score + (20 - fat)
         else
