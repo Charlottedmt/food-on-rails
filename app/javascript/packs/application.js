@@ -30,7 +30,6 @@ import "controllers";
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 import { initMapbox } from '../plugins/init_mapbox';
-import { sweetAlert } from '../plugins/sweet_alert';
 import { drawChart } from '../components/gauge';
 import { drawChart2 } from '../components/gauge';
 import { drawChart3 } from '../components/gauge';
@@ -45,6 +44,5 @@ document.addEventListener('turbolinks:load', () => {
   google.charts.setOnLoadCallback(drawChart2);
   google.charts.setOnLoadCallback(drawChart3);
   openBootstrapModal();
-  sweetAlert();
 });
 
