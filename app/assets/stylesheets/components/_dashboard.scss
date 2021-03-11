@@ -152,18 +152,15 @@
   margin-top: 7%;
 }
 
-.col-6 {
-  max-width: 47%;
-}
 
 .result-cards {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
-  margin: 4px;
-  width: 112px;
+  width: 176px;
   height: 160px;
   border-radius: 6%;
+  margin: 2px auto;
 }
 
 .result-cards p {
