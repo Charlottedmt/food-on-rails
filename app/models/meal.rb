@@ -256,23 +256,31 @@ class Meal < ApplicationRecord
   # CARBS
   def drink_carb_ratio_score
     @ratio_score = 0
-    if ((carbohydrates * 4) / calories) * 100 > 65
-      return @ratio_score
-    elsif ((carbohydrates * 4) / calories) * 100 < 45
-      return @ratio_score + 3
+    if carbohydrates
+      if ((carbohydrates * 4) / calories) * 100 > 65
+        return @ratio_score
+      elsif ((carbohydrates * 4) / calories) * 100 < 45
+        return @ratio_score + 3
+      else
+        return @ratio_score + 5
+      end
     else
-      return @ratio_score + 5
+      @ratio_score
     end
   end
 
   def drink_carb_bonus_score
     @bonus_score = 0
-    if (5..10).cover?(carbohydrates)
-      return @bonus_score + 10 + (10 - carbohydrates)
-    elsif carbohydrates > 10
-      return @bonus_score
+    if carbohydrates
+      if (5..10).cover?(carbohydrates)
+        return @bonus_score + 10 + (10 - carbohydrates)
+      elsif carbohydrates > 10
+        return @bonus_score
+      else
+        return @bonus_score + 20
+      end
     else
-      return @bonus_score + 20
+      @bonus_score
     end
   end
 
@@ -283,23 +291,31 @@ class Meal < ApplicationRecord
   # FAT
   def drink_fat_ratio_score
     @ratio_score = 0
-    if ((fat * 9) / calories) * 100 > 35
-      return @ratio_score
-    elsif ((fat * 9) / calories) * 100 < 20
-      return @ratio_score + 3
+    if fat
+      if ((fat * 9) / calories) * 100 > 35
+        return @ratio_score
+      elsif ((fat * 9) / calories) * 100 < 20
+        return @ratio_score + 3
+      else
+        return @ratio_score + 5
+      end
     else
-      return @ratio_score + 5
+      @ratio_score
     end
   end
 
   def drink_fat_bonus_score
     @bonus_score = 0
-    if (1..3).cover?(fat)
-      return @bonus_score + 10 + ((3 - fat) * 2)
-    elsif fat < 1
-      return @bonus_score + 20
+    if fat
+      if (1..3).cover?(fat)
+        return @bonus_score + 10 + ((3 - fat) * 2)
+      elsif fat < 1
+        return @bonus_score + 20
+      else
+        return @bonus_score
+      end
     else
-      return @bonus_score
+      @bonus_score
     end
   end
 
@@ -310,23 +326,31 @@ class Meal < ApplicationRecord
   # PROTEIN
   def drink_protein_ratio_score
     @ratio_score = 0
-    if ((proteins * 4) / calories) * 100 < 10
-      return @ratio_score
-    elsif ((proteins * 4) / calories) * 100 > 35
-      return @ratio_score + 3
+    if proteins
+      if ((proteins * 4) / calories) * 100 < 10
+        return @ratio_score
+      elsif ((proteins * 4) / calories) * 100 > 35
+        return @ratio_score + 3
+      else
+        return @ratio_score + 5
+      end
     else
-      return @ratio_score + 5
+      @ratio_score
     end
   end
 
   def drink_protein_bonus_score
     @bonus_score = 0
-    if (1..5).cover?(proteins)
-      return @bonus_score + (proteins - 1)
-    elsif proteins > 5
-      return @bonus_score + 5
+    if proteins
+      if (1..5).cover?(proteins)
+        return @bonus_score + (proteins - 1)
+      elsif proteins > 5
+        return @bonus_score + 5
+      else
+        return @bonus_score
+      end
     else
-      return @bonus_score
+      @bonus_score
     end
   end
 
