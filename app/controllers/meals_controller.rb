@@ -1,3 +1,4 @@
+require "open-uri"
 class MealsController < ApplicationController
   skip_before_action :authenticate_user!, only: :preferences
 
@@ -69,6 +70,22 @@ class MealsController < ApplicationController
   def preferences
     skip_authorization
   end
+
+  def edit
+    @meal = Meal.find(params[:id])
+    authorize @meal
+  end
+
+  def update
+    @meal = Meal.find(params[:id])
+    file = URI.open(params[:photo])
+    @meal.photo.attach(io: file, filename: "meal.png", content_type: 'image/png')
+    authorize @meal
+    @meal.save
+    redirect_to meals_path
+  end
+
+  private
 
   def meal_params
     params.require(:meal).permit(:name, :price, :calories, :protein, :fat, :carbohydrates, :sodium, tag_list: [])
