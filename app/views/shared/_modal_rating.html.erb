@@ -11,7 +11,7 @@
         <h2><%= choice.meal.name %></h2>
         <br>
         <div class="center-photo">
-          <%= cl_image_tag choice.meal.photo.key, height: 200, width: 200, padding: 0, crop: :pad %>
+          <%= cl_image_tag choice.meal.photo.key, height: 150, width: 150, padding: 0, crop: :pad %>
         </div>
         <div class="modal-space rating-icon">
           <%= simple_form_for (choice) do |f| %>
