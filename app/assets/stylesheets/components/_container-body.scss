@@ -74,6 +74,85 @@ hr {
   border-top-right-radius: $card-border-radius; 
   border-top-left-radius: $card-border-radius;
   background-color: white;
+  position: relative;
+
+  .legend {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 0%;
+    top: 18%;
+    margin-right: 8px;
+  }
+
+  p {
+    font-size: 14px;
+    margin-bottom: 0px;
+  }
+
+  #legend-worst {
+    display: flex;
+    align-items: center;
+  }
+
+  #legend-worst-bar {
+    height: 16px;
+    width: 16px;
+    background-color: #FB9695;
+    border: 2px solid rgb(244, 0, 1);
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+
+  #legend-moderate {
+    display: flex;
+    align-items: center;
+  }
+
+  #legend-moderate-bar {
+    height: 16px;
+    width: 16px;
+    background-color: #FDDD99;
+    border: 2px solid #FCBA03;
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+
+  #legend-healthy {
+    display: flex;
+    align-items: center;
+  }
+
+  #legend-healthy-bar {
+    height: 16px;
+    width: 16px;
+    background-color: #C7EBB7;
+    border: 2px solid #9BDD7D;
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+
+  #legend-average {
+    display: flex;
+    align-items: center;
+  }
+
+  #legend-average-bar {
+    height: 16px;
+    width: 16px;
+    background-color: #FFD9CE;
+    border: 2px solid #FFB19A;
+    border-radius: 50%;
+    margin-right: 2px;
+  }
+
+  #legend-text {
+    opacity: 0.6;
+    font-size: 12px;
+  }
+
+
 }
 
 // .container--graphs {

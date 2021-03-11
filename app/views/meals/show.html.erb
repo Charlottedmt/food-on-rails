@@ -30,10 +30,31 @@
       </div>
     </div>
     <div class="container-macros-graphs">
-      <h3 class="center-text">Nutrients</h3>
+      <h3 class="center-text">Nutrients vs. Average</h3>
       <%# library => { :series => { 0 => { color: "red" } } %>
       <%# <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], suffix: " grams", scales: {display: false, yAxes: [{ticks: {autoSkip: false}}]} %>
-      <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Avg. Protein", data: {Protein: Meal.average(:proteins)}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Avg. Carbs", data: {Carbs: Meal.average(:carbohydrates)}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Avg. Fat", data: {Fats: Meal.average(:fat)}}, {name: "Sodium", data: {Sodium: @meal.sodium}}, {name: "Avg Sodium", data: {Sodium: Meal.average(:sodium)}}], colors: [ @meal.protein_cutoffs, Meal.min_protein_meal.protein_cutoffs, @meal.carbs_cutoffs, Meal.max_carbs_meal.carbs_cutoffs, @meal.fat_cutoffs, Meal.max_fat_meal.fat_cutoffs, @meal.sodium_cutoffs, Meal.max_sodium_meal.sodium_cutoffs ], library: { scales: { yAxes: [{ gridLines: { display: false } }]}}, suffix: " grams", legend: false %>
+      <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Avg. Protein", data: {Protein: Meal.average(:proteins)}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Avg. Carbs", data: {Carbs: Meal.average(:carbohydrates)}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Avg. Fat", data: {Fats: Meal.average(:fat)}}, {name: "Sodium", data: {Sodium: @meal.sodium}}, {name: "Avg Sodium", data: {Sodium: Meal.average(:sodium)}}], colors: [ @meal.protein_cutoffs, "#FFB19A", @meal.carbs_cutoffs, "#FFB19A", @meal.fat_cutoffs, "#FFB19A", @meal.sodium_cutoffs, "#FFB19A" ], library: { scales: { yAxes: [{ gridLines: { display: false }, ticks: { display: false }}]}}, suffix: " grams", legend: false %>
+      <div class="legend">
+        <p>This meal</p>
+        <div id="legend-healthy">
+          <p id="legend-healthy-bar"></p>
+          <p id="legend-text">Good</p>
+        </div>
+        <div id="legend-moderate">
+          <p id="legend-moderate-bar"></p>
+          <p id="legend-text">Moderate</p>
+        </div>
+        <div id="legend-worst">
+          <p id="legend-worst-bar"></p>
+          <p id="legend-text">Bad</p>
+        </div>
+        <br>
+        <p>All options</p>
+        <div id="legend-average">
+          <p id="legend-average-bar"></p>
+          <p id="legend-text">Average</p>
+        </div>
+      </div>
     </div>
   </div>
 </div>
