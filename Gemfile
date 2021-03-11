@@ -12,7 +12,6 @@ gem 'pundit'
 gem 'pg_search', '~> 2.3.0'
 gem 'geocoder'
 gem 'chartkick'
-gem 'rails_admin', '~> 2.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.5'

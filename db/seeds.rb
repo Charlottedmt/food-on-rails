@@ -109,8 +109,7 @@ puts "Retrieving Address Log..."
 puts "Creating default user..."
 admin = User.first_or_create!(
   email: "admin@foodonrails.com",
-  password: "password",
-  admin: true
+  password: "password"
 )
 puts "User created and retrieving last month's data..."
 
