@@ -24,6 +24,7 @@ restaurants = {
   "Sukiya" => ["3-9-3 Meguro, Meguro City, Tokyo"],
   "Mos Burger" => [ "2−17−3 Kamiosaki, Shinagawa City, Tokyo"],
   "Family Mart" => ["3-10-13 Meguro, Meguro City, Tokyo"],
+  "Royal Host" => ["3-10-12, Meguro, Meguro City, Tokyo"],
   # not actual restauraunt addresses from here, just close to HUB
   "Denny's" => ["2−11−9 Meguro, Meguro City, Tokyo"],
   "Burger King" => ["2−11−8 Meguro, Meguro City, Tokyo"],
