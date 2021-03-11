@@ -12,12 +12,20 @@ class MealPolicy < ApplicationPolicy
     def show?
        true
     end
-    
+
     def index?
-      true 
+      true
     end
-  
+
     def create?
       true
+    end
+
+    def update?
+      user.admin?
+    end
+
+    def edit?
+      update?
     end
 end

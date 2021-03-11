@@ -1,0 +1,6 @@
+
+<%= @meal.name%>
+<%= simple_form_for @meal do |f| %>
+  <%= text_field_tag :photo %>
+  <%= f.submit %>
+<% end %>
