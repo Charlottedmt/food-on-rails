@@ -45,8 +45,13 @@ class ScrapeFitnesspalService
           fat: attrs[:fat],
           carbohydrates: attrs[:carbs],
           sodium: attrs[:sodium],
+          tag_list: tag
           )
-        meal.score = meal.food_score
+        if meal.tag_list == "Drinks"
+          meal.score = meal.drink_score
+        else
+          meal.score = meal.food_score
+        end
         meal.save
         results << meal
       end
