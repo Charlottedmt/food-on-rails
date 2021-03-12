@@ -34,6 +34,10 @@
   margin-top: 150px;
 }
 
+.modal-content .modal-content-restaurant {
+  opacity: 0.6;
+}
+
 .modal-body-google {
   display: flex;
   justify-content: center;
@@ -46,6 +50,8 @@
     width: 130px;
     height: 50px;
     margin: 16px;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, .2);
+    border-radius: 8px;
   }
   i {
    font-size: 2rem;
@@ -56,11 +62,24 @@
 }
 
 .selection-modal {
-  align-items: flex-start;
-  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 1rem 1rem;
   border-bottom: 1px solid #dee2e6;
   border-top-left-radius: 1px;
   border-top-right-radius: 1px;
+}
+
+.selection-modal h4 {
+  background-color: $primary-brand-color;
+  color: white;
+  border-radius: 50px;
+  padding: 4px 6px;
+}
+
+.selection-modal img {
+  border: 2px solid $primary-brand-color;
+  border-radius: 50%;
 }
 
