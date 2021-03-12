@@ -15,7 +15,7 @@
       <div class="modal-body-google" data-current_position="<%=current_position.to_json %>">
         <div class="modal-button-left">
           <div class="btn-google">
-            <p><%= link_to "https://www.google.com/maps/dir/?api=1&destination=#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}#{"&origin=#{params[:lat]},#{params[:lon]}" unless params[:lat].blank?||params[:lon].blank?}", :target => "_blank" do %></p>
+            <p><%= link_to "https://www.google.com/maps/dir/?api=1&destination=#{choice.meal.restaurant.locations[0].latitude},#{choice.meal.restaurant.locations[0].longitude}#{"&origin=#{params[:lat]},#{params[:lon]}&dirflg=w" unless params[:lat].blank?||params[:lon].blank?}", :target => "_blank" do %></p>
               <i class="fas fa-map-marked-alt btn btn-primary"></i>
             <% end %>
           </div>
