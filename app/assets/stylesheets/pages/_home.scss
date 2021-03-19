@@ -1,4 +1,3 @@
-// Specific CSS for your home-page
 a {
   color: $primary-brand-color;
   text-decoration: none;
@@ -17,24 +16,16 @@ a {
 }
 .body h2 {
   text-align: center;
-  // font-size: 4.3em;
   font-size: 4em;
-  // padding-top: 32px;
   padding-top: 56px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
 }
 .body h4 {
-  // margin-left: 28px;
   margin-left: 20px;
-  // padding-top: 20px;
   padding-top: 56px;
-  // font-size: 1.5rem;
   font-size: 1.7rem;
   line-height: 34px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
-}
-i {
-  // font-size: 5em;
 }
 .color-red{
   color: red;
@@ -74,4 +65,135 @@ i {
 }
 .btn-padding-left {
   padding-left: 8px;
+}
+
+// 320px — 480px: Mobile devices
+// 481px — 768px: iPads, Tablets
+// 769px — 1024px: Small screens, laptops
+// 1025px — 1200px: Desktops, large screens
+// 1201px and more —  Extra large screens, TV
+
+// mobile 1
+@media (max-width: 376px) {
+  .body h2 {
+    font-size: 3.8em;
+    padding-top: 24px;
+  }
+
+  .body h4 {
+    padding-top: 10px;
+    font-size: 1.3rem;
+  }
+}
+
+// mobile 2
+@media (min-width:376px) {
+}
+
+// tablets
+@media (min-width: 481px) {
+  .body h2 {
+    font-size: 6em;
+    padding-top: 100px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
+  }
+  .body h4 {
+    margin-left: 42px;
+    padding-top: 36px;
+    font-size: 2.5rem;
+    line-height: 52px;
+  }
+}
+
+// laptops
+@media (min-width: 1440px) {
+  .body h2 {
+    font-size: 7em;
+    padding-top: 4px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+  }
+  .body h4 {
+    text-align: center;
+    padding-top: 12px;
+    font-size: 4.5rem;
+    line-height: 80px;
+  }
+  .bg-design {
+    margin: 0 20%;
+    width: 60%;
+    height: 50%;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    margin-top: 10%;
+  }
+  .card-landing{
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .btn-landing{
+    width: 120px;
+    height: 120px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, .2);
+  }
+  .btn-landing i {
+    font-size: 3rem;
+  }
+  .btn-padding-left {
+    padding-left: 8px;
+  }
+  .btn-caption{
+    font-size: 1.5rem;
+  }
+  
+}
+
+// desktops
+@media (min-width: 1920px) {
+  .body h2 {
+    font-size: 10em;
+    padding-top: 100px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+  }
+  .body h4 {
+    text-align: center;
+    padding-top: 12px;
+    font-size: 4.5rem;
+    line-height: 80px;
+  }
+  .bg-design {
+    margin: 0 20%;
+    width: 1150px;
+    height: 550px;
+    background: rgba(0, 0, 0, .5);
+    border-radius: 8px;
+    margin-top: 120px;
+  }
+  .card-landing{
+    width: 280px;
+    height: 280px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .btn-landing{
+    width: 200px;
+    height: 200px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, .2);
+  }
+  .btn-landing i {
+    font-size: 4rem;
+  }
+  .btn-padding-left {
+    padding-left: 16px;
+  }
+  .btn-caption{
+    font-size: 2rem;
+  }
 }
