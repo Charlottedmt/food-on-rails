@@ -3,8 +3,8 @@
   <%= render 'shared/modal_rating',  choice: @choice %>
 <% end %>
 <div class="body">
-  <div class="bg-design">
     <h2>Food on Rails</h2>
+  <div class="bg-design">
     <h4>Healthiest Choice in<br><span class="color-red"><strong>Un</strong></span>healthy Situations</h4>
   </div>
     <div class="container-landing">
@@ -16,7 +16,7 @@
         </div>
         <p class="btn-caption"><strong>I'm Hungry</strong></p>
       </div>
-      <div class="card-landing">
+      <div class="card-landing  btn-mrgn-left">
         <div class="btn-landing btn-padding-left">
           <%= link_to meals_path(tag: 'Drinks') do %>
             <i class="fas fa-mug-hot"></i><br>
