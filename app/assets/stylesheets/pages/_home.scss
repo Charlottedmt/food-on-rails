@@ -22,10 +22,12 @@ a {
 }
 .body h4 {
   margin-left: 20px;
-  padding-top: 56px;
   font-size: 1.7rem;
   line-height: 34px;
   text-shadow: 5px 5px 10px rgba(0, 0, 0, .2);
+}
+.bg-design{
+  margin-bottom: 80%;
 }
 .color-red{
   color: red;
@@ -76,18 +78,31 @@ a {
 // mobile 1
 @media (max-width: 375px) {
   .body h2 {
-    font-size: 3.8em;
-    padding-top: 24px;
+    font-size: 3.5em;
+    padding-top: 7%;
   }
 
   .body h4 {
-    padding-top: 10px;
-    font-size: 1.3rem;
+    padding-top: 5%;
+    font-size: 22px;
   }
-}
-
-// mobile 2
-@media (min-width:376px) {
+  .card-landing{
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    margin-bottom: 0;
+  }
+  .btn-landing{
+    width: 80px;
+    height: 80px;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, .2);
+  }
+  .btn-landing i {
+    font-size: 1.5rem;
+  }
 }
 
 // tablets
@@ -103,21 +118,19 @@ a {
     font-size: 2.5rem;
     line-height: 52px;
   }
+  .bg-design {
+    margin-bottom: 54%;
+  }
 }
 
 // ipad Pro
 @media (min-width: 1024px) {
   .body h2 {
     font-size: 8em;
-    padding-top: 100px;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
   }
   .body h4 {
-    margin-left: 42px;
-    padding-top: 0;
-    padding-bottom: 60%;
+    padding: 0;
     font-size: 3.3rem;
-    line-height: 52px;
   }
   .container-landing{
     justify-content: center;
@@ -156,7 +169,6 @@ a {
   .body h2 {
     font-size: 10em;
     padding-top: 104px;
-    text-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
   }
   .body h4 {
     text-align: center;
@@ -168,40 +180,17 @@ a {
   }
   .bg-design {
     margin: 0 20%;
-    width: 60%;
+    width: 30%;
     height: auto;
     background: rgba(0, 0, 0, .5);
     border-radius: 8px;
     margin-top: 3%;
   }
-  .container-landing{
-    justify-content: center;
-  }
-  .card-landing{
-    width: 200px;
-    height: 200px;
-    text-align: center;
-    margin-bottom: 0;
-  }
-  .btn-landing{
-    width: 120px;
-    height: 120px;
-    align-items: center;
-    justify-content: center;
-    align-self: center;
-    box-shadow: 5px 5px 10px 3px rgba(0, 0, 0, .2);
-  }
-  .btn-landing i {
-    font-size: 3rem;
-  }
-  .btn-padding-left {
-    padding-left: 8px;
-  }
-  .btn-caption{
-    font-size: 1.5rem;
+  .container-landing {
+    padding-bottom: 0;
   }
   .btn-mrgn-left{
-    margin-left: 25%;
+    margin-left: 20%;
   }
 }
 
@@ -213,7 +202,5 @@ a {
   }
   .bg-design {
     margin: 0 32%;
-    height: auto;
-    width: auto;
   }
 }
