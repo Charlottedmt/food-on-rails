@@ -19,7 +19,7 @@
         </div>
       <% end %>
     </div>
-    <div class="cards-choice">
+    <!-- <div class="cards-choice"> -->
       <% @meals.first(3).each do |meal| %>
         <div class="card-choice">
           <%= cl_image_tag(meal.photo.key, height: 80, width: 80, crop: :pad) if meal.photo.attached? %>
@@ -53,7 +53,7 @@
           </div>
         </div>
       <% end %>
-    </div>
+    <!-- </div> -->
     <div class="more-card-choices" data-controller="load">
       <button class="btn" data-load-target="button" data-action="click->load#loadMore">More</button>
       <div class="cards-choice hidden" data-load-target="cards">
