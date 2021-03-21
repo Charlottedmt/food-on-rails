@@ -19,14 +19,10 @@
   
   &.horizontal{
     flex-direction: column;
-
   }
 
   .bar {
     display: flex;
-  }
-  .bar p{
-
   }
 
   #week {
@@ -38,5 +34,4 @@
     width: auto;
     margin-right: -16px;
   }
-
 }
