@@ -20,14 +20,30 @@
   border-bottom-left-radius: 0;
 }
 
-.more-card-choices {
+.card-choice-right {
+  margin-left: auto;
   position: relative;
+  top: 0%;
+  right: 0%;
+
   .btn {
-    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+    padding-top: 50%;
+  }
+}
+
+.more-card-choices {
+  // position: relative;
+  .btn {
+    // position: absolute;
     margin-top: 4%;
-    right: 42%;
+    // right: 42%;
     height: 40px;
-    width: 64px;
+    // width: 64px;
     background-color: $primary-brand-color;
     color: white;
   }
@@ -36,7 +52,7 @@
 // mobile 1
 @media (max-width: 375px) {
   .container-meal-index{
-    padding-top: 57%;
+    padding-top: 65%;
   }
   .card-choice {
     height: 80px;
@@ -50,9 +66,9 @@
   .card-choice-right .btn {
     height: 80px;
   }
-
   .more-card-choices .btn {
     margin-top: 1%;
+    // position: inherit;
   }
 }
 
