@@ -1,0 +1,103 @@
+.container-meal-index{
+  padding-top: 70%;
+}
+
+.card-choice img{
+  width: 30%;
+  height: 100%;
+  padding-right: 8px;
+  border-radius: $card-border-radius 0 0 $card-border-radius;
+}
+
+.card-choice-right .btn {
+  position: relative;
+  right: 0;
+  height: 100px;
+  width: 40px;
+  border-top-right-radius: $card-border-radius;
+  border-bottom-right-radius: $card-border-radius;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.card-choice-right {
+  margin-left: auto;
+  position: relative;
+  top: 0%;
+  right: 0%;
+  .btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0px;
+    padding-top: 50%;
+  }
+}
+
+.more-card-choices {
+  .btn {
+    background-color: $primary-brand-color;
+    color: white;
+  }
+}
+
+// mobile 1
+@media (max-width: 375px) {
+  .container-meal-index{
+    padding-top: 65%;
+  }
+  .card-choice {
+    height: 80px;
+  }
+  .card-choice img{
+    width: auto;
+    height: 75%;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .card-choice-right .btn {
+    height: 80px;
+  }
+  .more-card-choices .btn {
+    margin-top: 1%;
+  }
+}
+
+// tablets
+@media (min-width: 481px) {
+  .container-meal-index{
+    padding-top: 45%;
+    margin: 0 15%
+  }
+  .card-choice {
+    height: 140px;
+  }
+  .card-choice img{
+    width: auto;
+    height: 100%;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .card-choice-right .btn {
+    height: 140px;
+  }
+  .more-card-choices .btn {
+    margin-top: 1%;
+  }
+}
+
+// ipad Pro
+@media (min-width: 1024px) {
+
+}
+
+// laptops
+@media (min-width: 1440px) {
+
+}
+
+// desktops
+@media (min-width: 1920px) {
+
+}

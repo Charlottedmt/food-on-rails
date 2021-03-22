@@ -58,12 +58,6 @@ $card-border-radius: 8px;
   }
 }
 
-.card-choice img{
-  width: 30%;
-  height: 100%;
-  padding-right: 8px;
-  border-radius: $card-border-radius 0 0 $card-border-radius;
-}
 .card-choice-description h3, .card-choice-description p {
   margin: 0;
 }
@@ -71,48 +65,7 @@ $card-border-radius: 8px;
   margin: 0;
   font-size: 1.2em;
 }
-.card-choice-right {
-  margin-left: auto;
-  position: relative;
-  top: 0%;
-  right: 0%;
 
-  .btn {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin-right: 0px;
-    padding-top: 50%;
-  }
-  p {
-    
-  }
-}
-
-.more-card-choices {
-  position: relative;
-  .btn {
-    position: absolute;
-    margin-top: 4%;
-    right: 42%;
-    height: 40px;
-    width: 64px;
-    background-color: $primary-brand-color;
-    color: white;
-  }
-}
-
-.card-choice-right .btn {
-  position: relative;
-  right: 0;
-  height: 100px;
-  width: 40px;
-  border-top-right-radius: $card-border-radius;
-  border-bottom-right-radius: $card-border-radius;
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-}
 
 .meals-show-form {
 

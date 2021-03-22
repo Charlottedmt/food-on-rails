@@ -34,10 +34,6 @@ hr {
   margin-bottom: 16px;
 }
 
-.container-meal-index{
-  padding-top: 70%;
-}
-
 .container-calories-graphs {
   border-bottom: 4px solid rgba(0, 0, 0, 0.2);
   border-bottom-right-radius: $card-border-radius; 
@@ -173,11 +169,4 @@ hr {
     opacity: 0.6;
     font-size: 12px;
   }
-
-
 }
-
-// .container--graphs {
-//   display: flex;
-//   justify-content: space-between;
-// }
