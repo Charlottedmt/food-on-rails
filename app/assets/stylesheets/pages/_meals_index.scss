@@ -42,6 +42,37 @@
   }
 }
 
+.card-choice-middle {
+  display: flex;
+  position: absolute;
+  bottom: 18%;
+  right: 14%;
+  height: 40px;
+  width: 64px;
+  border-radius: $card-border-radius;
+  padding-left: 4%;
+  padding-top: 1%;
+  .score-success {
+    color: rgb(152, 220, 162);
+  }
+  .score-warning {
+    color: #FFC65A;
+  }
+  .score-danger {
+    color: rgb(237, 83, 85);
+  }
+  i {
+    padding-top: 17%;
+
+  }
+  p {
+    font-size: 20px;
+  }
+  .index-score {
+    display: flex;
+  }
+}
+
 // mobile 1
 @media (max-width: 375px) {
   .container-meal-index{
@@ -94,10 +125,35 @@
 
 // laptops
 @media (min-width: 1440px) {
-
+  .desktop-view {
+    display: flex;
+    width: 100vw;
+  }
+  #map {
+    position: sticky;
+    display: flex;
+    height: 100vh;
+    width: 50vw;
+  }
+  .container-meal-index{
+    padding-top: 5%;
+    width: 50vw;
+    margin: 0;
+    padding: 5% 10% 0 10%;  
+  }
+  .card-choice {
+    height: 140px;
+    margin-bottom: 16px;
+  }
+  .card-choice img{
+    margin-bottom: 0;
+  }
 }
 
 // desktops
 @media (min-width: 1920px) {
-
+  .container-meal-index{
+    width: 50vw;
+    padding-top: 10%
+  }
 }

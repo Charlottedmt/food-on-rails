@@ -3,7 +3,6 @@ $card-border-radius: 8px;
 // meal index meal cards
 .cards-choice {
   width: 100%;
-  display: grid;
 }
 
 .hidden {
@@ -21,51 +20,14 @@ $card-border-radius: 8px;
   border-radius: $card-border-radius;
 }
 
-.card-choice-middle {
-  display: flex;
-  position: absolute;
-  bottom: 18%;
-  right: 14%;
-  height: 40px;
-  width: 64px;
-  border-radius: $card-border-radius;
-  padding-left: 4%;
-  padding-top: 1%;
-
-  
-  .score-success {
-    color: rgb(152, 220, 162);
-  }
-
-  .score-warning {
-    color: #FFC65A;
-  }
-
-  .score-danger {
-    color: rgb(237, 83, 85);
-  }
-
-  i {
-    padding-top: 17%;
-
-  }
-  p {
-    font-size: 20px;
-  }
-
-  .index-score {
-    display: flex;
-  }
-}
-
 .card-choice-description h3, .card-choice-description p {
   margin: 0;
+  text-align: left;
 }
 .card-choice-description h3{
   margin: 0;
   font-size: 1.2em;
 }
-
 
 .meals-show-form {
 
