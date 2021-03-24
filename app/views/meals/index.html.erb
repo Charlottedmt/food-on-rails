@@ -1,10 +1,6 @@
 <%= render 'shared/loading' %>
 <div class="desktop-view">
-  <div id="map"
-      data-markers="<%= @markers.to_json %>"
-      data-current_position="<%= @current_position.to_json %>"
-      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
+  
   <div class="container-meal-index">
     <div class="container-body">
       <div class="form-preferences">
@@ -96,5 +92,10 @@
         </div>
       </div>
     </div>
+  </div>
+  <div id="map"
+      data-markers="<%= @markers.to_json %>"
+      data-current_position="<%= @current_position.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 </div>
