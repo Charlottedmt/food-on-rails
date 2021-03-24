@@ -1,5 +1,5 @@
 <div class="container-info-body">
-  <div class="card-detail card-detail-show">
+  <div class="card-detail card-meal-banner card-detail-show">
     <%= cl_image_tag(@meal.photo.key, crop: :fill) if @meal.photo.attached?  %>
     <h2><%= @meal.name%></h2>
     <%= cl_image_tag(@meal.restaurant.photo.key, crop: :fill, class: "show-restaurant") if @meal.restaurant.photo.attached? %>

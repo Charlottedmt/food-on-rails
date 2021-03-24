@@ -1,4 +1,20 @@
 .container-info-body{
-  margin: 0 2.5% 0 2.5%;
+  margin: 0 2.5%;
   padding-bottom: 48px;
+}
+
+.card-meal-banner {
+  position: sticky;
+  top: 0;
+  overflow: hidden;
+  background-color: $primary-brand-color;
+  border-radius: $card-border-radius;
+  z-index: -1;
+}
+
+// laptops
+@media (min-width: 1440px) {
+  .container-info-body{
+    margin: 2% 20%;
+  }
 }
