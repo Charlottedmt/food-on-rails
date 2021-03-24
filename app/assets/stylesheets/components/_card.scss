@@ -30,7 +30,6 @@ $card-border-radius: 8px;
 }
 
 .meals-show-form {
-
   .show-btn {
     position: absolute;
     border-top-left-radius: 18px;
@@ -39,7 +38,9 @@ $card-border-radius: 8px;
     width: 96px;
     top: -46px;
     right: 0px;
-    border: 0 solid #FF673B;
+    border-left: 1 solid white;
+    border-top: 1 solid white;
+    border-right: 1 solid white;
     box-shadow: -1px -2px 1px 1px rgba(0, 0, 0, 0.2);
     z-index: 1;
     text-align: left;
@@ -63,6 +64,7 @@ $card-border-radius: 8px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 8px 0 8px 0;
   z-index: -1;
+  border-radius: $card-border-radius;
 
   .show-restaurant {
   position: absolute;
@@ -75,20 +77,17 @@ $card-border-radius: 8px;
   box-shadow: 1px 2px 1px 1px rgba(0, 0, 0, 0.2);
   border-radius: $card-border-radius;
   }
-
 }
 .card-detail img{
   width: 100%;
   height: 50%;
 }
-
 /* meal show */
 .card-detail-show h2{
   margin: 0;
   color: white;
   text-align: center;
 }
-
 .card-detail-show  p{
   margin: 0;
   color: white;
@@ -101,26 +100,9 @@ $card-border-radius: 8px;
   padding-bottom: 16px;
   color: $primary-brand-color;
 }
-
 .card-detail-review-icons{
   display: flex;
   justify-content: space-around;
-}
-
-/* meal dashboard favorites */
-.scrolling-card {
-  display: inline-block;
-  height: 150px;
-  width: 150px;
-  text-align: center;
-  justify-content: center;
-  margin: 4px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  background-color: white;
-  border-radius: $card-border-radius;
-}
-.scrolling-card p{
-  margin: 4px;
 }
 
 .card-category {

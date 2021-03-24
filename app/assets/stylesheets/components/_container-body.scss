@@ -3,15 +3,6 @@
   padding-bottom: 48px;
 }
 
-.card-detail {
-  position: sticky;
-  top: 0;
-  overflow: hidden;
-  background-color: $primary-brand-color;
-  border-radius: 5%;
-  z-index: -1;
-}
-
 .container-nutritional-info{
   display: flex;
   flex-direction: column;
