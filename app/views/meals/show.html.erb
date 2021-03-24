@@ -1,15 +1,12 @@
-<div class="container-body">
-  <%# <h1>Nutrition Info</h1> %>
+<div class="container-info-body">
   <div class="card-detail card-detail-show">
     <%= cl_image_tag(@meal.photo.key, crop: :fill) if @meal.photo.attached?  %>
-    <!-- <img src="https://via.placeholder.com/80x60" alt=""> -->
     <h2><%= @meal.name%></h2>
     <%= cl_image_tag(@meal.restaurant.photo.key, crop: :fill, class: "show-restaurant") if @meal.restaurant.photo.attached? %>
   </div>
   <hr>
   <div class="container-nutritional-info">
     <div class="meals-show-form">
-      <%# link_to "INFO", meal_path(meal), class: "btn btn-primary card-choice-button" %>
       <%= simple_form_for [ @meal, @choice ] do |f| %>
         <%= f.association :meal, as: :hidden, input_html: { value: @meal.id }%>
         <%= f.association :user, as: :hidden, input_html: { value: current_user.id }%>
@@ -18,8 +15,6 @@
           <i class="fas fa-map-marker-alt"></i>
         <% end %>
       <% end %>
-      <%# <button class="btn btn-primary card-choice-button">INFO</button> %>
-      <!--button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> -->
     </div>
     <div class="container-calories-graphs">
       <h3 class="center-text">Recommended Calories Per Day</h3>
@@ -31,8 +26,6 @@
     </div>
     <div class="container-macros-graphs">
       <h3 class="center-text">Nutrients vs. Average</h3>
-      <%# library => { :series => { 0 => { color: "red" } } %>
-      <%# <%= column_chart [["Protein", @meal.proteins], ["Carbs", @meal.carbohydrates], ["Fats", @meal.fat], ["Sodium", @meal.sodium]], colors: [ @meal.protein_cutoffs, @meal.carbs_cutoffs, @meal.fat_cutoffs, @meal.sodium_cutoffs ], suffix: " grams", scales: {display: false, yAxes: [{ticks: {autoSkip: false}}]} %>
       <%= column_chart [{name: "Protein", data: {Protein: @meal.proteins}}, {name: "Avg. Protein", data: {Protein: Meal.average(:proteins)}}, {name: "Carbs", data: {Carbs: @meal.carbohydrates}}, {name: "Avg. Carbs", data: {Carbs: Meal.average(:carbohydrates)}}, {name: "Fats", data: {Fats: @meal.fat}}, {name: "Avg. Fat", data: {Fats: Meal.average(:fat)}}, {name: "Sodium", data: {Sodium: @meal.sodium}}, {name: "Avg Sodium", data: {Sodium: Meal.average(:sodium)}}], colors: [ @meal.protein_cutoffs, "#FFB19A", @meal.carbs_cutoffs, "#FFB19A", @meal.fat_cutoffs, "#FFB19A", @meal.sodium_cutoffs, "#FFB19A" ], library: { scales: { yAxes: [{ gridLines: { display: false }, ticks: { display: false }}]}}, suffix: " grams", legend: false %>
       <div class="legend">
         <div class="legend-left">
