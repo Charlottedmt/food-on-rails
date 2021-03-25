@@ -1,37 +1,42 @@
-<% if @choice %>
-  <% "it's inside"%>
-  <%# <button type="button" class="btn btn-secondary card-choice-button" data-toggle="modal" data-target="#exampleModal">GO!</button> %>
-  <%= render 'shared/modal_google', :choice => @choice, :current_position => @current_position %>
-<%end%>
-<h2 style="margin: 16px 0; text-align: center;">Dashboard</h2>
-<div class="dashboard-score">
-  <div class="progress" style="height: 4rem; width: 18rem; border-radius: 50px;">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning  pl-2;" role="progressbar" aria-valuenow="<%= @average_score %>" aria-valuemin="0" aria-valuemax="100" style="height: 4rem; width: <%= @average_score.to_i %>%; border-radius: 50px;">
-      <p class="average-score-text">Average Score</p>
-      <p class="average-score"><%= @average_score.to_i %></p>
+    <% if @choice %>
+    <% "it's inside"%>
+    <%= render 'shared/modal_google', :choice => @choice, :current_position => @current_position %>
+  <%end%>
+
+<div class="dashboard-container">
+  
+  <h2 style="margin: 16px 0; text-align: center;">Dashboard</h2>
+  <div class="dashboard-score">
+    <div class="progress">
+      <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning  pl-2;" role="progressbar" aria-valuenow="<%= @average_score %>" aria-valuemin="0" aria-valuemax="100" style="height: 4rem; width: <%= @average_score.to_i %>%; border-radius: 50px;">
+        <p class="average-score-text">Average Score</p>
+        <p class="average-score"><%= @average_score.to_i %></p>
+      </div>
     </div>
   </div>
-</div>
-<div class="dashboard-top">
-  <div class="score-last-month">
-    <div class="arrow-border" style="background: <%= get_score_bg_color(@average_score, @last_month) %>;">
-      <i class="fas <%= get_dashboard_arrow(@average_score, @last_month) %>" style="color:<%= get_score_color(@average_score, @last_month) %>;"></i>
+  
+  <div class="dashboard-top">
+    <div class="score-last-month">
+      <div class="arrow-border" style="background: <%= get_score_bg_color(@average_score, @last_month) %>;">
+        <i class="fas <%= get_dashboard_arrow(@average_score, @last_month) %>" style="color:<%= get_score_color(@average_score, @last_month) %>;"></i>
+      </div>
+      <h4 style="color:<%= get_score_color(@average_score, @last_month) %>;"><strong><%= get_dashboard_score(@last_month, @average_score) %></strong></h4>
+      <p>last month's avg</p>
     </div>
-    <h4 style="color:<%= get_score_color(@average_score, @last_month) %>;"><strong><%= get_dashboard_score(@last_month, @average_score) %></strong></h4>
-    <p>last month's avg</p>
-  </div>
-  <div class="score-current-month">
-    <div class="arrow-border" style="background: <%= get_score_bg_color(@average_score, 54.08) %>;">
-      <i class="fas <%= get_nationwide_arrow(@average_score, 54.08) %>" style="color:<%= get_score_color(@average_score, 54.08) %>;"></i>
+    <div class="score-current-month">
+      <div class="arrow-border" style="background: <%= get_score_bg_color(@average_score, 54.08) %>;">
+        <i class="fas <%= get_nationwide_arrow(@average_score, 54.08) %>" style="color:<%= get_score_color(@average_score, 54.08) %>;"></i>
+      </div>
+      <h4 style="color:<%= get_score_color(@average_score, 54.08) %>;"><strong><%= get_nationwide_score(@average_score, 54.08) %></strong></h4>
+      <p>nationwide avg.</p>
     </div>
-    <h4 style="color:<%= get_score_color(@average_score, 54.08) %>;"><strong><%= get_nationwide_score(@average_score, 54.08) %></strong></h4>
-    <p>nationwide avg.</p>
   </div>
-</div>
-<hr>
-<div class="results container">
+  
+  <hr>
+
   <h2 style="margin-bottom: 16px; text-align: center;">This Month</h2>
   <div class="row">
+  
     <div class="result-cards">
       <div class="result-icon">
         <img src="https://static.thenounproject.com/png/1180285-200.png" alt="calorie icon">
@@ -40,6 +45,7 @@
       <h4><strong><%= @calories.round(1) %> kcal</strong></h4>
       <%= @bike %> minutes of bicycling
     </div>
+  
     <div class="result-cards">
       <div class="result-icon">
         <img src="https://image.flaticon.com/icons/png/512/2599/2599597.png" alt="fat-icon">
@@ -49,7 +55,8 @@
       <%= @pizza %> whole pizzas
     </div>
   </div>
-  <div class="row">
+
+  <div class="row">  
     <div class="result-cards">
       <div class="result-icon">
         <img src="https://img.icons8.com/ios/452/salt-bae.png" alt="salt-bae">
@@ -58,6 +65,7 @@
       <h4><strong><%= @sodium.round(1) %> grams</strong></h4>
       <%= @salt %> table spoons of salt
     </div>
+
     <div class="result-cards">
       <div class="result-icon">
         <img src="https://icon-library.com/images/muscles_gym_training_protein-512.png" alt="protein-icon">
@@ -67,5 +75,5 @@
       <%= @egg %> eggs
     </div>
   </div>
-</div>
+
 </div>
