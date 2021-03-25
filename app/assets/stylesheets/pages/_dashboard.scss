@@ -1,3 +1,7 @@
+.dashboard-container {
+  text-align: center;
+}
+
 .dashboard-score {
   position: relative;
   display: flex;
@@ -35,6 +39,9 @@
 
 .progress {
   background-color: $secondary-brand-color;
+  height: 4rem; 
+  width: 82%; 
+  border-radius: 50px;
 }
 
 .dashboard-top {
@@ -124,30 +131,11 @@
   text-align:center;
 }
 
-.favorites {
-}
-
-.fav-card {
-  margin-bottom: 8px;
-}
-
-// anthony edits
-.scrolling-wrapper {
-  overflow-x: scroll;
-  overflow-y: hidden;
-  white-space: nowrap;
-}
-
-.results {
-  text-align: center;
-}
-
 .row {
   margin-left: auto;
   margin-right: auto;
   margin-top: 7%;
 }
-
 
 .result-cards {
   background: white;
@@ -191,4 +179,36 @@
   bottom: 81%;
   right: 32%;
   filter: invert(54%) sepia(48%) saturate(3994%) hue-rotate(337deg) brightness(104%) contrast(101%);
+}
+
+// mobile 1
+@media (max-width: 375px) {
+  
+}
+
+// tablets
+@media (min-width: 481px) {
+  
+}
+
+// ipad Pro
+@media (min-width: 1024px) {
+  
+}
+
+// laptops
+@media (min-width: 1440px) {
+  .dashboard-container{
+    margin: 0 35%;
+  }
+}
+
+// desktops
+@media (min-width: 1920px) {
+  .dashboard-container{
+    margin: 5% 35% 0 35%;
+  }
+  .progress {
+    width: 87%;
+  }
 }
